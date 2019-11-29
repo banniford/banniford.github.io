@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>宝塔二级域名javaweb项目ssl配置踩坑 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1、环境 宝塔界面 nginx tomcat javaweb项目 ssl个人单域名证书（免费）  2、注意事项 域名是否正确的解析  防火墙是否打开（宝塔和阿里云服务器防火墙都要打开 80和443端口） 网站是否301或302跳转，如果跳转了也要关闭 单域名证书会有指定域名，二级域名必须重新申请 二级域名一定要解析A记录到服务器ip 域名备案只用备案顶级域名，二级域名不用备案 如果有多个二级域名和">
+<meta property="og:type" content="article">
+<meta property="og:title" content="宝塔二级域名javaweb项目ssl配置踩坑">
+<meta property="og:url" content="http://yoursite.com/2019/11/29/宝塔二级域名javaweb项目ssl配置踩坑/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1、环境 宝塔界面 nginx tomcat javaweb项目 ssl个人单域名证书（免费）  2、注意事项 域名是否正确的解析  防火墙是否打开（宝塔和阿里云服务器防火墙都要打开 80和443端口） 网站是否301或302跳转，如果跳转了也要关闭 单域名证书会有指定域名，二级域名必须重新申请 二级域名一定要解析A记录到服务器ip 域名备案只用备案顶级域名，二级域名不用备案 如果有多个二级域名和">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-29T13:51:27.514Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="宝塔二级域名javaweb项目ssl配置踩坑">
+<meta name="twitter:description" content="1、环境 宝塔界面 nginx tomcat javaweb项目 ssl个人单域名证书（免费）  2、注意事项 域名是否正确的解析  防火墙是否打开（宝塔和阿里云服务器防火墙都要打开 80和443端口） 网站是否301或302跳转，如果跳转了也要关闭 单域名证书会有指定域名，二级域名必须重新申请 二级域名一定要解析A记录到服务器ip 域名备案只用备案顶级域名，二级域名不用备案 如果有多个二级域名和">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-宝塔二级域名javaweb项目ssl配置踩坑" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/29/宝塔二级域名javaweb项目ssl配置踩坑/" class="article-date">
+  <time datetime="2019-11-29T11:07:56.000Z" itemprop="datePublished">2019-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      宝塔二级域名javaweb项目ssl配置踩坑
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1、环境"><a href="#1、环境" class="headerlink" title="1、环境"></a>1、环境</h2><ul>
+<li>宝塔界面</li>
+<li>nginx</li>
+<li>tomcat</li>
+<li>javaweb项目</li>
+<li>ssl个人单域名证书（免费）</li>
+</ul>
+<h2 id="2、注意事项"><a href="#2、注意事项" class="headerlink" title="2、注意事项"></a>2、注意事项</h2><ul>
+<li>域名是否正确的解析 </li>
+<li>防火墙是否打开（宝塔和阿里云服务器防火墙都要打开 80和443端口）</li>
+<li>网站是否301或302跳转，如果跳转了也要关闭</li>
+<li><strong>单域名证书会有指定域名，二级域名必须重新申请</strong></li>
+<li>二级域名一定要解析A记录到服务器ip</li>
+<li>域名备案只用备案顶级域名，二级域名不用备案</li>
+<li>如果有多个二级域名和一个主域名，当主域名开启强制ssl后，没有开启ssl的二级域名会被解析到主域名或其他二级域名需要注意</li>
+</ul>
+<h2 id="3、步骤"><a href="#3、步骤" class="headerlink" title="3、步骤"></a>3、步骤</h2><p>1)、删除原装openjdk，安装JDK1.8</p>
+<p>2)、在宝塔软件页面找到tomcat，按需求版本安装</p>
+<p>3)、打开tomcat目录在webapps文件夹下上传并解压war包（可以改名为ROOT，默认为ROOT目录是tomcat识别目录）</p>
+<p>4)、tomcat配置文件中20行的<code>appBase=&quot;&quot;</code>一定为空，11行中添加参数<code>scheme=&quot;https&quot;</code>  如果端口号在这里更改，后面站点配置文件<code>proxy_pass &quot;域名:端口号&quot;;</code>中一定要对应</p>
+<p>5)、新建站点选择war解压后目录，域名填阿里云域名设置A记录解析的二级域名，站点设置ssl页面输入从阿里云下载的.key和.pem文件内容点击启用</p>
+<p>6)、在站点设置配置文件中检查<code>proxy_pass &quot;域名:端口号&quot;;</code>内容要与4中tomcat端口对应</p>
+<p>7)、在站点设置tomcat页面点击启动tomcat</p>
+<p>8)、使用https测试效果，也可以在ssl页面设置强制ssl</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/29/宝塔二级域名javaweb项目ssl配置踩坑/" data-id="ck3k7f2tw0005rstwzir2ak61" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/11/26/深度学习初探/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">深度学习初探</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/11/29/宝塔二级域名javaweb项目ssl配置踩坑/">宝塔二级域名javaweb项目ssl配置踩坑</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/26/深度学习初探/">深度学习初探</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/25/嵌入式Servlet容器（七）/">嵌入式Servlet容器（七）</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/23/SpringMVC自动配置（六）/">SpringMVC自动配置（六）</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/21/Thymeleaf使用/">Thymeleaf使用(五)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
