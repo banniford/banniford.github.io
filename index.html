@@ -62,6 +62,113 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-数据规范化" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/15/数据规范化/" class="article-date">
+  <time datetime="2019-12-15T13:54:12.000Z" itemprop="datePublished">2019-12-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/15/数据规范化/">数据规范化</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、数据规范化"><a href="#一、数据规范化" class="headerlink" title="一、数据规范化"></a>一、数据规范化</h2><ul>
+<li><p>在数据分析之前，我们都需要让数据满足一定的规律，达到规范性的要求，便于进行挖掘。</p>
+</li>
+<li><p>如果不进行变换的话，要不就是维数过多增加了计算成本，要不就是数据过于集中，很难找到数据之间的特征。</p>
+</li>
+<li><p>在数据变换中，重点是如何将数值进行规范化，有三种常用的规范方法，分别是Min-Max规范化、Z-Score规范化、小数定标规范化。</p>
+</li>
+</ul>
+<h3 id="1-Min-max规范化："><a href="#1-Min-max规范化：" class="headerlink" title="1.Min-max规范化："></a><strong>1.Min-max规范化：</strong></h3><p>将原始数据投射到指定的空间[min,max]。可用公式表示为：</p>
+<p>新数值 = （原数值-极小值）/ (极大值 - 极小值) 。</p>
+<p>SciKit-Learn中的MinMaxScaler可以完成这个功能。</p>
+<h3 id="2-Z-Score规范化："><a href="#2-Z-Score规范化：" class="headerlink" title="2.Z-Score规范化："></a><strong>2.Z-Score规范化：</strong></h3><p>将原始数据转换为正态分布的形式，使结果易于比较。可用公式表示为：</p>
+<p>新数值 = （原数值 - 均值）/ 标准差</p>
+<p>在SciKit-Learn中的preprocessing.scale()可以直接将给定数据进行Z-Score规范化。</p>
+<h3 id="3-小数定标规范化："><a href="#3-小数定标规范化：" class="headerlink" title="3.小数定标规范化："></a><strong>3.小数定标规范化：</strong></h3><p>通过移动小数点的位置来进行规范化。小数点移动的位数取决于该属性数据取值的最大绝对值。</p>
+<p>例如：属性A的取值范围是-800到70，那么就可以将数据的小数点整体向左移三位即[-0.8,0.07]</p>
+<p>利用numpy对数据进行小数定标规范化的方法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = np.ceil(np.log10(np.max(abs(x))))</span><br><span class="line">scaled_x =x/(<span class="number">10</span>**a)</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、np-linalg-norm-求范数"><a href="#二、np-linalg-norm-求范数" class="headerlink" title="二、np.linalg.norm(求范数)"></a>二、np.linalg.norm(求范数)</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x_norm=np.linalg.norm(x, ord=<span class="literal">None</span>, axis=<span class="literal">None</span>, keepdims=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-x-表示矩阵（也可以是一维）"><a href="#1-x-表示矩阵（也可以是一维）" class="headerlink" title="1. x: 表示矩阵（也可以是一维）"></a>1. <strong>x: 表示矩阵（也可以是一维）</strong></h3><h3 id="2-ord：范数类型"><a href="#2-ord：范数类型" class="headerlink" title="2. ord：范数类型"></a>2. <strong>ord：范数类型</strong></h3><ul>
+<li><strong>向量的范数</strong>：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">参数</th>
+<th align="center">说明</th>
+<th align="center">计算方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">默认</td>
+<td align="center">二范数：L2</td>
+<td align="center">$\sqrt {x^2_1+x^2_2+…+x^2_n}$</td>
+</tr>
+<tr>
+<td align="center">ord=2</td>
+<td align="center">二范数：L2</td>
+<td align="center">同上</td>
+</tr>
+<tr>
+<td align="center">ord=1</td>
+<td align="center">一范数：L1</td>
+<td align="center">｜$x_1$｜+｜$x_2$｜+…+｜$x_n$｜</td>
+</tr>
+<tr>
+<td align="center">ord=np.inf</td>
+<td align="center">无穷范数：L<sub>∞</sub></td>
+<td align="center">max(｜$x_1$｜)</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p><strong>矩阵的范数</strong>：</p>
+<p>ord=1：列和的最大值</p>
+<p>ord=2：|λE-ATA|=0，求特征值，然后求最大特征值得算术平方根(matlab在线版，计算ans=ATA，[x,y]=eig(ans)，sqrt(y)，x是特征向量，y是特征值)</p>
+<p>ord=∞：行和的最大值</p>
+<p>ord=None：默认情况下，是求整体的矩阵元素平方和，再开根号。（没仔细看，以为默认情况下就是矩阵的二范数，修正一下，默认情况下是求整个矩阵元素平方和再开根号）</p>
+</li>
+</ul>
+<h3 id="3-axis：处理类型"><a href="#3-axis：处理类型" class="headerlink" title="3. axis：处理类型"></a>3. <strong>axis：处理类型</strong></h3><p>   axis=1表示按行向量处理，求多个行向量的范数</p>
+<p>   axis=0表示按列向量处理，求多个列向量的范数</p>
+<p>   axis=None表示矩阵范数。</p>
+<h3 id="4-keepding：是否保持矩阵的二维特性"><a href="#4-keepding：是否保持矩阵的二维特性" class="headerlink" title="4. keepding：是否保持矩阵的二维特性"></a>4. <strong>keepding：是否保持矩阵的二维特性</strong></h3><p>   True表示保持矩阵的二维特性，False相反</p>
+<h3 id="5-总结"><a href="#5-总结" class="headerlink" title="5. 总结"></a>5. <strong>总结</strong></h3><ul>
+<li><p>矩阵的三种范数求法（应该是4种了，在默认情况下，又多出了一种情况）</p>
+</li>
+<li><p>向量的三种范数求法</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/15/数据规范化/" data-id="ck473k3kc0007qktwe49k394s" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-人工智能初探" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/12/14/人工智能初探/" class="article-date">
@@ -96,7 +203,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/14/人工智能初探/" data-id="ck45i3rog00068ktwmdal6tmj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/14/人工智能初探/" data-id="ck473k3k80004qktw3efhipv9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -156,7 +263,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/29/宝塔二级域名javaweb项目ssl配置踩坑/" data-id="ck45i3roi00088ktwb7fayb96" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/29/宝塔二级域名javaweb项目ssl配置踩坑/" data-id="ck473k3ke0009qktw18jvtwyo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -345,7 +452,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/25/嵌入式Servlet容器（七）/" data-id="ck45i3rox00098ktwghmvur6l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/25/嵌入式Servlet容器（七）/" data-id="ck473k3l3000aqktwn6pcwowd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -473,7 +580,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/23/SpringMVC自动配置（六）/" data-id="ck45i3roa00038ktw706ipyuv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/23/SpringMVC自动配置（六）/" data-id="ck473k3k60003qktwn22ow8p0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -529,7 +636,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/21/Thymeleaf使用/" data-id="ck45i3rod00058ktw5wyfkn3z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/21/Thymeleaf使用/" data-id="ck473k3kb0006qktw5ahloobf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -608,7 +715,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/21/Spring-Boot-Web开发/" data-id="ck45i3ro900028ktw23alajcu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/21/Spring-Boot-Web开发/" data-id="ck473k3k30001qktw5q8v75mb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -751,7 +858,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/21/Spring-Boot配置-三/" data-id="ck45i3ro000008ktwbln3an82" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/21/Spring-Boot配置-三/" data-id="ck473k3jx0000qktw0v4vpkbs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -807,7 +914,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/17/Holle-World探究（二）/" data-id="ck45i3ro600018ktwkd9ev4u6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/17/Holle-World探究（二）/" data-id="ck473k3k50002qktw2yop9lks" class="article-share-link">Share</a>
       
       
     </footer>
@@ -880,56 +987,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/06/初学springboot/" data-id="ck45i3rog00078ktwyi6nacwq" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/10/05/hello-world/" class="article-date">
-  <time datetime="2019-10-05T11:36:16.155Z" itemprop="datePublished">2019-10-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/05/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/05/hello-world/" data-id="ck45i3roc00048ktwmx6oilb6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/06/初学springboot/" data-id="ck473k3kd0008qktw2l0dsdtn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -940,6 +998,11 @@
 
   
 
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
 
 </section>
         
@@ -970,6 +1033,10 @@
       <ul>
         
           <li>
+            <a href="/2019/12/15/数据规范化/">数据规范化</a>
+          </li>
+        
+          <li>
             <a href="/2019/12/14/人工智能初探/">人工智能初探</a>
           </li>
         
@@ -983,10 +1050,6 @@
         
           <li>
             <a href="/2019/11/23/SpringMVC自动配置（六）/">SpringMVC自动配置（六）</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/21/Thymeleaf使用/">Thymeleaf使用(五)</a>
           </li>
         
       </ul>
