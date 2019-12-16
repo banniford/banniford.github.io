@@ -7,17 +7,18 @@
   
   <title>数据规范化 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、数据规范化 在数据分析之前，我们都需要让数据满足一定的规律，达到规范性的要求，便于进行挖掘。  如果不进行变换的话，要不就是维数过多增加了计算成本，要不就是数据过于集中，很难找到数据之间的特征。  在数据变换中，重点是如何将数值进行规范化，有三种常用的规范方法，分别是Min-Max规范化、Z-Score规范化、小数定标规范化。   1.Min-max规范化：将原始数据投射到指定的空间[min,">
+  <meta name="description" content="一、数据规范化   在数据分析之前，我们都需要让数据满足一定的规律，达到规范性的要求，便于进行挖掘。   如果不进行变换的话，要不就是维数过多增加了计算成本，要不就是数据过于集中，很难找到数据之间的特征。   在数据变换中，重点是如何将数值进行规范化，有三种常用的规范方法，分别是Min-Max规范化、Z-Score规范化、小数定标规范化。    1.Min-max规范化： 将原始数据投射到指定的">
+<meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据规范化">
 <meta property="og:url" content="http://yoursite.com/2019/12/15/数据规范化/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、数据规范化 在数据分析之前，我们都需要让数据满足一定的规律，达到规范性的要求，便于进行挖掘。  如果不进行变换的话，要不就是维数过多增加了计算成本，要不就是数据过于集中，很难找到数据之间的特征。  在数据变换中，重点是如何将数值进行规范化，有三种常用的规范方法，分别是Min-Max规范化、Z-Score规范化、小数定标规范化。   1.Min-max规范化：将原始数据投射到指定的空间[min,">
+<meta property="og:description" content="一、数据规范化   在数据分析之前，我们都需要让数据满足一定的规律，达到规范性的要求，便于进行挖掘。   如果不进行变换的话，要不就是维数过多增加了计算成本，要不就是数据过于集中，很难找到数据之间的特征。   在数据变换中，重点是如何将数值进行规范化，有三种常用的规范方法，分别是Min-Max规范化、Z-Score规范化、小数定标规范化。    1.Min-max规范化： 将原始数据投射到指定的">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-15T14:22:37.773Z">
+<meta property="og:updated_time" content="2019-12-16T09:01:25.721Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据规范化">
-<meta name="twitter:description" content="一、数据规范化 在数据分析之前，我们都需要让数据满足一定的规律，达到规范性的要求，便于进行挖掘。  如果不进行变换的话，要不就是维数过多增加了计算成本，要不就是数据过于集中，很难找到数据之间的特征。  在数据变换中，重点是如何将数值进行规范化，有三种常用的规范方法，分别是Min-Max规范化、Z-Score规范化、小数定标规范化。   1.Min-max规范化：将原始数据投射到指定的空间[min,">
+<meta name="twitter:description" content="一、数据规范化   在数据分析之前，我们都需要让数据满足一定的规律，达到规范性的要求，便于进行挖掘。   如果不进行变换的话，要不就是维数过多增加了计算成本，要不就是数据过于集中，很难找到数据之间的特征。   在数据变换中，重点是如何将数值进行规范化，有三种常用的规范方法，分别是Min-Max规范化、Z-Score规范化、小数定标规范化。    1.Min-max规范化： 将原始数据投射到指定的">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -28,6 +29,7 @@
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
   <link rel="stylesheet" href="/css/style.css">
+  <link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet">
 </head>
 </html>
 <body>
@@ -86,84 +88,96 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、数据规范化"><a href="#一、数据规范化" class="headerlink" title="一、数据规范化"></a>一、数据规范化</h2><ul>
-<li><p>在数据分析之前，我们都需要让数据满足一定的规律，达到规范性的要求，便于进行挖掘。</p>
+        <h2 id="一-数据规范化"><a class="markdownIt-Anchor" href="#一-数据规范化"></a> 一、数据规范化</h2>
+<ul>
+<li>
+<p>在数据分析之前，我们都需要让数据满足一定的规律，达到规范性的要求，便于进行挖掘。</p>
 </li>
-<li><p>如果不进行变换的话，要不就是维数过多增加了计算成本，要不就是数据过于集中，很难找到数据之间的特征。</p>
+<li>
+<p>如果不进行变换的话，要不就是维数过多增加了计算成本，要不就是数据过于集中，很难找到数据之间的特征。</p>
 </li>
-<li><p>在数据变换中，重点是如何将数值进行规范化，有三种常用的规范方法，分别是Min-Max规范化、Z-Score规范化、小数定标规范化。</p>
+<li>
+<p>在数据变换中，重点是如何将数值进行规范化，有三种常用的规范方法，分别是Min-Max规范化、Z-Score规范化、小数定标规范化。</p>
 </li>
 </ul>
-<h3 id="1-Min-max规范化："><a href="#1-Min-max规范化：" class="headerlink" title="1.Min-max规范化："></a><strong>1.Min-max规范化：</strong></h3><p>将原始数据投射到指定的空间[min,max]。可用公式表示为：</p>
+<h3 id="1min-max规范化"><a class="markdownIt-Anchor" href="#1min-max规范化"></a> <strong>1.Min-max规范化：</strong></h3>
+<p>将原始数据投射到指定的空间[min,max]。可用公式表示为：</p>
 <p>新数值 = （原数值-极小值）/ (极大值 - 极小值) 。</p>
 <p>SciKit-Learn中的MinMaxScaler可以完成这个功能。</p>
-<h3 id="2-Z-Score规范化："><a href="#2-Z-Score规范化：" class="headerlink" title="2.Z-Score规范化："></a><strong>2.Z-Score规范化：</strong></h3><p>将原始数据转换为正态分布的形式，使结果易于比较。可用公式表示为：</p>
+<h3 id="2z-score规范化"><a class="markdownIt-Anchor" href="#2z-score规范化"></a> <strong>2.Z-Score规范化：</strong></h3>
+<p>将原始数据转换为正态分布的形式，使结果易于比较。可用公式表示为：</p>
 <p>新数值 = （原数值 - 均值）/ 标准差</p>
 <p>在SciKit-Learn中的preprocessing.scale()可以直接将给定数据进行Z-Score规范化。</p>
-<h3 id="3-小数定标规范化："><a href="#3-小数定标规范化：" class="headerlink" title="3.小数定标规范化："></a><strong>3.小数定标规范化：</strong></h3><p>通过移动小数点的位置来进行规范化。小数点移动的位数取决于该属性数据取值的最大绝对值。</p>
+<h3 id="3小数定标规范化"><a class="markdownIt-Anchor" href="#3小数定标规范化"></a> <strong>3.小数定标规范化：</strong></h3>
+<p>通过移动小数点的位置来进行规范化。小数点移动的位数取决于该属性数据取值的最大绝对值。</p>
 <p>例如：属性A的取值范围是-800到70，那么就可以将数据的小数点整体向左移三位即[-0.8,0.07]</p>
 <p>利用numpy对数据进行小数定标规范化的方法如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = np.ceil(np.log10(np.max(abs(x))))</span><br><span class="line">scaled_x =x/(<span class="number">10</span>**a)</span><br></pre></td></tr></table></figure>
-
-<h2 id="二、np-linalg-norm-求范数"><a href="#二、np-linalg-norm-求范数" class="headerlink" title="二、np.linalg.norm(求范数)"></a>二、np.linalg.norm(求范数)</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x_norm=np.linalg.norm(x, ord=<span class="literal">None</span>, axis=<span class="literal">None</span>, keepdims=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-x-表示矩阵（也可以是一维）"><a href="#1-x-表示矩阵（也可以是一维）" class="headerlink" title="1. x: 表示矩阵（也可以是一维）"></a>1. <strong>x: 表示矩阵（也可以是一维）</strong></h3><h3 id="2-ord：范数类型"><a href="#2-ord：范数类型" class="headerlink" title="2. ord：范数类型"></a>2. <strong>ord：范数类型</strong></h3><ul>
-<li><strong>向量的范数</strong>：</li>
-</ul>
+<h2 id="二-nplinalgnorm求范数"><a class="markdownIt-Anchor" href="#二-nplinalgnorm求范数"></a> 二、np.linalg.norm(求范数)</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x_norm=np.linalg.norm(x, ord=<span class="literal">None</span>, axis=<span class="literal">None</span>, keepdims=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="1-x-表示矩阵也可以是一维"><a class="markdownIt-Anchor" href="#1-x-表示矩阵也可以是一维"></a> 1. <strong>x: 表示矩阵（也可以是一维）</strong></h3>
+<h3 id="2-ord范数类型"><a class="markdownIt-Anchor" href="#2-ord范数类型"></a> 2. <strong>ord：范数类型</strong></h3>
+<p><strong>向量的范数</strong>：</p>
 <table>
 <thead>
 <tr>
-<th align="center">参数</th>
-<th align="center">说明</th>
-<th align="center">计算方法</th>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">说明</th>
+<th style="text-align:center">计算方法</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">默认</td>
-<td align="center">二范数：L2</td>
-<td align="center">$\sqrt {x^2_1+x^2_2+…+x^2_n}$</td>
+<tbody>
+<tr>
+<td style="text-align:center">默认</td>
+<td style="text-align:center">二范数：L2</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msqrt><mrow><msubsup><mi>x</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>x</mi><mn>2</mn><mn>2</mn></msubsup><mo>+</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo>+</mo><msubsup><mi>x</mi><mi>n</mi><mn>2</mn></msubsup></mrow></msqrt></mrow><annotation encoding="application/x-tex">\sqrt {x^2_1+x^2_2+...+x^2_n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.9498050000000001em;"></span><span class="strut bottom" style="height:1.24001em;vertical-align:-0.2902049999999999em;"></span><span class="base textstyle uncramped"><span class="sqrt mord"><span class="sqrt-sign" style="top:-0.05980500000000011em;"><span class="style-wrap reset-textstyle textstyle uncramped"><span class="delimsizing size1">√</span></span></span><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="mord textstyle cramped"><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:0.26630799999999993em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">1</span></span></span><span style="top:-0.34480000000000005em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mbin">+</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:0.26630799999999993em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">2</span></span></span><span style="top:-0.34480000000000005em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mbin">+</span><span class="mord mathrm">.</span><span class="mord mathrm">.</span><span class="mord mathrm">.</span><span class="mbin">+</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:0.247em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">n</span></span></span><span style="top:-0.28900000000000003em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span><span style="top:-0.869805em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="reset-textstyle textstyle uncramped sqrt-line"></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span>​</span></span></span></span></span></span></td>
 </tr>
 <tr>
-<td align="center">ord=2</td>
-<td align="center">二范数：L2</td>
-<td align="center">同上</td>
+<td style="text-align:center">ord=2</td>
+<td style="text-align:center">二范数：L2</td>
+<td style="text-align:center">同上</td>
 </tr>
 <tr>
-<td align="center">ord=1</td>
-<td align="center">一范数：L1</td>
-<td align="center">｜$x_1$｜+｜$x_2$｜+…+｜$x_n$｜</td>
+<td style="text-align:center">ord=1</td>
+<td style="text-align:center">一范数：L1</td>
+<td style="text-align:center">｜<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">x_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>｜+｜<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">x_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>｜+…+｜<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">x_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>｜</td>
 </tr>
 <tr>
-<td align="center">ord=np.inf</td>
-<td align="center">无穷范数：L<sub>∞</sub></td>
-<td align="center">max(｜$x_1$｜)</td>
+<td style="text-align:center">ord=np.inf</td>
+<td style="text-align:center">无穷范数：L<sub>∞</sub></td>
+<td style="text-align:center">max(｜<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">x_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>｜)</td>
 </tr>
-</tbody></table>
-<ul>
-<li><p><strong>矩阵的范数</strong>：</p>
+</tbody>
+</table>
+<p><strong>矩阵的范数</strong>：</p>
 <p>ord=1：列和的最大值</p>
 <p>ord=2：|λE-ATA|=0，求特征值，然后求最大特征值得算术平方根(matlab在线版，计算ans=ATA，[x,y]=eig(ans)，sqrt(y)，x是特征向量，y是特征值)</p>
 <p>ord=∞：行和的最大值</p>
 <p>ord=None：默认情况下，是求整体的矩阵元素平方和，再开根号。（没仔细看，以为默认情况下就是矩阵的二范数，修正一下，默认情况下是求整个矩阵元素平方和再开根号）</p>
+<h3 id="3-axis处理类型"><a class="markdownIt-Anchor" href="#3-axis处理类型"></a> 3. <strong>axis：处理类型</strong></h3>
+<p>axis=1表示按行向量处理，求多个行向量的范数</p>
+<p>axis=0表示按列向量处理，求多个列向量的范数</p>
+<p>axis=None表示矩阵范数。</p>
+<h3 id="4-keepding是否保持矩阵的二维特性"><a class="markdownIt-Anchor" href="#4-keepding是否保持矩阵的二维特性"></a> 4. <strong>keepding：是否保持矩阵的二维特性</strong></h3>
+<p>True表示保持矩阵的二维特性，False相反</p>
+<h3 id="5-总结"><a class="markdownIt-Anchor" href="#5-总结"></a> 5. <strong>总结</strong></h3>
+<ul>
+<li>
+<p>矩阵的三种范数求法（应该是4种了，在默认情况下，又多出了一种情况）</p>
 </li>
-</ul>
-<h3 id="3-axis：处理类型"><a href="#3-axis：处理类型" class="headerlink" title="3. axis：处理类型"></a>3. <strong>axis：处理类型</strong></h3><p>   axis=1表示按行向量处理，求多个行向量的范数</p>
-<p>   axis=0表示按列向量处理，求多个列向量的范数</p>
-<p>   axis=None表示矩阵范数。</p>
-<h3 id="4-keepding：是否保持矩阵的二维特性"><a href="#4-keepding：是否保持矩阵的二维特性" class="headerlink" title="4. keepding：是否保持矩阵的二维特性"></a>4. <strong>keepding：是否保持矩阵的二维特性</strong></h3><p>   True表示保持矩阵的二维特性，False相反</p>
-<h3 id="5-总结"><a href="#5-总结" class="headerlink" title="5. 总结"></a>5. <strong>总结</strong></h3><ul>
-<li><p>矩阵的三种范数求法（应该是4种了，在默认情况下，又多出了一种情况）</p>
-</li>
-<li><p>向量的三种范数求法</p>
+<li>
+<p>向量的三种范数求法</p>
 </li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/15/数据规范化/" data-id="ck473k3kc0007qktwe49k394s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/15/数据规范化/" data-id="ck486u9e90007cgtwpbv2x1w7" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+
     </footer>
   </div>
   
@@ -189,9 +203,23 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
