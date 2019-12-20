@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://paniford.com/index.html">
+<meta property="og:url" content="https://github.com/banniford/banniford.github.io/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
@@ -55,7 +55,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://paniford.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/banniford/banniford.github.io"></form>
       </div>
     </div>
   </div>
@@ -86,7 +86,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="1-2层神经网络"><a class="markdownIt-Anchor" href="#1-2层神经网络"></a> 1-2层神经网络</h2>
-<img src="/2019/12/20/2层及多层神经网络的构建/2layerNN_kiank.png" style="width:650px;height:400px;">
+<img src="/banniford/banniford.github.io/2019/12/20/2层及多层神经网络的构建/2layerNN_kiank.png" style="width:650px;height:400px;">
 <p>该模型可以概括为： <strong>INPUT -&gt; LINEAR -&gt; RELU -&gt; LINEAR -&gt; SIGMOID -&gt; OUTPUT</strong>.</p>
 <ul>
 <li>输入是**（64,64,3）**图像，将其展平为大小为  <strong>（12288,1）</strong>  的向量。</li>
@@ -108,7 +108,7 @@
 <h3 id="步骤"><a class="markdownIt-Anchor" href="#步骤"></a> <strong>步骤:</strong></h3>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">initialize_parameters</span><span class="params">(n_x, n_h, n_y)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> parameters </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">linear_activation_forward</span><span class="params">(A_prev, W, b, activation)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> A, cache</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">compute_cost</span><span class="params">(AL, Y)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> cost</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">linear_activation_backward</span><span class="params">(dA, cache, activation)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> dA_prev, dW, db</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">update_parameters</span><span class="params">(parameters, grads, learning_rate)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> parameters</span><br></pre></td></tr></table></figure>
 <h2 id="l层深度神经网络"><a class="markdownIt-Anchor" href="#l层深度神经网络"></a> L层深度神经网络</h2>
-<img src="/2019/12/20/2层及多层神经网络的构建/LlayerNN_kiank.png" style="width:650px;height:400px;">
+<img src="/banniford/banniford.github.io/2019/12/20/2层及多层神经网络的构建/LlayerNN_kiank.png" style="width:650px;height:400px;">
 <p>该模型可以概括为：<strong>[LINEAR -&gt; RELU] <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.58333em;"></span><span class="strut bottom" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord">×</span></span></span></span> (L-1) -&gt; LINEAR -&gt; SIGMOID</strong></p>
 <ul>
 <li>
@@ -130,7 +130,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://paniford.com/2019/12/20/2层及多层神经网络的构建/" data-id="ck4e10xww00007ctw0x6w7lxj" class="article-share-link">Share</a>
+      <a data-url="https://github.com/banniford/banniford.github.io/2019/12/20/2层及多层神经网络的构建/" data-id="ck4e12q4l00016wtwdq2k6cyh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
@@ -249,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://paniford.com/2019/12/15/数据规范化/" data-id="ck4e10xxm000b7ctwiartsamj" class="article-share-link">Share</a>
+      <a data-url="https://github.com/banniford/banniford.github.io/2019/12/15/数据规范化/" data-id="ck4e12q58000b6wtwh53bg258" class="article-share-link">Share</a>
       
       
     </footer>
@@ -296,7 +296,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://paniford.com/2019/12/14/人工智能初探/" data-id="ck4e10xxn000c7ctw94i3o3bk" class="article-share-link">Share</a>
+      <a data-url="https://github.com/banniford/banniford.github.io/2019/12/14/人工智能初探/" data-id="ck4e12q5400086wtwe3hroq13" class="article-share-link">Share</a>
       
       
     </footer>
@@ -359,7 +359,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://paniford.com/2019/11/29/宝塔二级域名javaweb项目ssl配置踩坑/" data-id="ck4e10xxl000a7ctwymkt24xr" class="article-share-link">Share</a>
+      <a data-url="https://github.com/banniford/banniford.github.io/2019/11/29/宝塔二级域名javaweb项目ssl配置踩坑/" data-id="ck4e12q58000c6wtwlz85aj9v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -551,7 +551,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://paniford.com/2019/11/25/嵌入式Servlet容器（七）/" data-id="ck4e10xy9000d7ctwyudb92yt" class="article-share-link">Share</a>
+      <a data-url="https://github.com/banniford/banniford.github.io/2019/11/25/嵌入式Servlet容器（七）/" data-id="ck4e12q5t000d6wtwcdry61fh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -685,7 +685,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://paniford.com/2019/11/23/SpringMVC自动配置（六）/" data-id="ck4e10xxc00057ctw22tdqjjb" class="article-share-link">Share</a>
+      <a data-url="https://github.com/banniford/banniford.github.io/2019/11/23/SpringMVC自动配置（六）/" data-id="ck4e12q4t00046wtwnjldwrvv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -746,7 +746,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://paniford.com/2019/11/21/Thymeleaf使用/" data-id="ck4e10xxh00077ctwb80ae7jq" class="article-share-link">Share</a>
+      <a data-url="https://github.com/banniford/banniford.github.io/2019/11/21/Thymeleaf使用/" data-id="ck4e12q5200066wtw2etvx7tr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -835,7 +835,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://paniford.com/2019/11/21/Spring-Boot-Web开发/" data-id="ck4e10xx100017ctwc21hlflk" class="article-share-link">Share</a>
+      <a data-url="https://github.com/banniford/banniford.github.io/2019/11/21/Spring-Boot-Web开发/" data-id="ck4e12q4n00026wtw7xkqqpdt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -990,7 +990,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://paniford.com/2019/11/21/Spring-Boot配置-三/" data-id="ck4e10xx900047ctwitlzk675" class="article-share-link">Share</a>
+      <a data-url="https://github.com/banniford/banniford.github.io/2019/11/21/Spring-Boot配置-三/" data-id="ck4e12q4x00056wtwcbpfblzm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1059,7 +1059,7 @@ Spring的底层注解@import,给容器中导入一个组件;导入的组件由(A
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://paniford.com/2019/11/17/Holle-World探究（二）/" data-id="ck4e10xx600037ctwpp796dvx" class="article-share-link">Share</a>
+      <a data-url="https://github.com/banniford/banniford.github.io/2019/11/17/Holle-World探究（二）/" data-id="ck4e12q4e00006wtwrdef36h7" class="article-share-link">Share</a>
       
       
     </footer>
