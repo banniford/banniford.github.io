@@ -11,17 +11,17 @@
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2层及多层神经网络的构建">
-<meta property="og:url" content="https://github.com/banniford/banniford.github.io/2019/12/20/2层及多层神经网络的构建/index.html">
+<meta property="og:url" content="https://banniford.github.io/2019/12/20/2层及多层神经网络的构建/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1-2层神经网络  该模型可以概括为： INPUT -&amp;gt; LINEAR -&amp;gt; RELU -&amp;gt; LINEAR -&amp;gt; SIGMOID -&amp;gt; OUTPUT.  输入是**（64,64,3）**图像，将其展平为大小为  （12288,1）  的向量。 相应的向量：[x0,x1,...,x12287]T[x_0,x_1,...,x_{12287}]^T[x​0​​,x​1​​">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://github.com/banniford/banniford.github.io/2019/12/20/2层及多层神经网络的构建/2layerNN_kiank.png">
-<meta property="og:image" content="https://github.com/banniford/banniford.github.io/2019/12/20/2层及多层神经网络的构建/LlayerNN_kiank.png">
+<meta property="og:image" content="https://banniford.github.io/2019/12/20/2层及多层神经网络的构建/2layerNN_kiank.png">
+<meta property="og:image" content="https://banniford.github.io/2019/12/20/2层及多层神经网络的构建/LlayerNN_kiank.png">
 <meta property="og:updated_time" content="2019-12-20T10:35:13.784Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2层及多层神经网络的构建">
 <meta name="twitter:description" content="1-2层神经网络  该模型可以概括为： INPUT -&amp;gt; LINEAR -&amp;gt; RELU -&amp;gt; LINEAR -&amp;gt; SIGMOID -&amp;gt; OUTPUT.  输入是**（64,64,3）**图像，将其展平为大小为  （12288,1）  的向量。 相应的向量：[x0,x1,...,x12287]T[x_0,x_1,...,x_{12287}]^T[x​0​​,x​1​​">
-<meta name="twitter:image" content="https://github.com/banniford/banniford.github.io/2019/12/20/2层及多层神经网络的构建/2layerNN_kiank.png">
+<meta name="twitter:image" content="https://banniford.github.io/2019/12/20/2层及多层神经网络的构建/2layerNN_kiank.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -63,7 +63,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/banniford/banniford.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://banniford.github.io"></form>
       </div>
     </div>
   </div>
@@ -92,7 +92,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="1-2层神经网络"><a class="markdownIt-Anchor" href="#1-2层神经网络"></a> 1-2层神经网络</h2>
-<img src="/banniford/banniford.github.io/2019/12/20/2层及多层神经网络的构建/2layerNN_kiank.png" style="width:650px;height:400px;">
+<img src="/2019/12/20/2层及多层神经网络的构建/2layerNN_kiank.png" style="width:650px;height:400px;">
 <p>该模型可以概括为： <strong>INPUT -&gt; LINEAR -&gt; RELU -&gt; LINEAR -&gt; SIGMOID -&gt; OUTPUT</strong>.</p>
 <ul>
 <li>输入是**（64,64,3）**图像，将其展平为大小为  <strong>（12288,1）</strong>  的向量。</li>
@@ -114,7 +114,7 @@
 <h3 id="步骤"><a class="markdownIt-Anchor" href="#步骤"></a> <strong>步骤:</strong></h3>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">initialize_parameters</span><span class="params">(n_x, n_h, n_y)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> parameters </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">linear_activation_forward</span><span class="params">(A_prev, W, b, activation)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> A, cache</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">compute_cost</span><span class="params">(AL, Y)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> cost</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">linear_activation_backward</span><span class="params">(dA, cache, activation)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> dA_prev, dW, db</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">update_parameters</span><span class="params">(parameters, grads, learning_rate)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> parameters</span><br></pre></td></tr></table></figure>
 <h2 id="l层深度神经网络"><a class="markdownIt-Anchor" href="#l层深度神经网络"></a> L层深度神经网络</h2>
-<img src="/banniford/banniford.github.io/2019/12/20/2层及多层神经网络的构建/LlayerNN_kiank.png" style="width:650px;height:400px;">
+<img src="/2019/12/20/2层及多层神经网络的构建/LlayerNN_kiank.png" style="width:650px;height:400px;">
 <p>该模型可以概括为：<strong>[LINEAR -&gt; RELU] <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.58333em;"></span><span class="strut bottom" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord">×</span></span></span></span> (L-1) -&gt; LINEAR -&gt; SIGMOID</strong></p>
 <ul>
 <li>
@@ -136,7 +136,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/banniford/banniford.github.io/2019/12/20/2层及多层神经网络的构建/" data-id="ck4e12q4l00016wtwdq2k6cyh" class="article-share-link">Share</a>
+      <a data-url="https://banniford.github.io/2019/12/20/2层及多层神经网络的构建/" data-id="ck4e1665g00009otwtrqpj5ym" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
