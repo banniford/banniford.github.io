@@ -7,17 +7,17 @@
   
   <title>宝塔二级域名javaweb项目ssl配置踩坑 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、环境 宝塔界面 nginx tomcat javaweb项目 ssl个人单域名证书（免费）  2、注意事项 域名是否正确的解析  防火墙是否打开（宝塔和阿里云服务器防火墙都要打开 80和443端口） 网站是否301或302跳转，如果跳转了也要关闭 单域名证书会有指定域名，二级域名必须重新申请 二级域名一定要解析A记录到服务器ip 域名备案只用备案顶级域名，二级域名不用备案 如果有多个二级域名和">
+  <meta name="description" content="1、环境  宝塔界面 nginx tomcat javaweb项目 ssl个人单域名证书（免费）   2、注意事项  域名是否正确的解析 防火墙是否打开（宝塔和阿里云服务器防火墙都要打开 80和443端口） 网站是否301或302跳转，如果跳转了也要关闭 单域名证书会有指定域名，二级域名必须重新申请 二级域名一定要解析A记录到服务器ip 域名备案只用备案顶级域名，二级域名不用备案 如果有多个二级">
 <meta property="og:type" content="article">
 <meta property="og:title" content="宝塔二级域名javaweb项目ssl配置踩坑">
-<meta property="og:url" content="http://yoursite.com/2019/11/29/宝塔二级域名javaweb项目ssl配置踩坑/index.html">
+<meta property="og:url" content="http://paniford.com/2019/11/29/宝塔二级域名javaweb项目ssl配置踩坑/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1、环境 宝塔界面 nginx tomcat javaweb项目 ssl个人单域名证书（免费）  2、注意事项 域名是否正确的解析  防火墙是否打开（宝塔和阿里云服务器防火墙都要打开 80和443端口） 网站是否301或302跳转，如果跳转了也要关闭 单域名证书会有指定域名，二级域名必须重新申请 二级域名一定要解析A记录到服务器ip 域名备案只用备案顶级域名，二级域名不用备案 如果有多个二级域名和">
+<meta property="og:description" content="1、环境  宝塔界面 nginx tomcat javaweb项目 ssl个人单域名证书（免费）   2、注意事项  域名是否正确的解析 防火墙是否打开（宝塔和阿里云服务器防火墙都要打开 80和443端口） 网站是否301或302跳转，如果跳转了也要关闭 单域名证书会有指定域名，二级域名必须重新申请 二级域名一定要解析A记录到服务器ip 域名备案只用备案顶级域名，二级域名不用备案 如果有多个二级">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2019-11-30T05:30:08.896Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="宝塔二级域名javaweb项目ssl配置踩坑">
-<meta name="twitter:description" content="1、环境 宝塔界面 nginx tomcat javaweb项目 ssl个人单域名证书（免费）  2、注意事项 域名是否正确的解析  防火墙是否打开（宝塔和阿里云服务器防火墙都要打开 80和443端口） 网站是否301或302跳转，如果跳转了也要关闭 单域名证书会有指定域名，二级域名必须重新申请 二级域名一定要解析A记录到服务器ip 域名备案只用备案顶级域名，二级域名不用备案 如果有多个二级域名和">
+<meta name="twitter:description" content="1、环境  宝塔界面 nginx tomcat javaweb项目 ssl个人单域名证书（免费）   2、注意事项  域名是否正确的解析 防火墙是否打开（宝塔和阿里云服务器防火墙都要打开 80和443端口） 网站是否301或302跳转，如果跳转了也要关闭 单域名证书会有指定域名，二级域名必须重新申请 二级域名一定要解析A记录到服务器ip 域名备案只用备案顶级域名，二级域名不用备案 如果有多个二级">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,7 +59,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://paniford.com"></form>
       </div>
     </div>
   </div>
@@ -87,15 +87,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1、环境"><a href="#1、环境" class="headerlink" title="1、环境"></a>1、环境</h2><ul>
+        <h2 id="1-环境"><a class="markdownIt-Anchor" href="#1-环境"></a> 1、环境</h2>
+<ul>
 <li>宝塔界面</li>
 <li>nginx</li>
 <li>tomcat</li>
 <li>javaweb项目</li>
 <li>ssl个人单域名证书（免费）</li>
 </ul>
-<h2 id="2、注意事项"><a href="#2、注意事项" class="headerlink" title="2、注意事项"></a>2、注意事项</h2><ul>
-<li>域名是否正确的解析 </li>
+<h2 id="2-注意事项"><a class="markdownIt-Anchor" href="#2-注意事项"></a> 2、注意事项</h2>
+<ul>
+<li>域名是否正确的解析</li>
 <li>防火墙是否打开（宝塔和阿里云服务器防火墙都要打开 80和443端口）</li>
 <li>网站是否301或302跳转，如果跳转了也要关闭</li>
 <li><strong>单域名证书会有指定域名，二级域名必须重新申请</strong></li>
@@ -103,7 +105,8 @@
 <li>域名备案只用备案顶级域名，二级域名不用备案</li>
 <li>如果有多个二级域名和一个主域名，当主域名开启强制ssl后，没有开启ssl的二级域名会被解析到主域名或其他二级域名需要注意</li>
 </ul>
-<h2 id="3、步骤"><a href="#3、步骤" class="headerlink" title="3、步骤"></a>3、步骤</h2><p>1)删除原装openjdk，安装JDK1.8</p>
+<h2 id="3-步骤"><a class="markdownIt-Anchor" href="#3-步骤"></a> 3、步骤</h2>
+<p>1)删除原装openjdk，安装JDK1.8</p>
 <p>2)在宝塔软件页面找到tomcat，按需求版本安装</p>
 <p>3)打开tomcat目录在webapps文件夹下上传并解压war包（可以改名为ROOT，默认为ROOT目录是tomcat识别目录）</p>
 <p>4)tomcat配置文件中20行的<code>appBase=&quot;&quot;</code>一定为空，11行中添加参数<code>scheme=&quot;https&quot;</code>  如果端口号在这里更改，后面站点配置文件<code>proxy_pass &quot;域名:端口号&quot;;</code>中一定要对应</p>
@@ -115,7 +118,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/29/宝塔二级域名javaweb项目ssl配置踩坑/" data-id="ck486u9eb0009cgtw75ngxccb" class="article-share-link">Share</a>
+      <a data-url="http://paniford.com/2019/11/29/宝塔二级域名javaweb项目ssl配置踩坑/" data-id="ck4e10xxl000a7ctwymkt24xr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -187,6 +190,10 @@
       <ul>
         
           <li>
+            <a href="/2019/12/20/2层及多层神经网络的构建/">2层及多层神经网络的构建</a>
+          </li>
+        
+          <li>
             <a href="/2019/12/15/数据规范化/">数据规范化</a>
           </li>
         
@@ -200,10 +207,6 @@
         
           <li>
             <a href="/2019/11/25/嵌入式Servlet容器（七）/">嵌入式Servlet容器（七）</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/23/SpringMVC自动配置（六）/">SpringMVC自动配置（六）</a>
           </li>
         
       </ul>
