@@ -91,7 +91,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://banniford.github.io/2020/02/10/武汉加油/" data-id="ck6j0ceku000doktw6z0h4t22" class="article-share-link">Share</a>
+      <a data-url="https://banniford.github.io/2020/02/10/武汉加油/" data-id="ck6j1rs2v000eoctw8crnhzrw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -151,7 +151,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://banniford.github.io/2019/12/30/贝叶斯误差/" data-id="ck6j0ceku000eoktwapyv4k88" class="article-share-link">Share</a>
+      <a data-url="https://banniford.github.io/2019/12/30/贝叶斯误差/" data-id="ck6j1rs2u000doctwzcxtk9q3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -228,7 +228,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://banniford.github.io/2019/12/20/2层及多层神经网络的构建/" data-id="ck6j0cek00000oktwtuw386bo" class="article-share-link">Share</a>
+      <a data-url="https://banniford.github.io/2019/12/20/2层及多层神经网络的构建/" data-id="ck6j1rs250000octw4ykzjwx4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
@@ -262,7 +262,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一-数据规范化"><a class="markdownIt-Anchor" href="#一-数据规范化"></a> 一、数据规范化</h2>
+        <h2 id="数据规范化-标准化-归一化"><a class="markdownIt-Anchor" href="#数据规范化-标准化-归一化"></a> 数据规范化、标准化、归一化</h2>
+<p><a href="https://blog.csdn.net/u014381464/article/details/81101551" target="_blank" rel="noopener">转载：原文链接</a></p>
 <ul>
 <li>
 <p>在数据分析之前，我们都需要让数据满足一定的规律，达到规范性的要求，便于进行挖掘。</p>
@@ -273,21 +274,99 @@
 <li>
 <p>在数据变换中，重点是如何将数值进行规范化，有三种常用的规范方法，分别是Min-Max规范化、Z-Score规范化、小数定标规范化。</p>
 </li>
+<li>
+<p>针对数据库：规范化把关系满足的规范要求分为几级，满足要求最低的是第一范式（1NF），再来是第二范式、第三范式、BC范式和4NF、5NF等等，范数的等级越高，满足的约束集条件越严格。</p>
+</li>
+<li>
+<p>针对数据：</p>
+<p>1.数据的规范化包括归一化标准化正则化，是一个统称（也有人把标准化作为统称）。</p>
+<p>2.数据规范化是数据挖掘中的数据变换的一种方式，数据变换将数据变换或统一成适合于数据挖掘的形式，将被挖掘对象的属性数据按比例缩放，使其落入一个小的特定区间内，如[-1, 1]或[0, 1]。</p>
+<p>3.对属性值进行规范化常用于涉及神经网络和距离度量的分类算法和聚类算法当中。比如使用神经网络后向传播算法进行分类挖掘时，对训练元组中度量每个属性的输入值进行规范化有利于<strong>加快学习阶段的速度</strong>。对于基于距离度量相异度的方法，数据归一化能够让所有的<strong>属性具有相同的权值</strong>。</p>
+</li>
 </ul>
-<h3 id="1min-max规范化"><a class="markdownIt-Anchor" href="#1min-max规范化"></a> <strong>1.Min-max规范化：</strong></h3>
+<h3 id="1归一化normalization"><a class="markdownIt-Anchor" href="#1归一化normalization"></a> **1.**归一化（normalization）：</h3>
+<p>把数值放缩到0到1的小区间中（归到数字信号处理范畴之内），一般方法是最小最大规范的方：Min-max规范化</p>
 <p>将原始数据投射到指定的空间[min,max]。可用公式表示为：</p>
+<ul>
+<li>
 <p>新数值 = （原数值-极小值）/ (极大值 - 极小值) 。</p>
+</li>
+<li>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>x</mi><mo>∗</mo></msup><mo>=</mo><mfrac><mrow><mi>x</mi><mo>−</mo><mi>m</mi><mi>i</mi><mi>n</mi></mrow><mrow><mi>m</mi><mi>a</mi><mi>x</mi><mo>−</mo><mi>m</mi><mi>i</mi><mi>n</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">x^*=\frac {x-min} {max-min}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.855664em;"></span><span class="strut bottom" style="height:1.258995em;vertical-align:-0.403331em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord">∗</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mrel">=</span><span class="mord reset-textstyle textstyle uncramped"><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.345em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit">m</span><span class="mord mathit">a</span><span class="mord mathit">x</span><span class="mbin">−</span><span class="mord mathit">m</span><span class="mord mathit">i</span><span class="mord mathit">n</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.394em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord mathit">x</span><span class="mbin">−</span><span class="mord mathit">m</span><span class="mord mathit">i</span><span class="mord mathit">n</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span></span></span></span></p>
+</li>
+</ul>
 <p>SciKit-Learn中的MinMaxScaler可以完成这个功能。</p>
-<h3 id="2z-score规范化"><a class="markdownIt-Anchor" href="#2z-score规范化"></a> <strong>2.Z-Score规范化：</strong></h3>
+<p>上面min-max normalization是线性归一化，还有非线性归一化，通过一些数学函数，将原始值进行映射。该方法包括log、指数、反正切等。需要根据数据分布的情况，决定非线性函数的曲线。</p>
+<p>log函数： <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mi>l</mi><mi>g</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mrow><mi>l</mi><mi>g</mi><mo>(</mo><mi>m</mi><mi>a</mi><mi>x</mi><mo>)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">x=\frac {lg(x)} {lg(max)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.01em;"></span><span class="strut bottom" style="height:1.53em;vertical-align:-0.52em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span><span class="mrel">=</span><span class="mord reset-textstyle textstyle uncramped"><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.34500000000000003em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathit">m</span><span class="mord mathit">a</span><span class="mord mathit">x</span><span class="mclose">)</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.485em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mclose">)</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span></span></span></span>；反正切函数：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mi>a</mi><mi>t</mi><mi>a</mi><mi>n</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>∗</mo><mn>2</mn></mrow><mrow><mi>p</mi><mi>i</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">x=\frac {atan(x)*2} {pi}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.01em;"></span><span class="strut bottom" style="height:1.491108em;vertical-align:-0.481108em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span><span class="mrel">=</span><span class="mord reset-textstyle textstyle uncramped"><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.345em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit">p</span><span class="mord mathit">i</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.485em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord mathit">a</span><span class="mord mathit">t</span><span class="mord mathit">a</span><span class="mord mathit">n</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mclose">)</span><span class="mbin">∗</span><span class="mord mathrm">2</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span></span></span></span></p>
+<p><strong>应用：</strong></p>
+<p>1.无量纲化<br>
+例如房子数量和收入，从业务层知道这两者的重要性一样，所以把它们全部归一化，这是从业务层面上作的处理。</p>
+<p>2.避免数值问题<br>
+不同的数据在不同列数据的数量级相差过大的话，计算起来大数的变化会掩盖掉小数的变化。</p>
+<p>3.一些模型求解的需要<br>
+例如梯度下降法，如果不归一化，当学习率较大时，求解过程会呈之字形下降。学习率较小，则会产生直角形路线，不管怎么样，都不会是好路线（路线解释看西面归一化和标准化的对比）。解释神经网络梯度下降的文章。</p>
+<p>4.时间序列<br>
+进行log分析时，会将原本绝对化的时间序列归一化到某个基准时刻，形成相对时间序列，方便排查。</p>
+<p>5.收敛速度<br>
+加快求解过程中参数的收敛速度。</p>
+<p>特点：</p>
+<ul>
+<li>
+<p>对不同特征维度进行伸缩变换</p>
+</li>
+<li>
+<p>改变原始数据的分布，使得各个特征维度对目标函数的影响权重归于一致（使得扁平分布的数据伸缩变换成类圆形）</p>
+</li>
+<li>
+<p>对目标函数的影响体现在数值上</p>
+</li>
+<li>
+<p>把有量纲表达式变为无量纲表达式</p>
+<p>归一化可以消除量纲对最终结果的影响，使不同变量具有可比性。比如两个人体重差10KG，身高差0.02M，在衡量两个人的差别时体重的差距会把身高的差距完全掩盖，归一化之后就不会有这样的问题。</p>
+</li>
+</ul>
+<p><strong>好处：</strong></p>
+<ol>
+<li>提高迭代求解的收敛速度</li>
+<li>提高迭代求解的精度</li>
+</ol>
+<p><strong>缺点：</strong></p>
+<ol>
+<li>最大值与最小值非常容易受异常点影响</li>
+<li>鲁棒性较差，只适合传统精确小数据场景</li>
+</ol>
+<h3 id="2标准化standardization"><a class="markdownIt-Anchor" href="#2标准化standardization"></a> <strong>2.标准化（standardization）</strong></h3>
 <p>将原始数据转换为正态分布的形式，使结果易于比较。可用公式表示为：</p>
+<ul>
+<li>
 <p>新数值 = （原数值 - 均值）/ 标准差</p>
-<p>在SciKit-Learn中的preprocessing.scale()可以直接将给定数据进行Z-Score规范化。</p>
+</li>
+<li>
+<p>x^*=\frac {（x-μ）} {ρ}</p>
+</li>
+</ul>
+<p>在SciKit-Learn中的preprocessing.scale()可以直接将给定数据进行<strong>Z-Score规范化。</strong></p>
+<p>数据标准化是将数据按比例缩放，使其落入到一个小的区间内，标准化后的数据可正可负，但是一般绝对值不会   太大，一般是z-score标准化方法：减去期望后除以标准差。</p>
+<p><strong>特点：</strong></p>
+<p>对不同特征维度的伸缩变换的目的是使其不同度量之间的特征具有可比性，同时不改变原始数据的分布。</p>
+<p><strong>好处：</strong></p>
+<ul>
+<li>
+<p>不改变原始数据的分布，保持各个特征维度对目标函数的影响权重</p>
+</li>
+<li>
+<p>对目标函数的影响体现在几何分布上</p>
+</li>
+<li>
+<p>在已有样本足够多的情况下比较稳定，适合现代嘈杂大数据场景</p>
+</li>
+</ul>
 <h3 id="3小数定标规范化"><a class="markdownIt-Anchor" href="#3小数定标规范化"></a> <strong>3.小数定标规范化：</strong></h3>
 <p>通过移动小数点的位置来进行规范化。小数点移动的位数取决于该属性数据取值的最大绝对值。</p>
 <p>例如：属性A的取值范围是-800到70，那么就可以将数据的小数点整体向左移三位即[-0.8,0.07]</p>
 <p>利用numpy对数据进行小数定标规范化的方法如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = np.ceil(np.log10(np.max(abs(x))))</span><br><span class="line">scaled_x =x/(<span class="number">10</span>**a)</span><br></pre></td></tr></table></figure>
-<h2 id="二-nplinalgnorm求范数"><a class="markdownIt-Anchor" href="#二-nplinalgnorm求范数"></a> 二、np.linalg.norm(求范数)</h2>
+<h2 id="nplinalgnorm求范数"><a class="markdownIt-Anchor" href="#nplinalgnorm求范数"></a> np.linalg.norm(求范数)</h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x_norm=np.linalg.norm(x, ord=<span class="literal">None</span>, axis=<span class="literal">None</span>, keepdims=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
 <h3 id="1-x-表示矩阵也可以是一维"><a class="markdownIt-Anchor" href="#1-x-表示矩阵也可以是一维"></a> 1. <strong>x: 表示矩阵（也可以是一维）</strong></h3>
 <h3 id="2-ord范数类型"><a class="markdownIt-Anchor" href="#2-ord范数类型"></a> 2. <strong>ord：范数类型</strong></h3>
@@ -347,7 +426,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://banniford.github.io/2019/12/15/数据规范化/" data-id="ck6j0ceks000coktw1c53tedb" class="article-share-link">Share</a>
+      <a data-url="https://banniford.github.io/2019/12/15/数据规范化/" data-id="ck6j1rs2t000coctwk3zpyni6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -394,7 +473,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://banniford.github.io/2019/12/14/人工智能初探/" data-id="ck6j0cekr000aoktwysoam634" class="article-share-link">Share</a>
+      <a data-url="https://banniford.github.io/2019/12/14/人工智能初探/" data-id="ck6j1rs2p000aoctw5tesm1nb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -457,7 +536,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://banniford.github.io/2019/11/29/宝塔二级域名javaweb项目ssl配置踩坑/" data-id="ck6j0cekr000boktwcgvm3hei" class="article-share-link">Share</a>
+      <a data-url="https://banniford.github.io/2019/11/29/宝塔二级域名javaweb项目ssl配置踩坑/" data-id="ck6j1rs2r000boctwdwmpts9k" class="article-share-link">Share</a>
       
       
     </footer>
@@ -649,7 +728,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://banniford.github.io/2019/11/25/嵌入式Servlet容器（七）/" data-id="ck6j0celf000foktw5gsd3gsg" class="article-share-link">Share</a>
+      <a data-url="https://banniford.github.io/2019/11/25/嵌入式Servlet容器（七）/" data-id="ck6j1rs3n000foctwm4tohih4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -783,7 +862,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://banniford.github.io/2019/11/23/SpringMVC自动配置（六）/" data-id="ck6j0cekh0005oktwuh86ogak" class="article-share-link">Share</a>
+      <a data-url="https://banniford.github.io/2019/11/23/SpringMVC自动配置（六）/" data-id="ck6j1rs2j0005octw3jz9bsza" class="article-share-link">Share</a>
       
       
     </footer>
@@ -844,7 +923,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://banniford.github.io/2019/11/21/Thymeleaf使用/" data-id="ck6j0cekc0003oktw2a8h8xue" class="article-share-link">Share</a>
+      <a data-url="https://banniford.github.io/2019/11/21/Thymeleaf使用/" data-id="ck6j1rs2i0004octwfeic11ap" class="article-share-link">Share</a>
       
       
     </footer>
@@ -933,7 +1012,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://banniford.github.io/2019/11/21/Spring-Boot-Web开发/" data-id="ck6j0cekn0007oktwyru2gya8" class="article-share-link">Share</a>
+      <a data-url="https://banniford.github.io/2019/11/21/Spring-Boot-Web开发/" data-id="ck6j1rs2k0007octwuhqn6t0u" class="article-share-link">Share</a>
       
       
     </footer>
