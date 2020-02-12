@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="数据规范化、标准化、归一化 转载：原文链接   在数据分析之前，我们都需要让数据满足一定的规律，达到规范性的要求，便于进行挖掘。   如果不进行变换的话，要不就是维数过多增加了计算成本，要不就是数据过于集中，很难找到数据之间的特征。   在数据变换中，重点是如何将数值进行规范化，有三种常用的规范方法，分别是Min-Max规范化、Z-Score规范化、小数定标规范化。   针对数据库：规范化把关系">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-02-12T08:23:17.056Z">
+<meta property="og:updated_time" content="2020-02-12T08:38:15.557Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据规范化">
 <meta name="twitter:description" content="数据规范化、标准化、归一化 转载：原文链接   在数据分析之前，我们都需要让数据满足一定的规律，达到规范性的要求，便于进行挖掘。   如果不进行变换的话，要不就是维数过多增加了计算成本，要不就是数据过于集中，很难找到数据之间的特征。   在数据变换中，重点是如何将数值进行规范化，有三种常用的规范方法，分别是Min-Max规范化、Z-Score规范化、小数定标规范化。   针对数据库：规范化把关系">
@@ -109,7 +109,7 @@
 <p>3.对属性值进行规范化常用于涉及神经网络和距离度量的分类算法和聚类算法当中。比如使用神经网络后向传播算法进行分类挖掘时，对训练元组中度量每个属性的输入值进行规范化有利于<strong>加快学习阶段的速度</strong>。对于基于距离度量相异度的方法，数据归一化能够让所有的<strong>属性具有相同的权值</strong>。</p>
 </li>
 </ul>
-<h3 id="1归一化normalization"><a class="markdownIt-Anchor" href="#1归一化normalization"></a> **1.**归一化（normalization）：</h3>
+<h3 id="1归一化normalization"><a class="markdownIt-Anchor" href="#1归一化normalization"></a> 1.归一化（normalization）：</h3>
 <p>把数值放缩到0到1的小区间中（归到数字信号处理范畴之内），一般方法是最小最大规范的方：Min-max规范化</p>
 <p>将原始数据投射到指定的空间[min,max]。可用公式表示为：</p>
 <ul>
@@ -167,7 +167,7 @@
 <p>新数值 = （原数值 - 均值）/ 标准差</p>
 </li>
 <li>
-<p>x^*=\frac {（x-μ）} {ρ}</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>x</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">x^*</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.688696em;"></span><span class="strut bottom" style="height:0.688696em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord">∗</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>=(x-μ)/ρ</p>
 </li>
 </ul>
 <p>在SciKit-Learn中的preprocessing.scale()可以直接将给定数据进行<strong>Z-Score规范化。</strong></p>
@@ -251,7 +251,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://banniford.github.io/2019/12/15/数据规范化/" data-id="ck6j1rs2t000coctwk3zpyni6" class="article-share-link">Share</a>
+      <a data-url="https://banniford.github.io/2019/12/15/数据规范化/" data-id="ck6j2by2y000ckwtwes3l3gi4" class="article-share-link">Share</a>
       
       
     </footer>
