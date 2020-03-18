@@ -17,6 +17,10 @@
 
 
 
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
+
 
 
 
@@ -271,6 +275,133 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://banniford.github.io/2019/11/25/嵌入式Servlet容器（七）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="paniford">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="潘的日记本">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/25/嵌入式Servlet容器（七）/" itemprop="url">嵌入式Servlet容器（七）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-25T18:56:31+08:00">
+                2019-11-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="嵌入式Servlet容器"><a href="#嵌入式Servlet容器" class="headerlink" title="嵌入式Servlet容器"></a>嵌入式Servlet容器</h1><h3 id="一、如何定制和修改Servlet容器的相关配置；"><a href="#一、如何定制和修改Servlet容器的相关配置；" class="headerlink" title="一、如何定制和修改Servlet容器的相关配置；"></a>一、如何定制和修改Servlet容器的相关配置；</h3><ul>
+<li>修改和server有关的配置（ServerProperties【也是EmbeddedServletContainerCustomizer】）；</li>
+</ul>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">server.port</span>=<span class="string">8081</span></span><br><span class="line"><span class="meta">server.context-path</span>=<span class="string">/crud</span></span><br><span class="line"></span><br><span class="line"><span class="meta">server.tomcat.uri-encoding</span>=<span class="string">UTF-8</span></span><br><span class="line"></span><br><span class="line"><span class="attr">//通用的Servlet容器设置</span></span><br><span class="line"><span class="attr">server.xxx</span></span><br><span class="line"><span class="attr">//Tomcat的设置</span></span><br><span class="line"><span class="attr">server.tomcat.xxx</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/11/25/嵌入式Servlet容器（七）/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://banniford.github.io/2019/11/23/SpringMVC自动配置（六）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -334,38 +465,33 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
       
 
       
         
-          <h1 id="springmvc自动配置"><a class="markdownIt-Anchor" href="#springmvc自动配置"></a> SpringMVC自动配置</h1>
-<p><a href="https://docs.spring.io/spring-boot/docs/1.5.10.RELEASE/reference/htmlsingle/#boot-features-developing-web-applications" target="_blank" rel="noopener">https://docs.spring.io/spring-boot/docs/1.5.10.RELEASE/reference/htmlsingle/#boot-features-developing-web-applications</a></p>
-<h3 id="1-spring-mvc-auto-configuration"><a class="markdownIt-Anchor" href="#1-spring-mvc-auto-configuration"></a> 1. Spring MVC auto-configuration</h3>
-<p>Spring Boot 自动配置好了SpringMVC</p>
+          <h1 id="SpringMVC自动配置"><a href="#SpringMVC自动配置" class="headerlink" title="SpringMVC自动配置"></a>SpringMVC自动配置</h1><p><a href="https://docs.spring.io/spring-boot/docs/1.5.10.RELEASE/reference/htmlsingle/#boot-features-developing-web-applications" target="_blank" rel="noopener">https://docs.spring.io/spring-boot/docs/1.5.10.RELEASE/reference/htmlsingle/#boot-features-developing-web-applications</a></p>
+<h3 id="1-Spring-MVC-auto-configuration"><a href="#1-Spring-MVC-auto-configuration" class="headerlink" title="1. Spring MVC auto-configuration"></a>1. Spring MVC auto-configuration</h3><p>Spring Boot 自动配置好了SpringMVC</p>
 <p>以下是SpringBoot对SpringMVC的默认配置:<strong>（WebMvcAutoConfiguration）</strong></p>
 <ul>
-<li>
-<p>Inclusion of <code>ContentNegotiatingViewResolver</code> and <code>BeanNameViewResolver</code> beans.</p>
+<li><p>Inclusion of <code>ContentNegotiatingViewResolver</code> and <code>BeanNameViewResolver</code> beans.</p>
 <ul>
 <li>自动配置了ViewResolver（视图解析器：根据方法的返回值得到视图对象（View），视图对象决定如何渲染（转发？重定向？））</li>
 <li>ContentNegotiatingViewResolver：组合所有的视图解析器的；</li>
 <li>如何定制：我们可以自己给容器中添加一个视图解析器；自动的将其组合进来；</li>
 </ul>
 </li>
-<li>
-<p>Support for serving static resources, including support for WebJars (see below).静态资源文件夹路径,webjars</p>
+<li><p>Support for serving static resources, including support for WebJars (see below).静态资源文件夹路径,webjars</p>
 </li>
-<li>
-<p>Static <code>index.html</code> support. 静态首页访问</p>
+<li><p>Static <code>index.html</code> support. 静态首页访问</p>
 </li>
-<li>
-<p>Custom <code>Favicon</code> support (see below).  favicon.ico</p>
+<li><p>Custom <code>Favicon</code> support (see below).  favicon.ico</p>
 </li>
-<li>
-<p>自动注册了 of <code>Converter</code>, <code>GenericConverter</code>, <code>Formatter</code> beans.</p>
+</ul>
+<ul>
+<li><p>自动注册了 of <code>Converter</code>, <code>GenericConverter</code>, <code>Formatter</code> beans.</p>
 <ul>
 <li>Converter：转换器；  public String hello(User user)：类型转换使用Converter</li>
 <li><code>Formatter</code>  格式化器；  2017.12.17===Date；</li>
@@ -374,20 +500,15 @@
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="meta">@ConditionalOnProperty</span>(prefix = <span class="string">"spring.mvc"</span>, name = <span class="string">"date-format"</span>)<span class="comment">//在文件中配置日期格式化的规则</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Formatter&lt;Date&gt; <span class="title">dateFormatter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> DateFormatter(<span class="keyword">this</span>.mvcProperties.getDateFormat());<span class="comment">//日期格式化组件</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>
-<p>自己添加的格式化器转换器，我们只需要放在容器中即可</p>
+<li><p>自己添加的格式化器转换器，我们只需要放在容器中即可</p>
 </li>
-<li>
-<p>Support for <code>HttpMessageConverters</code> (see below).</p>
+<li><p>Support for <code>HttpMessageConverters</code> (see below).</p>
 <ul>
-<li>
-<p>HttpMessageConverter：SpringMVC用来转换Http请求和响应的；User—Json；</p>
+<li><p>HttpMessageConverter：SpringMVC用来转换Http请求和响应的；User—-Json；</p>
 </li>
-<li>
-<p><code>HttpMessageConverters</code> 是从容器中确定；获取所有的HttpMessageConverter；</p>
+<li><p><code>HttpMessageConverters</code> 是从容器中确定；获取所有的HttpMessageConverter；</p>
 </li>
-<li>
-<p>自己给容器中添加HttpMessageConverter，只需要将自己的组件注册容器中（@Bean,@Component）</p>
+<li><p>自己给容器中添加HttpMessageConverter，只需要将自己的组件注册容器中（@Bean,@Component）</p>
 </li>
 </ul>
 </li>
@@ -508,27 +629,22 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
       
 
       
         
-          <h1 id="thymeleaf使用"><a class="markdownIt-Anchor" href="#thymeleaf使用"></a> Thymeleaf使用</h1>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ConfigurationProperties</span>(prefix = <span class="string">"spring.thymeleaf"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThymeleafProperties</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Charset DEFAULT_ENCODING = Charset.forName(<span class="string">"UTF-8"</span>);</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> MimeType DEFAULT_CONTENT_TYPE = MimeType.valueOf(<span class="string">"text/html"</span>);</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String DEFAULT_PREFIX = <span class="string">"classpath:/templates/"</span>;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String DEFAULT_SUFFIX = <span class="string">".html"</span>;</span><br></pre></td></tr></table></figure>
+          <h1 id="Thymeleaf使用"><a href="#Thymeleaf使用" class="headerlink" title="Thymeleaf使用"></a>Thymeleaf使用</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ConfigurationProperties</span>(prefix = <span class="string">"spring.thymeleaf"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThymeleafProperties</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Charset DEFAULT_ENCODING = Charset.forName(<span class="string">"UTF-8"</span>);</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> MimeType DEFAULT_CONTENT_TYPE = MimeType.valueOf(<span class="string">"text/html"</span>);</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String DEFAULT_PREFIX = <span class="string">"classpath:/templates/"</span>;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String DEFAULT_SUFFIX = <span class="string">".html"</span>;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>
-<p>只要我们把HTML页面放在classpath:/templates/，thymeleaf就能自动渲染；</p>
+<li><p>只要我们把HTML页面放在classpath:/templates/，thymeleaf就能自动渲染；</p>
 </li>
-<li>
-<p>使用：</p>
+<li><p>使用：</p>
 </li>
 </ul>
-<h3 id="1-导入thymeleaf的名称空间"><a class="markdownIt-Anchor" href="#1-导入thymeleaf的名称空间"></a> 1、导入thymeleaf的名称空间</h3>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span> <span class="attr">xmlns:th</span>=<span class="string">"http://www.thymeleaf.org"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-使用thymeleaf语法"><a class="markdownIt-Anchor" href="#2-使用thymeleaf语法"></a> 2、使用thymeleaf语法；</h3>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span> <span class="attr">xmlns:th</span>=<span class="string">"http://www.thymeleaf.org"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>成功！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--th:text 将div里面的文本内容设置为 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">th:text</span>=<span class="string">"$&#123;hello&#125;"</span>&gt;</span>这是显示欢迎信息<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="1、导入thymeleaf的名称空间"><a href="#1、导入thymeleaf的名称空间" class="headerlink" title="1、导入thymeleaf的名称空间"></a>1、导入thymeleaf的名称空间</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span> <span class="attr">xmlns:th</span>=<span class="string">"http://www.thymeleaf.org"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2、使用thymeleaf语法；"><a href="#2、使用thymeleaf语法；" class="headerlink" title="2、使用thymeleaf语法；"></a>2、使用thymeleaf语法；</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span> <span class="attr">xmlns:th</span>=<span class="string">"http://www.thymeleaf.org"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>成功！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--th:text 将div里面的文本内容设置为 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">th:text</span>=<span class="string">"$&#123;hello&#125;"</span>&gt;</span>这是显示欢迎信息<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/11/21/Thymeleaf使用/#more" rel="contents">
@@ -645,22 +761,15 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
       
 
       
         
-          <h1 id="web开发"><a class="markdownIt-Anchor" href="#web开发"></a> Web开发</h1>
-<h2 id="1-简介"><a class="markdownIt-Anchor" href="#1-简介"></a> 1、简介</h2>
-<h4 id="使用springboot"><a class="markdownIt-Anchor" href="#使用springboot"></a> 使用SpringBoot；</h4>
-<h4 id="1-创建springboot应用选中我们需要的模块"><a class="markdownIt-Anchor" href="#1-创建springboot应用选中我们需要的模块"></a> <strong>1）、创建SpringBoot应用，选中我们需要的模块；</strong></h4>
-<h4 id="2-springboot已经默认将这些场景配置好了只需要在配置文件中指定少量配置就可以运行起来"><a class="markdownIt-Anchor" href="#2-springboot已经默认将这些场景配置好了只需要在配置文件中指定少量配置就可以运行起来"></a> <strong>2）、SpringBoot已经默认将这些场景配置好了，只需要在配置文件中指定少量配置就可以运行起来</strong></h4>
-<h4 id="3-自己编写业务代码"><a class="markdownIt-Anchor" href="#3-自己编写业务代码"></a> <strong>3）、自己编写业务代码；</strong></h4>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xxxxAutoConfiguration：帮我们给容器中自动配置组件；</span><br><span class="line">xxxxProperties:配置类来封装配置文件的内容；</span><br></pre></td></tr></table></figure>
-<h2 id="2-springboot对静态资源的映射规则"><a class="markdownIt-Anchor" href="#2-springboot对静态资源的映射规则"></a> 2、SpringBoot对静态资源的映射规则；</h2>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ConfigurationProperties</span>(prefix = <span class="string">"spring.resources"</span>, ignoreUnknownFields = <span class="keyword">false</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ResourceProperties</span> <span class="keyword">implements</span> <span class="title">ResourceLoaderAware</span> </span>&#123;</span><br><span class="line">  <span class="comment">//可以设置和静态资源有关的参数，缓存时间等</span></span><br></pre></td></tr></table></figure>
+          <h1 id="Web开发"><a href="#Web开发" class="headerlink" title="Web开发"></a>Web开发</h1><h2 id="1、简介"><a href="#1、简介" class="headerlink" title="1、简介"></a>1、简介</h2><h4 id="使用SpringBoot；"><a href="#使用SpringBoot；" class="headerlink" title="使用SpringBoot；"></a>使用SpringBoot；</h4><h4 id="1）、创建SpringBoot应用，选中我们需要的模块；"><a href="#1）、创建SpringBoot应用，选中我们需要的模块；" class="headerlink" title="1）、创建SpringBoot应用，选中我们需要的模块；"></a><strong>1）、创建SpringBoot应用，选中我们需要的模块；</strong></h4><h4 id="2）、SpringBoot已经默认将这些场景配置好了，只需要在配置文件中指定少量配置就可以运行起来"><a href="#2）、SpringBoot已经默认将这些场景配置好了，只需要在配置文件中指定少量配置就可以运行起来" class="headerlink" title="2）、SpringBoot已经默认将这些场景配置好了，只需要在配置文件中指定少量配置就可以运行起来"></a><strong>2）、SpringBoot已经默认将这些场景配置好了，只需要在配置文件中指定少量配置就可以运行起来</strong></h4><h4 id="3）、自己编写业务代码；"><a href="#3）、自己编写业务代码；" class="headerlink" title="3）、自己编写业务代码；"></a><strong>3）、自己编写业务代码；</strong></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xxxxAutoConfiguration：帮我们给容器中自动配置组件；</span><br><span class="line">xxxxProperties:配置类来封装配置文件的内容；</span><br></pre></td></tr></table></figure>
+<h2 id="2、SpringBoot对静态资源的映射规则；"><a href="#2、SpringBoot对静态资源的映射规则；" class="headerlink" title="2、SpringBoot对静态资源的映射规则；"></a>2、SpringBoot对静态资源的映射规则；</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ConfigurationProperties</span>(prefix = <span class="string">"spring.resources"</span>, ignoreUnknownFields = <span class="keyword">false</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ResourceProperties</span> <span class="keyword">implements</span> <span class="title">ResourceLoaderAware</span> </span>&#123;</span><br><span class="line">  <span class="comment">//可以设置和静态资源有关的参数，缓存时间等</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/11/21/Spring-Boot-Web开发/#more" rel="contents">
@@ -777,37 +886,29 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
       
 
       
         
-          <h2 id="一-配置文件"><a class="markdownIt-Anchor" href="#一-配置文件"></a> 一、配置文件</h2>
-<ul>
-<li>
-<p>Spring Boot使用一个全局得配置文件。作用：修改SpringBoot得Zion给配置默认值</p>
+          <h2 id="一、配置文件"><a href="#一、配置文件" class="headerlink" title="一、配置文件"></a>一、配置文件</h2><ul>
+<li><p>Spring Boot使用一个全局得配置文件。作用：修改SpringBoot得Zion给配置默认值</p>
 <ul>
 <li>application.properties</li>
-<li>application.yml</li>
+<li>application.yml </li>
 </ul>
 </li>
-<li>
-<p>配置文件放在src/main/resources目录或者类路径/config下</p>
+<li><p>配置文件放在src/main/resources目录或者类路径/config下</p>
 <ul>
-<li>springboot启动会扫描一下位置的application.properties或者application.yml文件作为Spring boot的默认配置文件<br>
--file:/config/<br>
--file:/<br>
--classpath:/config/<br>
--classpath:/</li>
+<li>springboot启动会扫描一下位置的application.properties或者application.yml文件作为Spring boot的默认配置文件<br>-file:/config/<br>-file:/<br>-classpath:/config/<br>-classpath:/</li>
 <li>优先级由高到低，高优先级的配置会覆盖低优先级的配置；</li>
 <li>Springboot会从这四个位置全部加载主配置文件；<strong>互补配置</strong></li>
 <li>还可以通过spring.config.location 来改变默认的配置文件位置</li>
 </ul>
 </li>
-<li>
-<p>.yml是YAML(YAML Ain’t Markup Language)语言得文件，以<strong>数据</strong>为中心，比json、xml等更适合做配置文件</p>
+<li><p>.yml是YAML(YAML Ain’t Markup Language)语言得文件，以<strong>数据</strong>为中心，比json、xml等更适合做配置文件</p>
 <ul>
 <li><a href="http://www.yaml.org/" target="_blank" rel="noopener">http://www.yaml.org/</a> 参考语法规范</li>
 <li>YAML 配置例子</li>
@@ -934,27 +1035,21 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
       
 
       
         
-          <h2 id="1-pom文件"><a class="markdownIt-Anchor" href="#1-pom文件"></a> 1、POM文件</h2>
-<h3 id="1-父项目"><a class="markdownIt-Anchor" href="#1-父项目"></a> 1、父项目</h3>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.9.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">relativePath</span>/&gt;</span> <span class="comment">&lt;!-- lookup parent from repository --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line">他的父项目</span><br><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-dependencies<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.9.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">relativePath</span>&gt;</span>../../spring-boot-dependencies<span class="tag">&lt;/<span class="name">relativePath</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line">他来真正管理Spring Boot 应用里面的所有依赖版本</span><br></pre></td></tr></table></figure>
-<p>Spring Boot的版本仲裁中心：<br>
-以后我们导入依赖默认是不需要写版本；（没有在dependencies里面管理的依赖自然需要生面版本号）</p>
-<h3 id="2-导入的依赖"><a class="markdownIt-Anchor" href="#2-导入的依赖"></a> 2、导入的依赖</h3>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+          <h2 id="1、POM文件"><a href="#1、POM文件" class="headerlink" title="1、POM文件"></a>1、POM文件</h2><h3 id="1、父项目"><a href="#1、父项目" class="headerlink" title="1、父项目"></a>1、父项目</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.9.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">relativePath</span>/&gt;</span> <span class="comment">&lt;!-- lookup parent from repository --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line">他的父项目</span><br><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-dependencies<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.9.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">relativePath</span>&gt;</span>../../spring-boot-dependencies<span class="tag">&lt;/<span class="name">relativePath</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line">他来真正管理Spring Boot 应用里面的所有依赖版本</span><br></pre></td></tr></table></figure>
+<p>Spring Boot的版本仲裁中心：<br>以后我们导入依赖默认是不需要写版本；（没有在dependencies里面管理的依赖自然需要生面版本号）</p>
+<h3 id="2、导入的依赖"><a href="#2、导入的依赖" class="headerlink" title="2、导入的依赖"></a>2、导入的依赖</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>spring-boot-starter-web:<br>
-spring-boot-starter:spring-boot场景启动器;帮我们导入了web模块正常运行所依赖的组件;</li>
+<li>spring-boot-starter-web:<br>spring-boot-starter:spring-boot场景启动器;帮我们导入了web模块正常运行所依赖的组件;</li>
 </ul>
 <p>Spring Boot将所有功能场景都抽取出来，做成一个个的starters（启动器），只需要在项目里面引入这些starter相关场景的所有依赖都会导入进来。要用什么功能就导入什么场景的启动器。</p>
-<h2 id="2-主程序类主入口类"><a class="markdownIt-Anchor" href="#2-主程序类主入口类"></a> 2、主程序类，主入口类</h2>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoApplication</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(DemoApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2、主程序类，主入口类"><a href="#2、主程序类，主入口类" class="headerlink" title="2、主程序类，主入口类"></a>2、主程序类，主入口类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoApplication</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(DemoApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>@<strong>SpringBootApplication:</strong> Spring Boot应用标注在某个类上说明这个类是SpringBoot的主配置类，SpringBoot就应该运行这个类的main方法来启动SpringBoot应用；</p>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1072,36 +1167,28 @@ spring-boot-starter:spring-boot场景启动器;帮我们导入了web模块正常
     
     
     
-    <div class="post-body" itemprop="articleBody">
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
       
 
       
         
-          <h2 id="1-spring-boot-简介"><a class="markdownIt-Anchor" href="#1-spring-boot-简介"></a> 1、Spring Boot 简介</h2>
-<ul>
+          <h2 id="1、Spring-Boot-简介"><a href="#1、Spring-Boot-简介" class="headerlink" title="1、Spring Boot 简介"></a>1、Spring Boot 简介</h2><ul>
 <li>简化spring应用开发得一个框架；</li>
 <li>整个Spring技术栈得一个大整合；</li>
 <li>J2EE开发的一站式解决方案；</li>
 </ul>
-<h2 id="2-微服务"><a class="markdownIt-Anchor" href="#2-微服务"></a> 2、微服务</h2>
-<p>2014、Martin fowler<br>
-微服务：构架风格<br>
-一个应用应该是一组小型服务；可以通过HTTP的方式进行互通；</p>
+<h2 id="2、微服务"><a href="#2、微服务" class="headerlink" title="2、微服务"></a>2、微服务</h2><p>2014、Martin fowler<br>微服务：构架风格<br>一个应用应该是一组小型服务；可以通过HTTP的方式进行互通；</p>
 <p>单体应用：ALL IN ONE；</p>
 <ul>
-<li>Simple to：develop,test,deploy,scale<br>
-每一个功能元素最终都是一个可独立替换和独立升级的软件单元<br>
-环境约束：</li>
+<li>Simple to：develop,test,deploy,scale<br>每一个功能元素最终都是一个可独立替换和独立升级的软件单元<br>环境约束：</li>
 <li>jdk1.8 :Spring Boot 1.7以上；</li>
 <li>maven3.x :maven3.3以上；</li>
 <li>intellIjIDEA2017 ：STS</li>
 <li>Spring Boot RELEASE:</li>
 </ul>
-<h2 id="3-统一环境"><a class="markdownIt-Anchor" href="#3-统一环境"></a> 3、统一环境：</h2>
-<h3 id="1maven设置"><a class="markdownIt-Anchor" href="#1maven设置"></a> 1.maven设置</h3>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">localRepository</span>&gt;</span>D:\ideaall\libmaven<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span>//大概50行</span><br><span class="line"></span><br><span class="line"> <span class="tag">&lt;<span class="name">mirrors</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span>&gt;</span>nexus-aliyun<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>*<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>Nexus aliyun<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/groups/public<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">mirrors</span>&gt;</span>//大概150行</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">  <span class="tag">&lt;<span class="name">profiles</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">  		<span class="tag">&lt;<span class="name">id</span>&gt;</span>jdk-1.8<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">  		<span class="tag">&lt;<span class="name">activation</span>&gt;</span></span><br><span class="line">  			<span class="tag">&lt;<span class="name">activeByDefault</span>&gt;</span>true<span class="tag">&lt;/<span class="name">activeByDefault</span>&gt;</span></span><br><span class="line">  			<span class="tag">&lt;<span class="name">jdk</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">jdk</span>&gt;</span></span><br><span class="line">  		<span class="tag">&lt;/<span class="name">activation</span>&gt;</span></span><br><span class="line">  		<span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">  			<span class="tag">&lt;<span class="name">maven.compiler.source</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.source</span>&gt;</span></span><br><span class="line">  			<span class="tag">&lt;<span class="name">maven.compiler.target</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.target</span>&gt;</span></span><br><span class="line">  			<span class="tag">&lt;<span class="name">maven.compiler.comilerVersion</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.comilerVersion</span>&gt;</span></span><br><span class="line">  		<span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;/<span class="name">profile</span>&gt;</span>//大概200行</span><br></pre></td></tr></table></figure>
+<h2 id="3、统一环境："><a href="#3、统一环境：" class="headerlink" title="3、统一环境："></a>3、统一环境：</h2><h3 id="1-maven设置"><a href="#1-maven设置" class="headerlink" title="1.maven设置"></a>1.maven设置</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">localRepository</span>&gt;</span>D:\ideaall\libmaven<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span>//大概50行</span><br><span class="line"></span><br><span class="line"> <span class="tag">&lt;<span class="name">mirrors</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span>&gt;</span>nexus-aliyun<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>*<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>Nexus aliyun<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/groups/public<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">mirrors</span>&gt;</span>//大概150行</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">  <span class="tag">&lt;<span class="name">profiles</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">  		<span class="tag">&lt;<span class="name">id</span>&gt;</span>jdk-1.8<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">  		<span class="tag">&lt;<span class="name">activation</span>&gt;</span></span><br><span class="line">  			<span class="tag">&lt;<span class="name">activeByDefault</span>&gt;</span>true<span class="tag">&lt;/<span class="name">activeByDefault</span>&gt;</span></span><br><span class="line">  			<span class="tag">&lt;<span class="name">jdk</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">jdk</span>&gt;</span></span><br><span class="line">  		<span class="tag">&lt;/<span class="name">activation</span>&gt;</span></span><br><span class="line">  		<span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">  			<span class="tag">&lt;<span class="name">maven.compiler.source</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.source</span>&gt;</span></span><br><span class="line">  			<span class="tag">&lt;<span class="name">maven.compiler.target</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.target</span>&gt;</span></span><br><span class="line">  			<span class="tag">&lt;<span class="name">maven.compiler.comilerVersion</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.comilerVersion</span>&gt;</span></span><br><span class="line">  		<span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;/<span class="name">profile</span>&gt;</span>//大概200行</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/10/06/初学springboot/#more" rel="contents">
@@ -1194,7 +1281,7 @@ spring-boot-starter:spring-boot场景启动器;帮我们导入了web模块正常
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1744,6 +1831,28 @@ spring-boot-starter:spring-boot场景启动器;帮我们导入了web模块正常
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
