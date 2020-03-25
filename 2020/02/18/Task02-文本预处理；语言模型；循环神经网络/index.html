@@ -468,10 +468,10 @@ P(w_1, w_2, w_3, w_4) &=  P(w_1) P(w_2 \mid w_1) P(w_3 \mid w_1, w_2) P(w_4 \mid
 <p><strong>output</strong>:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">X:  tensor([[ 0,  1,  2,  3,  4,  5],</span><br><span class="line">        [15, 16, 17, 18, 19, 20]]) </span><br><span class="line">Y: tensor([[ 1,  2,  3,  4,  5,  6],</span><br><span class="line">        [16, 17, 18, 19, 20, 21]]) </span><br><span class="line"></span><br><span class="line">X:  tensor([[ 6,  7,  8,  9, 10, 11],</span><br><span class="line">        [21, 22, 23, 24, 25, 26]]) </span><br><span class="line">Y: tensor([[ 7,  8,  9, 10, 11, 12],</span><br><span class="line">        [22, 23, 24, 25, 26, 27]])</span><br></pre></td></tr></table></figure>
 <hr>
-<h1 id="循环神经网络"><a href="#循环神经网络" class="headerlink" title="循环神经网络"></a>循环神经网络</h1><p>本节介绍循环神经网络，下图展示了如何基于循环神经网络实现语言模型。我们的目的是基于当前的输入与过去的输入序列，预测序列的下一个字符。循环神经网络引入一个隐藏变量$H$，用$H_{t}$表示$H$在时间步$t$的值。$H_{t}$的计算基于$X_{t}$和$H_{t-1}$，可以认为$H_{t}$记录了到当前字符为止的序列信息，利用$H_{t}$对序列的下一个字符进行预测。<br><img src="/2020/02/18/Task02-文本预处理；语言模型；循环神经网络/1.png" alt></p>
+<h1 id="循环神经网络"><a href="#循环神经网络" class="headerlink" title="循环神经网络"></a>循环神经网络</h1><p>本节介绍循环神经网络，下图展示了如何基于循环神经网络实现语言模型。我们的目的是基于当前的输入与过去的输入序列，预测序列的下一个字符。循环神经网络引入一个隐藏变量$H$，用$H<em>{t}$表示$H$在时间步$t$的值。$H</em>{t}$的计算基于$X<em>{t}$和$H</em>{t-1}$，可以认为$H<em>{t}$记录了到当前字符为止的序列信息，利用$H</em>{t}$对序列的下一个字符进行预测。<br><img src="/2020/02/18/Task02-文本预处理；语言模型；循环神经网络/1.png" alt></p>
 <h2 id="循环神经网络的构造"><a href="#循环神经网络的构造" class="headerlink" title="循环神经网络的构造"></a>循环神经网络的构造</h2><p>我们先看循环神经网络的具体构造。假设${X}_t \in \mathbb{R}^{n \times d}$是时间步$t$的小批量输入，${H}_t  \in \mathbb{R}^{n \times h}$是该时间步的隐藏变量，则：</p>
 <script type="math/tex; mode=display">
-{H}_t = \phi({X}_t {W}_{xh} + {H}_{t-1} {W}_{hh}  + {b}_h).</script><p>其中，${W}_{xh}\in \mathbb{R}^{d \times h}$，${W}_{hh} \in \mathbb{R}^{h \times h}$，${b}_{h} \in \mathbb{R}^{1 \times h}$，$\phi$函数是非线性激活函数。由于引入了${H}_{t-1} {W}_{hh}$，$H_{t}$能够捕捉截至当前时间步的序列的历史信息，就像是神经网络当前时间步的状态或记忆一样。由于$H_{t}$的计算基于$H_{t-1}$，上式的计算是循环的，使用循环计算的网络即循环神经网络（recurrent neural network）。</p>
+{H}_t = \phi({X}_t {W}_{xh} + {H}_{t-1} {W}_{hh}  + {b}_h).</script><p>其中，${W}<em>{xh}\in \mathbb{R}^{d \times h}$，${W}</em>{hh} \in \mathbb{R}^{h \times h}$，${b}<em>{h} \in \mathbb{R}^{1 \times h}$，$\phi$函数是非线性激活函数。由于引入了${H}</em>{t-1} {W}<em>{hh}$，$H</em>{t}$能够捕捉截至当前时间步的序列的历史信息，就像是神经网络当前时间步的状态或记忆一样。由于$H<em>{t}$的计算基于$H</em>{t-1}$，上式的计算是循环的，使用循环计算的网络即循环神经网络（recurrent neural network）。</p>
 <p>在时间步$t$，输出层的输出为：</p>
 <script type="math/tex; mode=display">
 {O}_t = {H}_t {W}_{hq} + {b}_q.</script><p>其中${W}_{hq} \in \mathbb{R}^{h \times q}$，${b}_q \in \mathbb{R}^{1 \times q}$。</p>
@@ -622,7 +622,7 @@ P(w_1, w_2, w_3, w_4) &=  P(w_1) P(w_2 \mid w_1) P(w_3 \mid w_1, w_2) P(w_4 \mid
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
