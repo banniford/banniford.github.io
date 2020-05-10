@@ -275,6 +275,134 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://banniford.github.io/2019/12/30/贝叶斯误差/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="paniford">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="潘的日记本">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/30/贝叶斯误差/" itemprop="url">贝叶斯误差</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-30T16:29:55+08:00">
+                2019-12-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="贝叶斯误差">贝叶斯误差</h2>
+<p>转载知乎:(<a href="https://www.zhihu.com/question/263546637" target="_blank" rel="noopener">https://www.zhihu.com/question/263546637</a>)</p>
+<h4 id="Wiki定义-贝叶斯误差（bayes-error-rate-是指在现有特征集上，任意可以基于特征输入进行随机输出的分类器所能达到最小误差。也可以叫做最小误差。"><strong><a href="https://en.wikipedia.org/wiki/Bayes_error_rate" target="_blank" rel="noopener">Wiki定义</a></strong>:贝叶斯误差（bayes error rate)是指在现有特征集上，任意可以基于特征输入进行随机输出的分类器所能达到最小误差。也可以叫做最小误差。</h4>
+<p>疑问：“书上说是从预先知道的分布预测而出现的c误差，既然已经预先知道分布了，那么为什么还有误差呢？”</p>
+<p>回答：<strong>分布是真实的，但预测的输出只能是一个值，所以会有误差</strong>。例如，假设真实世界中90%长头发的人为女性，10%为男性（这是已知的真实分布）；此时已知一个人头发长，预测该同学性别。由于只能预测男/女。<strong>此时即使你知道真实分布，预测为女，也会有10%的误差。这就是贝叶斯误差。</strong></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/12/30/贝叶斯误差/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://banniford.github.io/2019/12/20/2层及多层神经网络的构建/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -345,23 +473,28 @@
 
       
         
-          <h2 id="1-2层神经网络"><a href="#1-2层神经网络" class="headerlink" title="1-2层神经网络"></a>1-2层神经网络</h2><p><img src="/2019/12/20/2层及多层神经网络的构建/2layerNN_kiank.png" style="width:650px;height:400px;"></p>
-<p>该模型可以概括为： <strong>INPUT -&gt; LINEAR -&gt; RELU -&gt; LINEAR -&gt; SIGMOID -&gt; OUTPUT</strong>. </p>
+          <h2 id="1-2层神经网络">1-2层神经网络</h2>
+<img src="/2019/12/20/2层及多层神经网络的构建/2layerNN_kiank.png" style="width:650px;height:400px;">
+<p>该模型可以概括为： <strong>INPUT -&gt; LINEAR -&gt; RELU -&gt; LINEAR -&gt; SIGMOID -&gt; OUTPUT</strong>.</p>
 <ul>
 <li>输入是 <strong>(64,64,3)</strong> 图像，将其展平为大小为   <strong>(12288,1)</strong>  的向量。</li>
-<li>相应的向量：$[x<em>0,x_1,…,x</em>{12287}]^T$  然后乘以大小为   $(n^{[1]}, 12288)$  的权重矩阵  $W^{[1]}$ 。</li>
-<li><p>然后，您添加一个偏差项并获取其偏倚以获得以下向量： $[a<em>0^{[1]}, a_1^{[1]},…, a</em>{n^{[1]}-1}^{[1]}]^T$ .</p>
+<li>相应的向量：$[x_0,x_1,…,x_{12287}]^T$  然后乘以大小为   $(n^{[1]}, 12288)$  的权重矩阵  $W^{[1]}$ 。</li>
+<li>然后，您添加一个偏差项并获取其偏倚以获得以下向量： $[a_0^{[1]}, a_1^{[1]},…, a_{n^{[1]}-1}^{[1]}]^T$ .
 <ul>
-<li><p>然后重复相同的过程。</p>
+<li>
+<p>然后重复相同的过程。</p>
 </li>
-<li><p>您将所得向量乘以  $W^{[2]}$  ，然后加上截距（偏差）。</p>
+<li>
+<p>您将所得向量乘以  $W^{[2]}$  ，然后加上截距（偏差）。</p>
 </li>
-<li><p>最后，取最后一个激活函数为Sigmoid函数，如果大于0.5，则将其分类为猫。</p>
+<li>
+<p>最后，取最后一个激活函数为Sigmoid函数，如果大于0.5，则将其分类为猫。</p>
 </li>
 </ul>
 </li>
 </ul>
-<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤:"></a><strong>步骤:</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">initialize_parameters</span><span class="params">(n_x, n_h, n_y)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> parameters </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">linear_activation_forward</span><span class="params">(A_prev, W, b, activation)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> A, cache</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">compute_cost</span><span class="params">(AL, Y)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> cost</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">linear_activation_backward</span><span class="params">(dA, cache, activation)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> dA_prev, dW, db</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">update_parameters</span><span class="params">(parameters, grads, learning_rate)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> parameters</span><br></pre></td></tr></table></figure>
+<h3 id="步骤"><strong>步骤:</strong></h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">initialize_parameters</span><span class="params">(n_x, n_h, n_y)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> parameters </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">linear_activation_forward</span><span class="params">(A_prev, W, b, activation)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> A, cache</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">compute_cost</span><span class="params">(AL, Y)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> cost</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">linear_activation_backward</span><span class="params">(dA, cache, activation)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> dA_prev, dW, db</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">update_parameters</span><span class="params">(parameters, grads, learning_rate)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> parameters</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/12/20/2层及多层神经网络的构建/#more" rel="contents">
@@ -485,17 +618,23 @@
 
       
         
-          <h2 id="数据规范化、标准化、归一化"><a href="#数据规范化、标准化、归一化" class="headerlink" title="数据规范化、标准化、归一化"></a>数据规范化、标准化、归一化</h2><p><a href="https://blog.csdn.net/u014381464/article/details/81101551" target="_blank" rel="noopener">转载：原文链接</a></p>
+          <h2 id="数据规范化、标准化、归一化">数据规范化、标准化、归一化</h2>
+<p><a href="https://blog.csdn.net/u014381464/article/details/81101551" target="_blank" rel="noopener">转载：原文链接</a></p>
 <ul>
-<li><p>在数据分析之前，我们都需要让数据满足一定的规律，达到规范性的要求，便于进行挖掘。</p>
+<li>
+<p>在数据分析之前，我们都需要让数据满足一定的规律，达到规范性的要求，便于进行挖掘。</p>
 </li>
-<li><p>如果不进行变换的话，要不就是维数过多增加了计算成本，要不就是数据过于集中，很难找到数据之间的特征。</p>
+<li>
+<p>如果不进行变换的话，要不就是维数过多增加了计算成本，要不就是数据过于集中，很难找到数据之间的特征。</p>
 </li>
-<li><p>在数据变换中，重点是如何将数值进行规范化，有三种常用的规范方法，分别是Min-Max规范化、Z-Score规范化、小数定标规范化。</p>
+<li>
+<p>在数据变换中，重点是如何将数值进行规范化，有三种常用的规范方法，分别是Min-Max规范化、Z-Score规范化、小数定标规范化。</p>
 </li>
-<li><p>针对数据库：规范化把关系满足的规范要求分为几级，满足要求最低的是第一范式（1NF），再来是第二范式、第三范式、BC范式和4NF、5NF等等，范数的等级越高，满足的约束集条件越严格。</p>
+<li>
+<p>针对数据库：规范化把关系满足的规范要求分为几级，满足要求最低的是第一范式（1NF），再来是第二范式、第三范式、BC范式和4NF、5NF等等，范数的等级越高，满足的约束集条件越严格。</p>
 </li>
-<li><p>针对数据：</p>
+<li>
+<p>针对数据：</p>
 <p>1.数据的规范化包括归一化标准化正则化，是一个统称（也有人把标准化作为统称）。</p>
 <p>2.数据规范化是数据挖掘中的数据变换的一种方式，数据变换将数据变换或统一成适合于数据挖掘的形式，将被挖掘对象的属性数据按比例缩放，使其落入一个小的特定区间内，如[-1, 1]或[0, 1]。</p>
 <p>3.对属性值进行规范化常用于涉及神经网络和距离度量的分类算法和聚类算法当中。比如使用神经网络后向传播算法进行分类挖掘时，对训练元组中度量每个属性的输入值进行规范化有利于<strong>加快学习阶段的速度</strong>。对于基于距离度量相异度的方法，数据归一化能够让所有的<strong>属性具有相同的权值</strong>。</p>
@@ -624,7 +763,9 @@
 
       
         
-          <h1 id="准备淌一淌人工智能的浑水！"><a href="#准备淌一淌人工智能的浑水！" class="headerlink" title="准备淌一淌人工智能的浑水！"></a>准备淌一淌人工智能的浑水！</h1><h3 id="准备路线：深度学习→图像分析"><a href="#准备路线：深度学习→图像分析" class="headerlink" title="准备路线：深度学习→图像分析"></a>准备路线：深度学习→图像分析</h3><p>人工智能(Artificial Intelligence)是研究、开发用于模拟、延伸和扩展人的智能的理论、方法、技术及应用系统的一门新的技术科学。人工智能是计算机科学的一个分支，它企图了解智能的实质，并生产出一种新的能以人类智能相似的方式作出反应的智能机器，该领域的研究包括机器人、语言识别、图像识别、自然语言处理和专家系统等。“人工智能是一门极富挑战性的科学，从事这项工作的人必须懂得计算机知识，心理学和哲学。人工智能是包括十分广泛的科学，它由不同的领域组成，如机器学习，计算机视觉等等，人工智能的发展历史是和计算机科学与技术的发展史联系在一起的。除了计算机科学以外, 人工智能还涉及信息论、控制论、自动化、仿生学、生物学、心理学、数理逻辑、语言学、医学和哲学等多门学科。人工智能学科研究的主要内容包括：知识表示、自动推理和搜索方法、机器学习和知识获取、知识处理系统、自然语言理解、计算机视觉、智能机器人、自动程序设计等方面。</p>
+          <h1>准备淌一淌人工智能的浑水！</h1>
+<h3 id="准备路线：深度学习→图像分析">准备路线：深度学习→图像分析</h3>
+<p>人工智能(Artificial Intelligence)是研究、开发用于模拟、延伸和扩展人的智能的理论、方法、技术及应用系统的一门新的技术科学。人工智能是计算机科学的一个分支，它企图了解智能的实质，并生产出一种新的能以人类智能相似的方式作出反应的智能机器，该领域的研究包括机器人、语言识别、图像识别、自然语言处理和专家系统等。“人工智能是一门极富挑战性的科学，从事这项工作的人必须懂得计算机知识，心理学和哲学。人工智能是包括十分广泛的科学，它由不同的领域组成，如机器学习，计算机视觉等等，人工智能的发展历史是和计算机科学与技术的发展史联系在一起的。除了计算机科学以外, 人工智能还涉及信息论、控制论、自动化、仿生学、生物学、心理学、数理逻辑、语言学、医学和哲学等多门学科。人工智能学科研究的主要内容包括：知识表示、自动推理和搜索方法、机器学习和知识获取、知识处理系统、自然语言理解、计算机视觉、智能机器人、自动程序设计等方面。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/12/14/人工智能初探/#more" rel="contents">
@@ -748,15 +889,17 @@
 
       
         
-          <h2 id="1、环境"><a href="#1、环境" class="headerlink" title="1、环境"></a>1、环境</h2><ul>
+          <h2 id="1、环境">1、环境</h2>
+<ul>
 <li>宝塔界面</li>
 <li>nginx</li>
 <li>tomcat</li>
 <li>javaweb项目</li>
 <li>ssl个人单域名证书（免费）</li>
 </ul>
-<h2 id="2、注意事项"><a href="#2、注意事项" class="headerlink" title="2、注意事项"></a>2、注意事项</h2><ul>
-<li>域名是否正确的解析 </li>
+<h2 id="2、注意事项">2、注意事项</h2>
+<ul>
+<li>域名是否正确的解析</li>
 <li>防火墙是否打开（宝塔和阿里云服务器防火墙都要打开 80和443端口）</li>
 <li>网站是否301或302跳转，如果跳转了也要关闭</li>
 <li><strong>单域名证书会有指定域名，二级域名必须重新申请</strong></li>
@@ -887,7 +1030,9 @@
 
       
         
-          <h1 id="嵌入式Servlet容器"><a href="#嵌入式Servlet容器" class="headerlink" title="嵌入式Servlet容器"></a>嵌入式Servlet容器</h1><h3 id="一、如何定制和修改Servlet容器的相关配置；"><a href="#一、如何定制和修改Servlet容器的相关配置；" class="headerlink" title="一、如何定制和修改Servlet容器的相关配置；"></a>一、如何定制和修改Servlet容器的相关配置；</h3><ul>
+          <h1>嵌入式Servlet容器</h1>
+<h3 id="一、如何定制和修改Servlet容器的相关配置；">一、如何定制和修改Servlet容器的相关配置；</h3>
+<ul>
 <li>修改和server有关的配置（ServerProperties【也是EmbeddedServletContainerCustomizer】）；</li>
 </ul>
 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">server.port</span>=<span class="string">8081</span></span><br><span class="line"><span class="meta">server.context-path</span>=<span class="string">/crud</span></span><br><span class="line"></span><br><span class="line"><span class="meta">server.tomcat.uri-encoding</span>=<span class="string">UTF-8</span></span><br><span class="line"></span><br><span class="line"><span class="attr">//通用的Servlet容器设置</span></span><br><span class="line"><span class="attr">server.xxx</span></span><br><span class="line"><span class="attr">//Tomcat的设置</span></span><br><span class="line"><span class="attr">server.tomcat.xxx</span></span><br></pre></td></tr></table></figure>
@@ -1014,26 +1159,31 @@
 
       
         
-          <h1 id="SpringMVC自动配置"><a href="#SpringMVC自动配置" class="headerlink" title="SpringMVC自动配置"></a>SpringMVC自动配置</h1><p><a href="https://docs.spring.io/spring-boot/docs/1.5.10.RELEASE/reference/htmlsingle/#boot-features-developing-web-applications" target="_blank" rel="noopener">https://docs.spring.io/spring-boot/docs/1.5.10.RELEASE/reference/htmlsingle/#boot-features-developing-web-applications</a></p>
-<h3 id="1-Spring-MVC-auto-configuration"><a href="#1-Spring-MVC-auto-configuration" class="headerlink" title="1. Spring MVC auto-configuration"></a>1. Spring MVC auto-configuration</h3><p>Spring Boot 自动配置好了SpringMVC</p>
+          <h1>SpringMVC自动配置</h1>
+<p><a href="https://docs.spring.io/spring-boot/docs/1.5.10.RELEASE/reference/htmlsingle/#boot-features-developing-web-applications" target="_blank" rel="noopener">https://docs.spring.io/spring-boot/docs/1.5.10.RELEASE/reference/htmlsingle/#boot-features-developing-web-applications</a></p>
+<h3 id="1-Spring-MVC-auto-configuration">1. Spring MVC auto-configuration</h3>
+<p>Spring Boot 自动配置好了SpringMVC</p>
 <p>以下是SpringBoot对SpringMVC的默认配置:<strong>（WebMvcAutoConfiguration）</strong></p>
 <ul>
-<li><p>Inclusion of <code>ContentNegotiatingViewResolver</code> and <code>BeanNameViewResolver</code> beans.</p>
+<li>
+<p>Inclusion of <code>ContentNegotiatingViewResolver</code> and <code>BeanNameViewResolver</code> beans.</p>
 <ul>
 <li>自动配置了ViewResolver（视图解析器：根据方法的返回值得到视图对象（View），视图对象决定如何渲染（转发？重定向？））</li>
 <li>ContentNegotiatingViewResolver：组合所有的视图解析器的；</li>
 <li>如何定制：我们可以自己给容器中添加一个视图解析器；自动的将其组合进来；</li>
 </ul>
 </li>
-<li><p>Support for serving static resources, including support for WebJars (see below).静态资源文件夹路径,webjars</p>
+<li>
+<p>Support for serving static resources, including support for WebJars (see below).静态资源文件夹路径,webjars</p>
 </li>
-<li><p>Static <code>index.html</code> support. 静态首页访问</p>
+<li>
+<p>Static <code>index.html</code> support. 静态首页访问</p>
 </li>
-<li><p>Custom <code>Favicon</code> support (see below).  favicon.ico</p>
+<li>
+<p>Custom <code>Favicon</code> support (see below).  favicon.ico</p>
 </li>
-</ul>
-<ul>
-<li><p>自动注册了 of <code>Converter</code>, <code>GenericConverter</code>, <code>Formatter</code> beans.</p>
+<li>
+<p>自动注册了 of <code>Converter</code>, <code>GenericConverter</code>, <code>Formatter</code> beans.</p>
 <ul>
 <li>Converter：转换器；  public String hello(User user)：类型转换使用Converter</li>
 <li><code>Formatter</code>  格式化器；  2017.12.17===Date；</li>
@@ -1042,15 +1192,20 @@
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="meta">@ConditionalOnProperty</span>(prefix = <span class="string">"spring.mvc"</span>, name = <span class="string">"date-format"</span>)<span class="comment">//在文件中配置日期格式化的规则</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Formatter&lt;Date&gt; <span class="title">dateFormatter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> DateFormatter(<span class="keyword">this</span>.mvcProperties.getDateFormat());<span class="comment">//日期格式化组件</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>自己添加的格式化器转换器，我们只需要放在容器中即可</p>
+<li>
+<p>自己添加的格式化器转换器，我们只需要放在容器中即可</p>
 </li>
-<li><p>Support for <code>HttpMessageConverters</code> (see below).</p>
+<li>
+<p>Support for <code>HttpMessageConverters</code> (see below).</p>
 <ul>
-<li><p>HttpMessageConverter：SpringMVC用来转换Http请求和响应的；User—-Json；</p>
+<li>
+<p>HttpMessageConverter：SpringMVC用来转换Http请求和响应的；User—Json；</p>
 </li>
-<li><p><code>HttpMessageConverters</code> 是从容器中确定；获取所有的HttpMessageConverter；</p>
+<li>
+<p><code>HttpMessageConverters</code> 是从容器中确定；获取所有的HttpMessageConverter；</p>
 </li>
-<li><p>自己给容器中添加HttpMessageConverter，只需要将自己的组件注册容器中（@Bean,@Component）</p>
+<li>
+<p>自己给容器中添加HttpMessageConverter，只需要将自己的组件注册容器中（@Bean,@Component）</p>
 </li>
 </ul>
 </li>
@@ -1178,15 +1333,20 @@
 
       
         
-          <h1 id="Thymeleaf使用"><a href="#Thymeleaf使用" class="headerlink" title="Thymeleaf使用"></a>Thymeleaf使用</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ConfigurationProperties</span>(prefix = <span class="string">"spring.thymeleaf"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThymeleafProperties</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Charset DEFAULT_ENCODING = Charset.forName(<span class="string">"UTF-8"</span>);</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> MimeType DEFAULT_CONTENT_TYPE = MimeType.valueOf(<span class="string">"text/html"</span>);</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String DEFAULT_PREFIX = <span class="string">"classpath:/templates/"</span>;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String DEFAULT_SUFFIX = <span class="string">".html"</span>;</span><br></pre></td></tr></table></figure>
+          <h1>Thymeleaf使用</h1>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ConfigurationProperties</span>(prefix = <span class="string">"spring.thymeleaf"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThymeleafProperties</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Charset DEFAULT_ENCODING = Charset.forName(<span class="string">"UTF-8"</span>);</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> MimeType DEFAULT_CONTENT_TYPE = MimeType.valueOf(<span class="string">"text/html"</span>);</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String DEFAULT_PREFIX = <span class="string">"classpath:/templates/"</span>;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String DEFAULT_SUFFIX = <span class="string">".html"</span>;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>只要我们把HTML页面放在classpath:/templates/，thymeleaf就能自动渲染；</p>
+<li>
+<p>只要我们把HTML页面放在classpath:/templates/，thymeleaf就能自动渲染；</p>
 </li>
-<li><p>使用：</p>
+<li>
+<p>使用：</p>
 </li>
 </ul>
-<h3 id="1、导入thymeleaf的名称空间"><a href="#1、导入thymeleaf的名称空间" class="headerlink" title="1、导入thymeleaf的名称空间"></a>1、导入thymeleaf的名称空间</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span> <span class="attr">xmlns:th</span>=<span class="string">"http://www.thymeleaf.org"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="2、使用thymeleaf语法；"><a href="#2、使用thymeleaf语法；" class="headerlink" title="2、使用thymeleaf语法；"></a>2、使用thymeleaf语法；</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span> <span class="attr">xmlns:th</span>=<span class="string">"http://www.thymeleaf.org"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>成功！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--th:text 将div里面的文本内容设置为 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">th:text</span>=<span class="string">"$&#123;hello&#125;"</span>&gt;</span>这是显示欢迎信息<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="1、导入thymeleaf的名称空间">1、导入thymeleaf的名称空间</h3>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span> <span class="attr">xmlns:th</span>=<span class="string">"http://www.thymeleaf.org"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2、使用thymeleaf语法；">2、使用thymeleaf语法；</h3>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span> <span class="attr">xmlns:th</span>=<span class="string">"http://www.thymeleaf.org"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>成功！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--th:text 将div里面的文本内容设置为 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">th:text</span>=<span class="string">"$&#123;hello&#125;"</span>&gt;</span>这是显示欢迎信息<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/11/21/Thymeleaf使用/#more" rel="contents">
@@ -1310,8 +1470,15 @@
 
       
         
-          <h1 id="Web开发"><a href="#Web开发" class="headerlink" title="Web开发"></a>Web开发</h1><h2 id="1、简介"><a href="#1、简介" class="headerlink" title="1、简介"></a>1、简介</h2><h4 id="使用SpringBoot；"><a href="#使用SpringBoot；" class="headerlink" title="使用SpringBoot；"></a>使用SpringBoot；</h4><h4 id="1）、创建SpringBoot应用，选中我们需要的模块；"><a href="#1）、创建SpringBoot应用，选中我们需要的模块；" class="headerlink" title="1）、创建SpringBoot应用，选中我们需要的模块；"></a><strong>1）、创建SpringBoot应用，选中我们需要的模块；</strong></h4><h4 id="2）、SpringBoot已经默认将这些场景配置好了，只需要在配置文件中指定少量配置就可以运行起来"><a href="#2）、SpringBoot已经默认将这些场景配置好了，只需要在配置文件中指定少量配置就可以运行起来" class="headerlink" title="2）、SpringBoot已经默认将这些场景配置好了，只需要在配置文件中指定少量配置就可以运行起来"></a><strong>2）、SpringBoot已经默认将这些场景配置好了，只需要在配置文件中指定少量配置就可以运行起来</strong></h4><h4 id="3）、自己编写业务代码；"><a href="#3）、自己编写业务代码；" class="headerlink" title="3）、自己编写业务代码；"></a><strong>3）、自己编写业务代码；</strong></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xxxxAutoConfiguration：帮我们给容器中自动配置组件；</span><br><span class="line">xxxxProperties:配置类来封装配置文件的内容；</span><br></pre></td></tr></table></figure>
-<h2 id="2、SpringBoot对静态资源的映射规则；"><a href="#2、SpringBoot对静态资源的映射规则；" class="headerlink" title="2、SpringBoot对静态资源的映射规则；"></a>2、SpringBoot对静态资源的映射规则；</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ConfigurationProperties</span>(prefix = <span class="string">"spring.resources"</span>, ignoreUnknownFields = <span class="keyword">false</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ResourceProperties</span> <span class="keyword">implements</span> <span class="title">ResourceLoaderAware</span> </span>&#123;</span><br><span class="line">  <span class="comment">//可以设置和静态资源有关的参数，缓存时间等</span></span><br></pre></td></tr></table></figure>
+          <h1>Web开发</h1>
+<h2 id="1、简介">1、简介</h2>
+<h4 id="使用SpringBoot；">使用SpringBoot；</h4>
+<h4 id="1）、创建SpringBoot应用，选中我们需要的模块；"><strong>1）、创建SpringBoot应用，选中我们需要的模块；</strong></h4>
+<h4 id="2）、SpringBoot已经默认将这些场景配置好了，只需要在配置文件中指定少量配置就可以运行起来"><strong>2）、SpringBoot已经默认将这些场景配置好了，只需要在配置文件中指定少量配置就可以运行起来</strong></h4>
+<h4 id="3）、自己编写业务代码；"><strong>3）、自己编写业务代码；</strong></h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xxxxAutoConfiguration：帮我们给容器中自动配置组件；</span><br><span class="line">xxxxProperties:配置类来封装配置文件的内容；</span><br></pre></td></tr></table></figure>
+<h2 id="2、SpringBoot对静态资源的映射规则；">2、SpringBoot对静态资源的映射规则；</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ConfigurationProperties</span>(prefix = <span class="string">"spring.resources"</span>, ignoreUnknownFields = <span class="keyword">false</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ResourceProperties</span> <span class="keyword">implements</span> <span class="title">ResourceLoaderAware</span> </span>&#123;</span><br><span class="line">  <span class="comment">//可以设置和静态资源有关的参数，缓存时间等</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/11/21/Spring-Boot-Web开发/#more" rel="contents">
@@ -1435,22 +1602,30 @@
 
       
         
-          <h2 id="一、配置文件"><a href="#一、配置文件" class="headerlink" title="一、配置文件"></a>一、配置文件</h2><ul>
-<li><p>Spring Boot使用一个全局得配置文件。作用：修改SpringBoot得Zion给配置默认值</p>
+          <h2 id="一、配置文件">一、配置文件</h2>
+<ul>
+<li>
+<p>Spring Boot使用一个全局得配置文件。作用：修改SpringBoot得Zion给配置默认值</p>
 <ul>
 <li>application.properties</li>
-<li>application.yml </li>
+<li>application.yml</li>
 </ul>
 </li>
-<li><p>配置文件放在src/main/resources目录或者类路径/config下</p>
+<li>
+<p>配置文件放在src/main/resources目录或者类路径/config下</p>
 <ul>
-<li>springboot启动会扫描一下位置的application.properties或者application.yml文件作为Spring boot的默认配置文件<br>-file:/config/<br>-file:/<br>-classpath:/config/<br>-classpath:/</li>
+<li>springboot启动会扫描一下位置的application.properties或者application.yml文件作为Spring boot的默认配置文件<br>
+-file:/config/<br>
+-file:/<br>
+-classpath:/config/<br>
+-classpath:/</li>
 <li>优先级由高到低，高优先级的配置会覆盖低优先级的配置；</li>
 <li>Springboot会从这四个位置全部加载主配置文件；<strong>互补配置</strong></li>
 <li>还可以通过spring.config.location 来改变默认的配置文件位置</li>
 </ul>
 </li>
-<li><p>.yml是YAML(YAML Ain’t Markup Language)语言得文件，以<strong>数据</strong>为中心，比json、xml等更适合做配置文件</p>
+<li>
+<p>.yml是YAML(YAML Ain’t Markup Language)语言得文件，以<strong>数据</strong>为中心，比json、xml等更适合做配置文件</p>
 <ul>
 <li><a href="http://www.yaml.org/" target="_blank" rel="noopener">http://www.yaml.org/</a> 参考语法规范</li>
 <li>YAML 配置例子</li>
@@ -1464,138 +1639,6 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/11/21/Spring-Boot配置-三/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://banniford.github.io/2019/11/17/Holle-World探究（二）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="paniford">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="潘的日记本">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/17/Holle-World探究（二）/" itemprop="url">Holle World探究（二）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-17T16:02:34+08:00">
-                2019-11-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="1、POM文件"><a href="#1、POM文件" class="headerlink" title="1、POM文件"></a>1、POM文件</h2><h3 id="1、父项目"><a href="#1、父项目" class="headerlink" title="1、父项目"></a>1、父项目</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.9.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">relativePath</span>/&gt;</span> <span class="comment">&lt;!-- lookup parent from repository --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line">他的父项目</span><br><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-dependencies<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.9.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">relativePath</span>&gt;</span>../../spring-boot-dependencies<span class="tag">&lt;/<span class="name">relativePath</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line">他来真正管理Spring Boot 应用里面的所有依赖版本</span><br></pre></td></tr></table></figure>
-<p>Spring Boot的版本仲裁中心：<br>以后我们导入依赖默认是不需要写版本；（没有在dependencies里面管理的依赖自然需要生面版本号）</p>
-<h3 id="2、导入的依赖"><a href="#2、导入的依赖" class="headerlink" title="2、导入的依赖"></a>2、导入的依赖</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>spring-boot-starter-web:<br>spring-boot-starter:spring-boot场景启动器;帮我们导入了web模块正常运行所依赖的组件;</li>
-</ul>
-<p>Spring Boot将所有功能场景都抽取出来，做成一个个的starters（启动器），只需要在项目里面引入这些starter相关场景的所有依赖都会导入进来。要用什么功能就导入什么场景的启动器。</p>
-<h2 id="2、主程序类，主入口类"><a href="#2、主程序类，主入口类" class="headerlink" title="2、主程序类，主入口类"></a>2、主程序类，主入口类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoApplication</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(DemoApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>@<strong>SpringBootApplication:</strong> Spring Boot应用标注在某个类上说明这个类是SpringBoot的主配置类，SpringBoot就应该运行这个类的main方法来启动SpringBoot应用；</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/11/17/Holle-World探究（二）/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1685,7 +1728,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

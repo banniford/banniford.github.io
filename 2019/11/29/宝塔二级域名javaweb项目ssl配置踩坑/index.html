@@ -83,18 +83,18 @@
 
 
 
-<meta name="description" content="1、环境 宝塔界面 nginx tomcat javaweb项目 ssl个人单域名证书（免费）  2、注意事项 域名是否正确的解析  防火墙是否打开（宝塔和阿里云服务器防火墙都要打开 80和443端口） 网站是否301或302跳转，如果跳转了也要关闭 单域名证书会有指定域名，二级域名必须重新申请 二级域名一定要解析A记录到服务器ip 域名备案只用备案顶级域名，二级域名不用备案 如果有多个二级域名和">
+<meta name="description" content="1、环境  宝塔界面 nginx tomcat javaweb项目 ssl个人单域名证书（免费）  2、注意事项  域名是否正确的解析 防火墙是否打开（宝塔和阿里云服务器防火墙都要打开 80和443端口） 网站是否301或302跳转，如果跳转了也要关闭 单域名证书会有指定域名，二级域名必须重新申请 二级域名一定要解析A记录到服务器ip 域名备案只用备案顶级域名，二级域名不用备案 如果有多个二级域名">
 <meta name="keywords" content="web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="宝塔二级域名javaweb项目ssl配置踩坑">
 <meta property="og:url" content="https://banniford.github.io/2019/11/29/宝塔二级域名javaweb项目ssl配置踩坑/index.html">
 <meta property="og:site_name" content="潘的日记本">
-<meta property="og:description" content="1、环境 宝塔界面 nginx tomcat javaweb项目 ssl个人单域名证书（免费）  2、注意事项 域名是否正确的解析  防火墙是否打开（宝塔和阿里云服务器防火墙都要打开 80和443端口） 网站是否301或302跳转，如果跳转了也要关闭 单域名证书会有指定域名，二级域名必须重新申请 二级域名一定要解析A记录到服务器ip 域名备案只用备案顶级域名，二级域名不用备案 如果有多个二级域名和">
+<meta property="og:description" content="1、环境  宝塔界面 nginx tomcat javaweb项目 ssl个人单域名证书（免费）  2、注意事项  域名是否正确的解析 防火墙是否打开（宝塔和阿里云服务器防火墙都要打开 80和443端口） 网站是否301或302跳转，如果跳转了也要关闭 单域名证书会有指定域名，二级域名必须重新申请 二级域名一定要解析A记录到服务器ip 域名备案只用备案顶级域名，二级域名不用备案 如果有多个二级域名">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2020-02-21T14:50:24.452Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="宝塔二级域名javaweb项目ssl配置踩坑">
-<meta name="twitter:description" content="1、环境 宝塔界面 nginx tomcat javaweb项目 ssl个人单域名证书（免费）  2、注意事项 域名是否正确的解析  防火墙是否打开（宝塔和阿里云服务器防火墙都要打开 80和443端口） 网站是否301或302跳转，如果跳转了也要关闭 单域名证书会有指定域名，二级域名必须重新申请 二级域名一定要解析A记录到服务器ip 域名备案只用备案顶级域名，二级域名不用备案 如果有多个二级域名和">
+<meta name="twitter:description" content="1、环境  宝塔界面 nginx tomcat javaweb项目 ssl个人单域名证书（免费）  2、注意事项  域名是否正确的解析 防火墙是否打开（宝塔和阿里云服务器防火墙都要打开 80和443端口） 网站是否301或302跳转，如果跳转了也要关闭 单域名证书会有指定域名，二级域名必须重新申请 二级域名一定要解析A记录到服务器ip 域名备案只用备案顶级域名，二级域名不用备案 如果有多个二级域名">
 
 
 
@@ -346,15 +346,17 @@
       
 
       
-        <h2 id="1、环境"><a href="#1、环境" class="headerlink" title="1、环境"></a>1、环境</h2><ul>
+        <h2 id="1、环境">1、环境</h2>
+<ul>
 <li>宝塔界面</li>
 <li>nginx</li>
 <li>tomcat</li>
 <li>javaweb项目</li>
 <li>ssl个人单域名证书（免费）</li>
 </ul>
-<h2 id="2、注意事项"><a href="#2、注意事项" class="headerlink" title="2、注意事项"></a>2、注意事项</h2><ul>
-<li>域名是否正确的解析 </li>
+<h2 id="2、注意事项">2、注意事项</h2>
+<ul>
+<li>域名是否正确的解析</li>
 <li>防火墙是否打开（宝塔和阿里云服务器防火墙都要打开 80和443端口）</li>
 <li>网站是否301或302跳转，如果跳转了也要关闭</li>
 <li><strong>单域名证书会有指定域名，二级域名必须重新申请</strong></li>
@@ -363,10 +365,11 @@
 <li>如果有多个二级域名和一个主域名，当主域名开启强制ssl后，没有开启ssl的二级域名会被解析到主域名或其他二级域名需要注意</li>
 </ul>
 <a id="more"></a>
-<h2 id="3、步骤"><a href="#3、步骤" class="headerlink" title="3、步骤"></a>3、步骤</h2><p>1)删除原装openjdk，安装JDK1.8</p>
+<h2 id="3、步骤">3、步骤</h2>
+<p>1)删除原装openjdk，安装JDK1.8</p>
 <p>2)在宝塔软件页面找到tomcat，按需求版本安装</p>
 <p>3)打开tomcat目录在webapps文件夹下上传并解压war包（可以改名为ROOT，默认为ROOT目录是tomcat识别目录）</p>
-<p>4)tomcat配置文件中20行的<code>appBase=&quot;&quot;</code>一定为空，11行中添加参数<code>scheme=&quot;https&quot;</code>  如果端口号在这里更改，后面站点配置文件<code>proxy_pass &quot;域名:端口号&quot;;</code>中一定要对应</p>
+<p>4)tomcat配置文件中20行的<code> appBase=&quot;&quot;</code>一定为空，11行中添加参数<code>scheme=&quot;https&quot;</code>  如果端口号在这里更改，后面站点配置文件<code>proxy_pass &quot;域名:端口号&quot;;</code>中一定要对应</p>
 <p>5)新建站点选择war解压后目录，域名填阿里云域名设置A记录解析的二级域名，站点设置ssl页面输入从阿里云下载的.key和.pem文件内容点击启用</p>
 <p>6)在站点设置配置文件中检查<code>proxy_pass &quot;域名:端口号&quot;;</code>内容要与4中tomcat端口对应</p>
 <p>7)在站点设置tomcat页面点击启动tomcat</p>
@@ -492,7 +495,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
