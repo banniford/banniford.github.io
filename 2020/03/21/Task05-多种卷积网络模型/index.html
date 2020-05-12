@@ -83,23 +83,22 @@
 
 
 
-<meta name="description" content="深度卷积神经网络（AlexNet） LeNet:  在大的真实数据集上的表现并不尽如⼈意。     1.神经网络计算复杂。2.还没有⼤量深⼊研究参数初始化和⾮凸优化算法等诸多领域。   机器学习的特征提取:手工定义的特征提取函数神经网络的特征提取：通过学习得到数据的多级表征，并逐级表⽰越来越抽象的概念或模式。   神经网络发展的限制:数据、硬件 AlexNet首次证明了学习到的特征可以超越⼿⼯设计">
+<meta name="description" content="深度卷积神经网络（AlexNet） LeNet:  在大的真实数据集上的表现并不尽如⼈意。 1.神经网络计算复杂。 2.还没有⼤量深⼊研究参数初始化和⾮凸优化算法等诸多领域。 机器学习的特征提取:手工定义的特征提取函数 神经网络的特征提取：通过学习得到数据的多级表征，并逐级表⽰越来越抽象的概念或模式。 神经网络发展的限制:数据、硬件  AlexNet 首次证明了学习到的特征可以超越⼿⼯设计的特征">
 <meta name="keywords" content="deep learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Task05:多种卷积网络模型">
 <meta property="og:url" content="https://banniford.github.io/2020/03/21/Task05-多种卷积网络模型/index.html">
 <meta property="og:site_name" content="潘的日记本">
-<meta property="og:description" content="深度卷积神经网络（AlexNet） LeNet:  在大的真实数据集上的表现并不尽如⼈意。     1.神经网络计算复杂。2.还没有⼤量深⼊研究参数初始化和⾮凸优化算法等诸多领域。   机器学习的特征提取:手工定义的特征提取函数神经网络的特征提取：通过学习得到数据的多级表征，并逐级表⽰越来越抽象的概念或模式。   神经网络发展的限制:数据、硬件 AlexNet首次证明了学习到的特征可以超越⼿⼯设计">
+<meta property="og:description" content="深度卷积神经网络（AlexNet） LeNet:  在大的真实数据集上的表现并不尽如⼈意。 1.神经网络计算复杂。 2.还没有⼤量深⼊研究参数初始化和⾮凸优化算法等诸多领域。 机器学习的特征提取:手工定义的特征提取函数 神经网络的特征提取：通过学习得到数据的多级表征，并逐级表⽰越来越抽象的概念或模式。 神经网络发展的限制:数据、硬件  AlexNet 首次证明了学习到的特征可以超越⼿⼯设计的特征">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://banniford.github.io/2020/03/21/Task05-多种卷积网络模型/1.png">
 <meta property="og:image" content="https://banniford.github.io/2020/03/21/Task05-多种卷积网络模型/2.png">
 <meta property="og:image" content="https://banniford.github.io/2020/03/21/Task05-多种卷积网络模型/3.png">
 <meta property="og:image" content="https://banniford.github.io/2020/03/21/Task05-多种卷积网络模型/4.png">
-<meta property="og:image" content="https://banniford.github.io/2020/03/21/Task05-多种卷积网络模型/5.png">
 <meta property="og:updated_time" content="2020-03-21T03:18:44.011Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Task05:多种卷积网络模型">
-<meta name="twitter:description" content="深度卷积神经网络（AlexNet） LeNet:  在大的真实数据集上的表现并不尽如⼈意。     1.神经网络计算复杂。2.还没有⼤量深⼊研究参数初始化和⾮凸优化算法等诸多领域。   机器学习的特征提取:手工定义的特征提取函数神经网络的特征提取：通过学习得到数据的多级表征，并逐级表⽰越来越抽象的概念或模式。   神经网络发展的限制:数据、硬件 AlexNet首次证明了学习到的特征可以超越⼿⼯设计">
+<meta name="twitter:description" content="深度卷积神经网络（AlexNet） LeNet:  在大的真实数据集上的表现并不尽如⼈意。 1.神经网络计算复杂。 2.还没有⼤量深⼊研究参数初始化和⾮凸优化算法等诸多领域。 机器学习的特征提取:手工定义的特征提取函数 神经网络的特征提取：通过学习得到数据的多级表征，并逐级表⽰越来越抽象的概念或模式。 神经网络发展的限制:数据、硬件  AlexNet 首次证明了学习到的特征可以超越⼿⼯设计的特征">
 <meta name="twitter:image" content="https://banniford.github.io/2020/03/21/Task05-多种卷积网络模型/1.png">
 
 
@@ -352,11 +351,16 @@
       
 
       
-        <h1 id="深度卷积神经网络（AlexNet）"><a href="#深度卷积神经网络（AlexNet）" class="headerlink" title="深度卷积神经网络（AlexNet）"></a>深度卷积神经网络（AlexNet）</h1><p> LeNet:  在大的真实数据集上的表现并不尽如⼈意。    </p>
-<p>1.神经网络计算复杂。<br>2.还没有⼤量深⼊研究参数初始化和⾮凸优化算法等诸多领域。  </p>
-<p>机器学习的特征提取:手工定义的特征提取函数<br>神经网络的特征提取：通过学习得到数据的多级表征，并逐级表⽰越来越抽象的概念或模式。  </p>
+        <h1 id="深度卷积神经网络alexnet"><a class="markdownIt-Anchor" href="#深度卷积神经网络alexnet"></a> 深度卷积神经网络（AlexNet）</h1>
+<p>LeNet:  在大的真实数据集上的表现并不尽如⼈意。</p>
+<p>1.神经网络计算复杂。<br>
+2.还没有⼤量深⼊研究参数初始化和⾮凸优化算法等诸多领域。</p>
+<p>机器学习的特征提取:手工定义的特征提取函数<br>
+神经网络的特征提取：通过学习得到数据的多级表征，并逐级表⽰越来越抽象的概念或模式。</p>
 <p>神经网络发展的限制:数据、硬件</p>
-<h3 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h3><p>首次证明了学习到的特征可以超越⼿⼯设计的特征，从而⼀举打破计算机视觉研究的前状。<br><strong>特征：</strong></p>
+<h3 id="alexnet"><a class="markdownIt-Anchor" href="#alexnet"></a> AlexNet</h3>
+<p>首次证明了学习到的特征可以超越⼿⼯设计的特征，从而⼀举打破计算机视觉研究的前状。<br>
+<strong>特征：</strong></p>
 <ol>
 <li>8层变换，其中有5层卷积（1/3/5/6/7）和2层全连接隐藏层（9/10），以及1个全连接输出层（11）。</li>
 <li>将sigmoid激活函数改成了更加简单的ReLU激活函数。</li>
@@ -366,31 +370,35 @@
 <p><img src="/2020/03/21/Task05-多种卷积网络模型/1.png" alt="Image Name"></p>
 <a id="more"></a>
 <hr>
-<h1 id="使用重复元素的网络（VGG）"><a href="#使用重复元素的网络（VGG）" class="headerlink" title="使用重复元素的网络（VGG）"></a>使用重复元素的网络（VGG）</h1><p><strong>VGG：</strong>通过重复使⽤简单的基础块来构建深度模型。 </p>
-<p>Block:数个相同的填充为1、窗口形状为$3\times 3$的卷积层,接上一个步幅为2、窗口形状为$2\times 2$的最大池化层。  </p>
+<h1 id="使用重复元素的网络vgg"><a class="markdownIt-Anchor" href="#使用重复元素的网络vgg"></a> 使用重复元素的网络（VGG）</h1>
+<p>**VGG：**通过重复使⽤简单的基础块来构建深度模型。</p>
+<p>Block:数个相同的填充为1、窗口形状为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn><mo>×</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">3\times 3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span>的卷积层,接上一个步幅为2、窗口形状为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo>×</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">2\times 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>的最大池化层。</p>
 <p>卷积层保持输入的高和宽不变，而池化层则对其减半。</p>
 <p><img src="/2020/03/21/Task05-多种卷积网络模型/2.png" alt="Image Name"></p>
 <hr>
-<h1 id="网络中的网络（NiN）"><a href="#网络中的网络（NiN）" class="headerlink" title="网络中的网络（NiN）"></a>网络中的网络（NiN）</h1><p><strong>LeNet、AlexNet</strong>和<strong>VGG：</strong>先以由卷积层构成的模块充分抽取 空间特征，再以由全连接层构成的模块来输出分类结果。 </p>
-<p>NiN：串联多个由卷积层和“全连接”层构成的小⽹络来构建⼀个深层⽹络。 </p>
-<p>⽤了输出通道数等于标签类别数的NiN块，然后使⽤全局平均池化层对每个通道中所有元素求平均并直接⽤于分类。  </p>
+<h1 id="网络中的网络nin"><a class="markdownIt-Anchor" href="#网络中的网络nin"></a> 网络中的网络（NiN）</h1>
+<p><strong>LeNet、AlexNet</strong>和**VGG：**先以由卷积层构成的模块充分抽取 空间特征，再以由全连接层构成的模块来输出分类结果。</p>
+<p>NiN：串联多个由卷积层和“全连接”层构成的小⽹络来构建⼀个深层⽹络。</p>
+<p>⽤了输出通道数等于标签类别数的NiN块，然后使⽤全局平均池化层对每个通道中所有元素求平均并直接⽤于分类。</p>
 <p><img src="/2020/03/21/Task05-多种卷积网络模型/3.png" alt="Image Name"></p>
-<p>1×1卷积核作用   </p>
-<p><strong>1.</strong>放缩通道数：通过控制卷积核的数量达到通道数的放缩。  </p>
-<p><strong>2.</strong>增加非线性。1×1卷积核的卷积过程相当于全连接层的计算过程，并且还加入了非线性激活函数，从而可以增加网络的非线性。  </p>
-<p><strong>3.</strong>计算参数少   </p>
+<p>1×1卷积核作用</p>
+<p>**1.**放缩通道数：通过控制卷积核的数量达到通道数的放缩。</p>
+<p>**2.**增加非线性。1×1卷积核的卷积过程相当于全连接层的计算过程，并且还加入了非线性激活函数，从而可以增加网络的非线性。</p>
+<p>**3.**计算参数少</p>
 <p><strong>NiN网络特性：</strong></p>
-<p>NiN重复使⽤由卷积层和代替全连接层的1×1卷积层构成的NiN块来构建深层⽹络。 </p>
-<p>NiN去除了容易造成过拟合的全连接输出层，而是将其替换成输出通道数等于标签类别数 的NiN块和全局平均池化层。   </p>
-<p>NiN的以上设计思想影响了后⾯⼀系列卷积神经网络的设计。  </p>
+<p>NiN重复使⽤由卷积层和代替全连接层的1×1卷积层构成的NiN块来构建深层⽹络。</p>
+<p>NiN去除了容易造成过拟合的全连接输出层，而是将其替换成输出通道数等于标签类别数 的NiN块和全局平均池化层。</p>
+<p>NiN的以上设计思想影响了后⾯⼀系列卷积神经网络的设计。</p>
 <hr>
-<h1 id="GoogLeNet"><a href="#GoogLeNet" class="headerlink" title="GoogLeNet"></a>GoogLeNet</h1><ol>
-<li>由Inception基础块组成。  </li>
-<li>Inception块相当于⼀个有4条线路的⼦⽹络。它通过不同窗口形状的卷积层和最⼤池化层来并⾏抽取信息，并使⽤1×1卷积层减少通道数从而降低模型复杂度。   </li>
-<li>可以⾃定义的超参数是每个层的输出通道数，我们以此来控制模型复杂度。 </li>
+<h1 id="googlenet"><a class="markdownIt-Anchor" href="#googlenet"></a> GoogLeNet</h1>
+<ol>
+<li>由Inception基础块组成。</li>
+<li>Inception块相当于⼀个有4条线路的⼦⽹络。它通过不同窗口形状的卷积层和最⼤池化层来并⾏抽取信息，并使⽤1×1卷积层减少通道数从而降低模型复杂度。</li>
+<li>可以⾃定义的超参数是每个层的输出通道数，我们以此来控制模型复杂度。</li>
 </ol>
 <p><img src="/2020/03/21/Task05-多种卷积网络模型/4.png" alt="Image Name"></p>
-<p></p><h4><center>完整模型结构 </center> </h4><br><img src="/2020/03/21/Task05-多种卷积网络模型/5.png" alt="Image Name"><p></p>
+<h4><center>完整模型结构 </center> </h4>
+![Image Name](Task05-多种卷积网络模型/5.png)
 
       
     </div>
@@ -558,7 +566,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#深度卷积神经网络（AlexNet）"><span class="nav-number">1.</span> <span class="nav-text">深度卷积神经网络（AlexNet）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AlexNet"><span class="nav-number">1.0.1.</span> <span class="nav-text">AlexNet</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#使用重复元素的网络（VGG）"><span class="nav-number">2.</span> <span class="nav-text">使用重复元素的网络（VGG）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络中的网络（NiN）"><span class="nav-number">3.</span> <span class="nav-text">网络中的网络（NiN）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GoogLeNet"><span class="nav-number">4.</span> <span class="nav-text">GoogLeNet</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">4.0.0.1.</span> <span class="nav-text">完整模型结构  </span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#深度卷积神经网络alexnet"><span class="nav-number">1.</span> <span class="nav-text"> 深度卷积神经网络（AlexNet）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#alexnet"><span class="nav-number">1.0.1.</span> <span class="nav-text"> AlexNet</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#使用重复元素的网络vgg"><span class="nav-number">2.</span> <span class="nav-text"> 使用重复元素的网络（VGG）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络中的网络nin"><span class="nav-number">3.</span> <span class="nav-text"> 网络中的网络（NiN）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#googlenet"><span class="nav-number">4.</span> <span class="nav-text"> GoogLeNet</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">4.0.0.1.</span> <span class="nav-text">完整模型结构  </span></a></li></ol></li></div>
             
 
           </div>
