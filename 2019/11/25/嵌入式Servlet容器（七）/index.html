@@ -83,18 +83,18 @@
 
 
 
-<meta name="description" content="嵌入式Servlet容器  一、如何定制和修改Servlet容器的相关配置；  修改和server有关的配置（ServerProperties【也是EmbeddedServletContainerCustomizer】）；  123456789server.port=8081server.context-path=/crudserver.tomcat.uri-encoding=UTF-8//通用">
+<meta name="description" content="嵌入式Servlet容器 一、如何定制和修改Servlet容器的相关配置；  修改和server有关的配置（ServerProperties【也是EmbeddedServletContainerCustomizer】）；  123456789server.port=8081server.context-path=/crudserver.tomcat.uri-encoding=UTF-8//通用的S">
 <meta name="keywords" content="java web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="嵌入式Servlet容器（七）">
 <meta property="og:url" content="https://banniford.github.io/2019/11/25/嵌入式Servlet容器（七）/index.html">
 <meta property="og:site_name" content="潘的日记本">
-<meta property="og:description" content="嵌入式Servlet容器  一、如何定制和修改Servlet容器的相关配置；  修改和server有关的配置（ServerProperties【也是EmbeddedServletContainerCustomizer】）；  123456789server.port=8081server.context-path=/crudserver.tomcat.uri-encoding=UTF-8//通用">
+<meta property="og:description" content="嵌入式Servlet容器 一、如何定制和修改Servlet容器的相关配置；  修改和server有关的配置（ServerProperties【也是EmbeddedServletContainerCustomizer】）；  123456789server.port=8081server.context-path=/crudserver.tomcat.uri-encoding=UTF-8//通用的S">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2020-02-21T14:50:43.990Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="嵌入式Servlet容器（七）">
-<meta name="twitter:description" content="嵌入式Servlet容器  一、如何定制和修改Servlet容器的相关配置；  修改和server有关的配置（ServerProperties【也是EmbeddedServletContainerCustomizer】）；  123456789server.port=8081server.context-path=/crudserver.tomcat.uri-encoding=UTF-8//通用">
+<meta name="twitter:description" content="嵌入式Servlet容器 一、如何定制和修改Servlet容器的相关配置；  修改和server有关的配置（ServerProperties【也是EmbeddedServletContainerCustomizer】）；  123456789server.port=8081server.context-path=/crudserver.tomcat.uri-encoding=UTF-8//通用的S">
 
 
 
@@ -346,8 +346,8 @@
       
 
       
-        <h1 id="嵌入式servlet容器"><a class="markdownIt-Anchor" href="#嵌入式servlet容器"></a> 嵌入式Servlet容器</h1>
-<h3 id="一-如何定制和修改servlet容器的相关配置"><a class="markdownIt-Anchor" href="#一-如何定制和修改servlet容器的相关配置"></a> 一、如何定制和修改Servlet容器的相关配置；</h3>
+        <h1>嵌入式Servlet容器</h1>
+<h3 id="一、如何定制和修改Servlet容器的相关配置；">一、如何定制和修改Servlet容器的相关配置；</h3>
 <ul>
 <li>修改和server有关的配置（ServerProperties【也是EmbeddedServletContainerCustomizer】）；</li>
 </ul>
@@ -357,7 +357,7 @@
 <li>编写一个<strong>EmbeddedServletContainerCustomizer</strong>：嵌入式的Servlet容器的定制器；来修改Servlet容器的配置</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span>  <span class="comment">//一定要将这个定制器加入到容器中</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> EmbeddedServletContainerCustomizer <span class="title">embeddedServletContainerCustomizer</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> EmbeddedServletContainerCustomizer() &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//定制嵌入式的Servlet容器相关的规则</span></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">customize</span><span class="params">(ConfigurableEmbeddedServletContainer container)</span> </span>&#123;</span><br><span class="line">            container.setPort(<span class="number">8083</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="二-如何定制和修改servlet容器的相关配置"><a class="markdownIt-Anchor" href="#二-如何定制和修改servlet容器的相关配置"></a> 二、如何定制和修改Servlet容器的相关配置；</h3>
+<h3 id="二、如何定制和修改Servlet容器的相关配置；">二、如何定制和修改Servlet容器的相关配置；</h3>
 <ul>
 <li>修改和server有关的配置（ServerProperties【也是EmbeddedServletContainerCustomizer】）；</li>
 </ul>
@@ -366,7 +366,7 @@
 <li>编写一个<strong>EmbeddedServletContainerCustomizer</strong>：嵌入式的Servlet容器的定制器；来修改Servlet容器的配置</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span>  <span class="comment">//一定要将这个定制器加入到容器中</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> EmbeddedServletContainerCustomizer <span class="title">embeddedServletContainerCustomizer</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> EmbeddedServletContainerCustomizer() &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//定制嵌入式的Servlet容器相关的规则</span></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">customize</span><span class="params">(ConfigurableEmbeddedServletContainer container)</span> </span>&#123;</span><br><span class="line">            container.setPort(<span class="number">8083</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="三-注册servlet三大组件servlet-filter-listener"><a class="markdownIt-Anchor" href="#三-注册servlet三大组件servlet-filter-listener"></a> 三、注册Servlet三大组件【Servlet、Filter、Listener】</h3>
+<h3 id="三、注册Servlet三大组件【Servlet、Filter、Listener】">三、注册Servlet三大组件【Servlet、Filter、Listener】</h3>
 <ul>
 <li>
 <p>由于SpringBoot默认是以jar包的方式启动嵌入式的Servlet容器来启动SpringBoot的web应用，没有web.xml文件。</p>
@@ -396,7 +396,7 @@
 </li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span>(name = DEFAULT_DISPATCHER_SERVLET_REGISTRATION_BEAN_NAME)</span><br><span class="line"><span class="meta">@ConditionalOnBean</span>(value = DispatcherServlet.class, name = DEFAULT_DISPATCHER_SERVLET_BEAN_NAME)</span><br><span class="line"><span class="function"><span class="keyword">public</span> ServletRegistrationBean <span class="title">dispatcherServletRegistration</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">      DispatcherServlet dispatcherServlet)</span> </span>&#123;</span><br><span class="line">   ServletRegistrationBean registration = <span class="keyword">new</span> ServletRegistrationBean(</span><br><span class="line">         dispatcherServlet, <span class="keyword">this</span>.serverProperties.getServletMapping());</span><br><span class="line">    <span class="comment">//默认拦截： /  所有请求；包静态资源，但是不拦截jsp请求；   /*会拦截jsp</span></span><br><span class="line">    <span class="comment">//可以通过server.servletPath来修改SpringMVC前端控制器默认拦截的请求路径</span></span><br><span class="line">    </span><br><span class="line">   registration.setName(DEFAULT_DISPATCHER_SERVLET_BEAN_NAME);</span><br><span class="line">   registration.setLoadOnStartup(</span><br><span class="line">         <span class="keyword">this</span>.webMvcProperties.getServlet().getLoadOnStartup());</span><br><span class="line">   <span class="keyword">if</span> (<span class="keyword">this</span>.multipartConfig != <span class="keyword">null</span>) &#123;</span><br><span class="line">      registration.setMultipartConfig(<span class="keyword">this</span>.multipartConfig);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> registration;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="四-替换为其他嵌入式servlet容器"><a class="markdownIt-Anchor" href="#四-替换为其他嵌入式servlet容器"></a> 四、替换为其他嵌入式Servlet容器</h3>
+<h3 id="四、替换为其他嵌入式Servlet容器">四、替换为其他嵌入式Servlet容器</h3>
 <p>默认支持：</p>
 <p>Tomcat（默认使用）</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">   引入web模块默认就是使用嵌入式的Tomcat作为Servlet容器；</span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -404,7 +404,7 @@
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 引入web模块 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-tomcat<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--引入其他的Servlet容器--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-jetty<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>Undertow（不支持JSP，高并发）</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 引入web模块 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-tomcat<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--引入其他的Servlet容器--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-undertow<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="五-嵌入式servlet容器自动配置原理"><a class="markdownIt-Anchor" href="#五-嵌入式servlet容器自动配置原理"></a> 五、嵌入式Servlet容器自动配置原理；</h3>
+<h3 id="五、嵌入式Servlet容器自动配置原理；">五、嵌入式Servlet容器自动配置原理；</h3>
 <ul>
 <li>EmbeddedServletContainerAutoConfiguration：嵌入式的Servlet容器自动配置？</li>
 </ul>
@@ -429,7 +429,7 @@
 <li>只要是嵌入式的Servlet容器工厂，后置处理器就工作；</li>
 </ul>
 <p>3）、后置处理器，从容器中获取所有的<strong>EmbeddedServletContainerCustomizer</strong>，调用定制器的定制方法</p>
-<h3 id="六-嵌入式servlet容器启动原理"><a class="markdownIt-Anchor" href="#六-嵌入式servlet容器启动原理"></a> 六、嵌入式Servlet容器启动原理；</h3>
+<h3 id="六、嵌入式Servlet容器启动原理；">六、嵌入式Servlet容器启动原理；</h3>
 <ul>
 <li>什么时候创建嵌入式的Servlet容器工厂？什么时候获取嵌入式的Servlet容器并启动Tomcat；</li>
 </ul>
@@ -457,7 +457,7 @@
 <p><strong>IOC容器启动创建嵌入式的Servlet容器</strong></p>
 </li>
 </ul>
-<h3 id="七-使用外置的servlet容器"><a class="markdownIt-Anchor" href="#七-使用外置的servlet容器"></a> 七、使用外置的Servlet容器</h3>
+<h3 id="七、使用外置的Servlet容器">七、使用外置的Servlet容器</h3>
 <ul>
 <li>
 <p>嵌入式Servlet容器：应用打成可执行的jar</p>
@@ -470,14 +470,14 @@
 <p>外置的Servlet容器：外面安装Tomcat—应用war包的方式打包；</p>
 </li>
 </ul>
-<h3 id="步骤"><a class="markdownIt-Anchor" href="#步骤"></a> 步骤</h3>
+<h3 id="步骤">步骤</h3>
 <p>1）、必须创建一个war项目；（利用idea创建好目录结构）</p>
 <p>2）、将嵌入式的Tomcat指定为provided；</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-tomcat<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>3）、必须编写一个<strong>SpringBootServletInitializer</strong>的子类，并调用configure方法</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ServletInitializer</span> <span class="keyword">extends</span> <span class="title">SpringBootServletInitializer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="meta">@Override</span></span><br><span class="line">   <span class="function"><span class="keyword">protected</span> SpringApplicationBuilder <span class="title">configure</span><span class="params">(SpringApplicationBuilder application)</span> </span>&#123;</span><br><span class="line">       <span class="comment">//传入SpringBoot应用的主程序</span></span><br><span class="line">      <span class="keyword">return</span> application.sources(SpringBoot04WebJspApplication.class);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>4）、启动服务器就可以使用；</p>
-<h3 id="原理"><a class="markdownIt-Anchor" href="#原理"></a> 原理</h3>
+<h3 id="原理">原理</h3>
 <p>jar包：执行SpringBoot主类的main方法，启动ioc容器，创建嵌入式的Servlet容器；</p>
 <p>war包：启动服务器，<strong>服务器启动SpringBoot应用</strong>【SpringBootServletInitializer】，启动ioc容器；</p>
 <p>servlet3.0（Spring注解版）：</p>
@@ -624,7 +624,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -637,7 +637,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -670,7 +670,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#嵌入式servlet容器"><span class="nav-number">1.</span> <span class="nav-text"> 嵌入式Servlet容器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-如何定制和修改servlet容器的相关配置"><span class="nav-number">1.0.1.</span> <span class="nav-text"> 一、如何定制和修改Servlet容器的相关配置；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-如何定制和修改servlet容器的相关配置"><span class="nav-number">1.0.2.</span> <span class="nav-text"> 二、如何定制和修改Servlet容器的相关配置；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-注册servlet三大组件servlet-filter-listener"><span class="nav-number">1.0.3.</span> <span class="nav-text"> 三、注册Servlet三大组件【Servlet、Filter、Listener】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四-替换为其他嵌入式servlet容器"><span class="nav-number">1.0.4.</span> <span class="nav-text"> 四、替换为其他嵌入式Servlet容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五-嵌入式servlet容器自动配置原理"><span class="nav-number">1.0.5.</span> <span class="nav-text"> 五、嵌入式Servlet容器自动配置原理；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六-嵌入式servlet容器启动原理"><span class="nav-number">1.0.6.</span> <span class="nav-text"> 六、嵌入式Servlet容器启动原理；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七-使用外置的servlet容器"><span class="nav-number">1.0.7.</span> <span class="nav-text"> 七、使用外置的Servlet容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤"><span class="nav-number">1.0.8.</span> <span class="nav-text"> 步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">1.0.9.</span> <span class="nav-text"> 原理</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">嵌入式Servlet容器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、如何定制和修改Servlet容器的相关配置；"><span class="nav-number">1.0.1.</span> <span class="nav-text">一、如何定制和修改Servlet容器的相关配置；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、如何定制和修改Servlet容器的相关配置；"><span class="nav-number">1.0.2.</span> <span class="nav-text">二、如何定制和修改Servlet容器的相关配置；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、注册Servlet三大组件【Servlet、Filter、Listener】"><span class="nav-number">1.0.3.</span> <span class="nav-text">三、注册Servlet三大组件【Servlet、Filter、Listener】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、替换为其他嵌入式Servlet容器"><span class="nav-number">1.0.4.</span> <span class="nav-text">四、替换为其他嵌入式Servlet容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、嵌入式Servlet容器自动配置原理；"><span class="nav-number">1.0.5.</span> <span class="nav-text">五、嵌入式Servlet容器自动配置原理；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、嵌入式Servlet容器启动原理；"><span class="nav-number">1.0.6.</span> <span class="nav-text">六、嵌入式Servlet容器启动原理；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七、使用外置的Servlet容器"><span class="nav-number">1.0.7.</span> <span class="nav-text">七、使用外置的Servlet容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤"><span class="nav-number">1.0.8.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">1.0.9.</span> <span class="nav-text">原理</span></a></li></ol></li></ol></div>
             
 
           </div>

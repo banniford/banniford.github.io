@@ -275,6 +275,263 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://banniford.github.io/2020/08/20/c语言复习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="paniford">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="潘的日记本">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/08/20/c语言复习/" itemprop="url">c语言复习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-20T21:26:48+08:00">
+                2020-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1>C语言复习</h1>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">include&lt;stdio.h&gt;</span><br><span class="line">基本头函数 </span><br><span class="line">include&lt;<span class="built_in">string</span>.h&gt;</span><br><span class="line">字符串处理函数 </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">10</span>];</span><br><span class="line">    <span class="keyword">int</span> j=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;<span class="number">10</span>;++i)&#123;<span class="comment">//第三个函数体最后循环结束时才运行，++i和i++一样 </span></span><br><span class="line">    </span><br><span class="line">    a[i]=++j;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,a[i]);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d\n"</span>,i); </span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line"><span class="keyword">char</span> c[<span class="number">4</span>]=&#123;<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'\0'</span>,<span class="string">'d'</span>&#125;;<span class="comment">//单个字符用‘’\0表示结束，“”超过一个字符 </span></span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%c"</span>,getchar());</span><br><span class="line"><span class="keyword">char</span> str[<span class="number">13</span>];</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%s"</span>,str);<span class="comment">//c语言中如果输入是数据变量则不需要加&amp;引用，数组本身就是引用地址 </span></span><br><span class="line"><span class="keyword">int</span> a ;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a); </span><br><span class="line"><span class="keyword">char</span> c[]=&#123;<span class="string">"China\n12223"</span>&#125;;<span class="comment">//会在字符组后自动 添加\0 </span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%s"</span>,c);</span><br><span class="line"><span class="built_in">puts</span>(c);<span class="comment">//输出已经定义得字符组 </span></span><br><span class="line"></span><br><span class="line">gets(c);<span class="comment">//从键盘获取char数组字符+1位返回值时c得起始地址，puts和gets只能输出和输入一个字符串 </span></span><br><span class="line"><span class="built_in">puts</span>(c);</span><br><span class="line"><span class="keyword">char</span> c[<span class="number">20</span>]=&#123;<span class="string">"China\n12223"</span>&#125;;<span class="comment">//会在字符组后自动 添加\0 </span></span><br><span class="line"><span class="keyword">char</span> str[]=&#123;<span class="string">"\nxxx"</span>&#125;;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%s"</span>,<span class="built_in">strcat</span>(c,str));<span class="comment">//strcat可以链接两个字符串，且第一个字符串要足够大可以容纳下1，2两个数组，不满得位置都是\0</span></span><br><span class="line"><span class="keyword">char</span> str1[<span class="number">10</span>],str2[]=<span class="string">"China"</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%s"</span>,<span class="built_in">strcpy</span>(str1,str2));<span class="comment">//将字符串2复制到1中也可以strcpy(str1,"China") </span></span><br><span class="line"><span class="built_in">strcmp</span>(str1,<span class="string">"China"</span>);<span class="comment">//比较两个字符串相等=0左大为正数，右大为负数 </span></span><br><span class="line"><span class="built_in">strlen</span>(<span class="string">"asdasd"</span>);<span class="comment">//统计字符串完整长度，不包括\0</span></span><br><span class="line"><span class="comment">//strlwr将字符串中大转小 strupr 小转大</span></span><br></pre></td></tr></table></figure>
+<p>函数写在<code>main</code>下面得时候，要在<code>main</code>函数里面声明，例如 <code>viod test();</code>调用<code>test()；</code></p>
+<p>带返回值得函数都需加类型，没有返回值得用void 传递数组时，传递首地址，所以声明函数中数组可以不加大小<br>
+<code>void test(int array[])</code>但是类型要一致 ，多维要加最高维度大小 <code>int test(int array[][10])</code></p>
+<p>寄存器变量 <code>register</code> 减少去内存读取数量</p>
+<p>全局变量定义域一般从定义处开始到文件末，使用<code>extern</code>可以把下面得全局变量扩展到此处。两个文件间使用扩展得话<br>
+就是一个文件定义全局变量，另一个文件使用<code>extern</code>进行扩展链接 ，如果一个文件中全局变量被<code>static</code>修饰，<br>
+则其他文件中不能用<code>extern</code>扩展</p>
+<p><code>static</code> 修饰函数时不能被其他文件调用  <code>extern</code> 修饰函数可以被其他文件声明使用 是默认，可省</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/08/20/c语言复习/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://banniford.github.io/2020/07/31/常用公式（数二）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="paniford">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="潘的日记本">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/31/常用公式（数二）/" itemprop="url">常用公式（数二）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-31T14:33:37+08:00">
+                2020-07-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1>数二常用公式</h1>
+<h3 id="极限">极限</h3>
+<h3 id="微分">微分</h3>
+<h3 id="中值定理">中值定理</h3>
+<h3 id="不定积分">不定积分</h3>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://banniford.github.io/2020/05/12/基于SSD目标检测网络的树莓派控制系统（三）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -345,10 +602,10 @@
 
       
         
-          <h1 id="基于pyqt5的ssd目标检测软件三"><a class="markdownIt-Anchor" href="#基于pyqt5的ssd目标检测软件三"></a> 基于PyQt5的SSD目标检测软件（三）</h1>
-<h4 id="续上节"><a class="markdownIt-Anchor" href="#续上节"></a> 续上节。。。。</h4>
-<h4 id="2-训练部分"><a class="markdownIt-Anchor" href="#2-训练部分"></a> 2. 训练部分</h4>
-<h5 id="21-真实框得处理"><a class="markdownIt-Anchor" href="#21-真实框得处理"></a> 2.1 真实框得处理</h5>
+          <h1>基于PyQt5的SSD目标检测软件（三）</h1>
+<h4 id="续上节。。。。">续上节。。。。</h4>
+<h4 id="2-训练部分">2. 训练部分</h4>
+<h5 id="2-1-真实框得处理">2.1 真实框得处理</h5>
 <p>​		预测部分实际上是没有计算loss的向前传播，主要是通过模型进行预测结果，而训练过程主要通过反向传播来修正权重减小整体的成本loss和精度loss从而使模型更加准确。</p>
 <p>​		在预测部分，每个特征层的预测结果，<strong>num_priors x 4 的卷积</strong> 用于预测 <strong>该特征层上</strong> <strong>每一个网格点上 每一个先验框</strong> 的 <strong>微调</strong> 情况(<strong>bounding box regression</strong>（<strong>边界框回归 在训练中 微调边界框大小匹配真实框)</strong>)。</p>
 <p>​		所以说，我们直接利用SSD网络预测到的结果只是直接<strong>匹配相同类别</strong>所得到的原来<strong>初始化先验框</strong>的结果，而我们需要的是进行<strong>bounding box regression 回归后</strong> <strong>调整过的准确预测框的位置。</strong></p>
@@ -478,11 +735,11 @@
 
       
         
-          <h1 id="基于pyqt5的ssd目标检测软件二"><a class="markdownIt-Anchor" href="#基于pyqt5的ssd目标检测软件二"></a> 基于PyQt5的SSD目标检测软件（二）</h1>
-<h2 id="ssd-目标检测网络详解"><a class="markdownIt-Anchor" href="#ssd-目标检测网络详解"></a> SSD 目标检测网络详解</h2>
-<h3 id="一-前言"><a class="markdownIt-Anchor" href="#一-前言"></a> 一、前言</h3>
+          <h1>基于PyQt5的SSD目标检测软件（二）</h1>
+<h2 id="SSD-目标检测网络详解">SSD 目标检测网络详解</h2>
+<h3 id="一、前言">一、前言</h3>
 <p>​		这次SSD目标检测网络是基于pytorch版本的并且我的代码中去掉了cuda加速(<s>部分代码残留没有删除</s>)，原因很简单，因为我得AMD不YES了，等有机会用intel的显卡再说吧，b站up主的原版代码有加速部分可以参考增加，不过仅使用cpu硬算这样效率确实降低了很多，有待以后更改。</p>
-<h3 id="二-ssd是什么"><a class="markdownIt-Anchor" href="#二-ssd是什么"></a> 二、SSD是什么?</h3>
+<h3 id="二、SSD是什么">二、SSD是什么?</h3>
 <p>​		目标检测近年来已经取得了很多重要的发展，那么主流的算法也主要分为两个部分：</p>
 <ul>
 <li>Two-stage方法，如R-CNN系列算法，其主要思路是先通过启发式方法（ selective search ） 或者CNN网络（RPN)产生一系列稀疏的候选框，然后对这些候选框进行分类与回归，因为中间使用了一些图像分割方法判别特征后进行候选框的生成，所以two-stage方法的优势是准确度高；</li>
@@ -612,8 +869,8 @@
 
       
         
-          <h1 id="基于pyqt5的ssd目标检测软件一"><a class="markdownIt-Anchor" href="#基于pyqt5的ssd目标检测软件一"></a> 基于PyQt5的SSD目标检测软件（一）</h1>
-<h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2>
+          <h1>基于PyQt5的SSD目标检测软件（一）</h1>
+<h2 id="前言">前言</h2>
 <p>​        墨迹了这么久，终于把毕设做好了，这在一年前是我不敢想的事情，作为一个生物工程专业的学生做了一个关于计算机图像识别方面的毕设听起来也怪搞笑的。四年前进入大学的场景还历历在目，四年后戏剧性的在疫情中结束了我的大学生涯，今年注定是不平凡的一年，有太多的历史值得我们去铭记。回想这四年的时光还是参与了不少事情，大学也不算虚度，唯一的遗憾就是没有坚持锻炼身体，四年过去了依旧这么瘦，希望以后最近的锻炼能坚持下去，养成一些好习惯。</p>
 <p>说一说做这个毕设的故事吧，大二的时候相当迷茫，并不明确的专业知识让我产生了编程学习也就是看看网课这么简单的想法，机缘巧合参加了创新工作室，当然也离不开王振海的忽悠，不过当时对编程依旧充满了喜爱，是目的也是动力，虽然没有目标，但是恰好工作室也有一些项目，反正都是知识，就跟着学，就这样跟着学会了3D建模，3D打印，单片机传感器的一些知识，等等，我不是想学编程吗？当老师知道了我得想法，也鼓励我去尝试，所以老师给了一个项目说想用树莓派做一个显微镜，直到这时，我才意识到如果实现这个功能，我所要补充的知识体系不是一点点编程的基础就可以解决的，当然它也确实打开了我学习计算机的大门，在拿到树莓派之前，我甚至不太清楚Linux是什么。就这样走着学着，得益于东风校区同学完成了硬件的建模、3D打印和电机控制，在临近比赛的前两天，我解决了用树莓派控制并图像展示的核心问题，虽然方法很简单笨拙，却实现了项目自动对焦<s>opencv调包</s>的简单需要。那是我第一次出省比赛，第一次走进上海交大的校园，也是后面一切的开始，但是实现目标检测功能的软件在那时已经种下了种子。</p>
           <!--noindex-->
@@ -739,8 +996,8 @@
 
       
         
-          <h1 id="mnist手写字体识别实例"><a class="markdownIt-Anchor" href="#mnist手写字体识别实例"></a> MNIST手写字体识别实例</h1>
-<h2 id="1步骤概要"><a class="markdownIt-Anchor" href="#1步骤概要"></a> 1.步骤概要</h2>
+          <h1>MNIST手写字体识别实例</h1>
+<h2 id="1-步骤概要">1.步骤概要</h2>
 <ul>
 <li>
 <p>读取数据</p>
@@ -878,7 +1135,7 @@
 
       
         
-          <h1 id="图像增广"><a class="markdownIt-Anchor" href="#图像增广"></a> 图像增广</h1>
+          <h1>图像增广</h1>
 <p>大规模数据集是成功应用深度神经网络的前提。图像增广（image augmentation）技术通过对训练图像做一系列随机改变，来产生相似但又不同的训练样本，从而扩大训练数据集的规模。图像增广的另一种解释是，随机改变训练样本可以降低模型对某些属性的依赖，从而提高模型的泛化能力。例如，我们可以对图像进行不同方式的裁剪，使感兴趣的物体出现在不同位置，从而减轻模型对物体出现位置的依赖性。我们也可以调整亮度、色彩等因素来降低模型对色彩的敏感度。可以说，在当年AlexNet的成功中，图像增广技术功不可没。</p>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1004,8 +1261,8 @@
       
         
           <p>PyTorch是美国互联网巨头Facebook在深度学习框架Torch的基础上使用Python重写的一个全新的深度学习框架，它更像NumPy的替代产物，不仅继承了NumPy的众多优点，还支持GPUs计算，在计算效率上要比NumPy有更明显的优势；不仅如此，PyTorch还有许多高级功能，比如拥有丰富的API，可以快速完成深度神经网络模型的搭建和训练。所以 PyTorch一经发布，便受到了众多开发人员和科研人员的追捧和喜爱，成为AI从业者的重要工具之一。</p>
-<h3 id="知识储备深度学习中的常见概念"><a class="markdownIt-Anchor" href="#知识储备深度学习中的常见概念"></a> 知识储备——深度学习中的常见概念</h3>
-<h4 id="张量tensor"><a class="markdownIt-Anchor" href="#张量tensor"></a> 张量Tensor</h4>
+<h3 id="知识储备——深度学习中的常见概念">知识储备——深度学习中的常见概念</h3>
+<h4 id="张量Tensor">张量Tensor</h4>
 <p>Tensorflow中数据的核心单元就是Tensor。张量包含了一个数据集合，这个数据集合就是原始值变形而来的，它可以是一个任何维度的数据。tensor的rank就是其维度。</p>
 <p>Rank本意是矩阵的秩，不过Tensor Rank和Matrix Rank的意义不太一样，这里就还叫Rank。Tensor Rank的意义看起来更像是维度，比如Rank =1就是向量，Rank=2 就是矩阵了，Rank = 0 就是一个值。</p>
           <!--noindex-->
@@ -1131,14 +1388,14 @@
 
       
         
-          <h1 id="深度卷积神经网络alexnet"><a class="markdownIt-Anchor" href="#深度卷积神经网络alexnet"></a> 深度卷积神经网络（AlexNet）</h1>
+          <h1>深度卷积神经网络（AlexNet）</h1>
 <p>LeNet:  在大的真实数据集上的表现并不尽如⼈意。</p>
 <p>1.神经网络计算复杂。<br>
 2.还没有⼤量深⼊研究参数初始化和⾮凸优化算法等诸多领域。</p>
 <p>机器学习的特征提取:手工定义的特征提取函数<br>
 神经网络的特征提取：通过学习得到数据的多级表征，并逐级表⽰越来越抽象的概念或模式。</p>
 <p>神经网络发展的限制:数据、硬件</p>
-<h3 id="alexnet"><a class="markdownIt-Anchor" href="#alexnet"></a> AlexNet</h3>
+<h3 id="AlexNet">AlexNet</h3>
 <p>首次证明了学习到的特征可以超越⼿⼯设计的特征，从而⼀举打破计算机视觉研究的前状。<br>
 <strong>特征：</strong></p>
 <ol>
@@ -1271,285 +1528,16 @@
 
       
         
-          <h2 id="卷积神经网络"><a class="markdownIt-Anchor" href="#卷积神经网络"></a> 卷积神经网络</h2>
-<h3 id="二维互相关运算"><a class="markdownIt-Anchor" href="#二维互相关运算"></a> 二维互相关运算</h3>
+          <h2 id="卷积神经网络">卷积神经网络</h2>
+<h3 id="二维互相关运算">二维互相关运算</h3>
 <p>二维互相关（cross-correlation）运算的输入是一个二维输入数组和一个二维核（kernel）数组，输出也是一个二维数组，其中核数组通常称为卷积核或过滤器（filter）。卷积核的尺寸通常小于输入数组，卷积核在输入数组上滑动，在每个位置上，卷积核与该位置处的输入子数组按元素相乘并求和，得到输出数组中相应位置的元素。图1展示了一个互相关运算的例子，阴影部分分别是输入的第一个计算区域、核数组以及对应的输出。</p>
 <p><img src="/2020/03/18/Task04-卷积神经网络/1.png" alt="Image Name"></p>
 <center>图1 二维互相关运算</center>
-<h3 id="互相关运算与卷积运算"><a class="markdownIt-Anchor" href="#互相关运算与卷积运算"></a> 互相关运算与卷积运算</h3>
+<h3 id="互相关运算与卷积运算">互相关运算与卷积运算</h3>
 <p>卷积层得名于卷积运算，但卷积层中用到的并非卷积运算而是互相关运算。我们将核数组上下翻转、左右翻转，再与输入数组做互相关运算，这一过程就是卷积运算。由于卷积层的核数组是可学习的，所以使用互相关运算与使用卷积运算并无本质区别。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/03/18/Task04-卷积神经网络/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://banniford.github.io/2020/02/18/Task03：过拟合、欠拟合及其解决方案；梯度消失、梯度爆炸/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="paniford">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="潘的日记本">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/18/Task03：过拟合、欠拟合及其解决方案；梯度消失、梯度爆炸/" itemprop="url">Task03：过拟合、欠拟合及其解决方案；梯度消失、梯度爆炸</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-18T21:58:11+08:00">
-                2020-02-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="过拟合-欠拟合及其解决方案"><a class="markdownIt-Anchor" href="#过拟合-欠拟合及其解决方案"></a> 过拟合、欠拟合及其解决方案</h2>
-<ol>
-<li>过拟合、欠拟合的概念</li>
-<li>权重衰减</li>
-<li>丢弃法</li>
-</ol>
-<h1 id="模型选择-过拟合和欠拟合"><a class="markdownIt-Anchor" href="#模型选择-过拟合和欠拟合"></a> 模型选择、过拟合和欠拟合</h1>
-<h2 id="训练误差和泛化误差"><a class="markdownIt-Anchor" href="#训练误差和泛化误差"></a> 训练误差和泛化误差</h2>
-<p>在解释上述现象之前，我们需要区分训练误差（training error）和泛化误差（generalization error）。通俗来讲，前者指模型在训练数据集上表现出的误差，后者指模型在任意一个测试数据样本上表现出的误差的期望，并常常通过测试数据集上的误差来近似。计算训练误差和泛化误差可以使用之前介绍过的损失函数，例如线性回归用到的平方损失函数和softmax回归用到的交叉熵损失函数。</p>
-<p>机器学习模型应关注降低泛化误差。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/02/18/Task03：过拟合、欠拟合及其解决方案；梯度消失、梯度爆炸/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://banniford.github.io/2020/02/18/Task02-文本预处理；语言模型；循环神经网络/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="paniford">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="潘的日记本">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/18/Task02-文本预处理；语言模型；循环神经网络/" itemprop="url">Task02-文本预处理；语言模型；循环神经网络</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-18T17:01:45+08:00">
-                2020-02-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="文本预处理"><a class="markdownIt-Anchor" href="#文本预处理"></a> 文本预处理</h1>
-<p>文本是一类序列数据，一篇文章可以看作是字符或单词的序列，本节将介绍文本数据的常见预处理步骤，预处理通常包括四个步骤：</p>
-<ol>
-<li>读入文本</li>
-<li>分词</li>
-<li>建立字典，将每个词映射到一个唯一的索引（index）</li>
-<li>将文本从词的序列转换为索引的序列，方便输入模型</li>
-</ol>
-<h2 id="读入文本"><a class="markdownIt-Anchor" href="#读入文本"></a> 读入文本</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_time_machine</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'/home/kesci/input/timemachine7163/timemachine.txt'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        lines = [re.sub(<span class="string">'[^a-z]+'</span>, <span class="string">' '</span>, line.strip().lower()) <span class="keyword">for</span> line <span class="keyword">in</span> f]</span><br><span class="line">    <span class="keyword">return</span> lines</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">lines = read_time_machine()</span><br><span class="line">print(<span class="string">'# sentences %d'</span> % len(lines))</span><br></pre></td></tr></table></figure>
-<hr>
-<p><strong>output</strong>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># sentences 3221</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/02/18/Task02-文本预处理；语言模型；循环神经网络/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1639,7 +1627,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1652,7 +1640,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
