@@ -345,14 +345,14 @@
 
       
         
-          <h2 id="过拟合、欠拟合及其解决方案">过拟合、欠拟合及其解决方案</h2>
+          <h2 id="过拟合-欠拟合及其解决方案"><a class="markdownIt-Anchor" href="#过拟合-欠拟合及其解决方案"></a> 过拟合、欠拟合及其解决方案</h2>
 <ol>
 <li>过拟合、欠拟合的概念</li>
 <li>权重衰减</li>
 <li>丢弃法</li>
 </ol>
-<h1>模型选择、过拟合和欠拟合</h1>
-<h2 id="训练误差和泛化误差">训练误差和泛化误差</h2>
+<h1 id="模型选择-过拟合和欠拟合"><a class="markdownIt-Anchor" href="#模型选择-过拟合和欠拟合"></a> 模型选择、过拟合和欠拟合</h1>
+<h2 id="训练误差和泛化误差"><a class="markdownIt-Anchor" href="#训练误差和泛化误差"></a> 训练误差和泛化误差</h2>
 <p>在解释上述现象之前，我们需要区分训练误差（training error）和泛化误差（generalization error）。通俗来讲，前者指模型在训练数据集上表现出的误差，后者指模型在任意一个测试数据样本上表现出的误差的期望，并常常通过测试数据集上的误差来近似。计算训练误差和泛化误差可以使用之前介绍过的损失函数，例如线性回归用到的平方损失函数和softmax回归用到的交叉熵损失函数。</p>
 <p>机器学习模型应关注降低泛化误差。</p>
           <!--noindex-->
@@ -478,7 +478,7 @@
 
       
         
-          <h1>文本预处理</h1>
+          <h1 id="文本预处理"><a class="markdownIt-Anchor" href="#文本预处理"></a> 文本预处理</h1>
 <p>文本是一类序列数据，一篇文章可以看作是字符或单词的序列，本节将介绍文本数据的常见预处理步骤，预处理通常包括四个步骤：</p>
 <ol>
 <li>读入文本</li>
@@ -486,7 +486,7 @@
 <li>建立字典，将每个词映射到一个唯一的索引（index）</li>
 <li>将文本从词的序列转换为索引的序列，方便输入模型</li>
 </ol>
-<h2 id="读入文本">读入文本</h2>
+<h2 id="读入文本"><a class="markdownIt-Anchor" href="#读入文本"></a> 读入文本</h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_time_machine</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'/home/kesci/input/timemachine7163/timemachine.txt'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        lines = [re.sub(<span class="string">'[^a-z]+'</span>, <span class="string">' '</span>, line.strip().lower()) <span class="keyword">for</span> line <span class="keyword">in</span> f]</span><br><span class="line">    <span class="keyword">return</span> lines</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">lines = read_time_machine()</span><br><span class="line">print(<span class="string">'# sentences %d'</span> % len(lines))</span><br></pre></td></tr></table></figure>
 <hr>
 <p><strong>output</strong>:</p>
@@ -614,12 +614,11 @@
 
       
         
-          <h2 id="线性回归的基本要素">线性回归的基本要素</h2>
-<h3 id="模型">模型</h3>
+          <h2 id="线性回归的基本要素"><a class="markdownIt-Anchor" href="#线性回归的基本要素"></a> 线性回归的基本要素</h2>
+<h3 id="模型"><a class="markdownIt-Anchor" href="#模型"></a> 模型</h3>
 <p>为了简单起见，这里我们假设价格只取决于房屋状况的两个因素，即面积（平方米）和房龄（年）。接下来我们希望探索价格与这两个因素的具体关系。线性回归假设输出与各个输入之间是线性关系:</p>
-<p>$$<br>
-\mathrm{price} = w_{\mathrm{area}} \cdot \mathrm{area} + w_{\mathrm{age}} \cdot \mathrm{age} + b<br>
-$$</p>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow><mo>=</mo><msub><mi>w</mi><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi></mrow></msub><mo>⋅</mo><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi></mrow><mo>+</mo><msub><mi>w</mi><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>⋅</mo><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">e</mi></mrow><mo>+</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">\mathrm{price} = w_{\mathrm{area}} \cdot \mathrm{area} + w_{\mathrm{age}} \cdot \mathrm{age} + b
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8623000000000001em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathrm">p</span><span class="mord mathrm">r</span><span class="mord mathrm">i</span><span class="mord mathrm">c</span><span class="mord mathrm">e</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.59445em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">a</span><span class="mord mathrm mtight">r</span><span class="mord mathrm mtight">e</span><span class="mord mathrm mtight">a</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord mathrm">a</span><span class="mord mathrm">r</span><span class="mord mathrm">e</span><span class="mord mathrm">a</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.730558em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">a</span><span class="mord mathrm mtight" style="margin-right:0.01389em;">g</span><span class="mord mathrm mtight">e</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.7777700000000001em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathrm">a</span><span class="mord mathrm" style="margin-right:0.01389em;">g</span><span class="mord mathrm">e</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span></span></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/02/14/Task01-线性回归；Softmax与分类模型、多层感知机/#more" rel="contents">
@@ -744,7 +743,7 @@ $$</p>
       
         
           
-            <h1><center>武汉加油！</center></h1>
+            <h1 id="center武汉加油center"><a class="markdownIt-Anchor" href="#center武汉加油center"></a> <center>武汉加油！</center></h1>
 <img src="/2020/02/10/武汉加油/whjy.jpg" style="width:650px;height:400px;">
 
           
@@ -864,9 +863,9 @@ $$</p>
 
       
         
-          <h2 id="贝叶斯误差">贝叶斯误差</h2>
+          <h2 id="贝叶斯误差"><a class="markdownIt-Anchor" href="#贝叶斯误差"></a> 贝叶斯误差</h2>
 <p>转载知乎:(<a href="https://www.zhihu.com/question/263546637" target="_blank" rel="noopener">https://www.zhihu.com/question/263546637</a>)</p>
-<h4 id="Wiki定义-贝叶斯误差（bayes-error-rate-是指在现有特征集上，任意可以基于特征输入进行随机输出的分类器所能达到最小误差。也可以叫做最小误差。"><strong><a href="https://en.wikipedia.org/wiki/Bayes_error_rate" target="_blank" rel="noopener">Wiki定义</a></strong>:贝叶斯误差（bayes error rate)是指在现有特征集上，任意可以基于特征输入进行随机输出的分类器所能达到最小误差。也可以叫做最小误差。</h4>
+<h4 id="wiki定义贝叶斯误差bayes-error-rate是指在现有特征集上任意可以基于特征输入进行随机输出的分类器所能达到最小误差-也可以叫做最小误差"><a class="markdownIt-Anchor" href="#wiki定义贝叶斯误差bayes-error-rate是指在现有特征集上任意可以基于特征输入进行随机输出的分类器所能达到最小误差-也可以叫做最小误差"></a> <strong><a href="https://en.wikipedia.org/wiki/Bayes_error_rate" target="_blank" rel="noopener">Wiki定义</a></strong>:贝叶斯误差（bayes error rate)是指在现有特征集上，任意可以基于特征输入进行随机输出的分类器所能达到最小误差。也可以叫做最小误差。</h4>
 <p>疑问：“书上说是从预先知道的分布预测而出现的c误差，既然已经预先知道分布了，那么为什么还有误差呢？”</p>
 <p>回答：<strong>分布是真实的，但预测的输出只能是一个值，所以会有误差</strong>。例如，假设真实世界中90%长头发的人为女性，10%为男性（这是已知的真实分布）；此时已知一个人头发长，预测该同学性别。由于只能预测男/女。<strong>此时即使你知道真实分布，预测为女，也会有10%的误差。这就是贝叶斯误差。</strong></p>
           <!--noindex-->
@@ -992,19 +991,19 @@ $$</p>
 
       
         
-          <h2 id="1-2层神经网络">1-2层神经网络</h2>
+          <h2 id="1-2层神经网络"><a class="markdownIt-Anchor" href="#1-2层神经网络"></a> 1-2层神经网络</h2>
 <img src="/2019/12/20/2层及多层神经网络的构建/2layerNN_kiank.png" style="width:650px;height:400px;">
 <p>该模型可以概括为： <strong>INPUT -&gt; LINEAR -&gt; RELU -&gt; LINEAR -&gt; SIGMOID -&gt; OUTPUT</strong>.</p>
 <ul>
 <li>输入是 <strong>(64,64,3)</strong> 图像，将其展平为大小为   <strong>(12288,1)</strong>  的向量。</li>
-<li>相应的向量：$[x_0,x_1,…,x_{12287}]^T$  然后乘以大小为   $(n^{[1]}, 12288)$  的权重矩阵  $W^{[1]}$ 。</li>
-<li>然后，您添加一个偏差项并获取其偏倚以获得以下向量： $[a_0^{[1]}, a_1^{[1]},…, a_{n^{[1]}-1}^{[1]}]^T$ .
+<li>相应的向量：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">[</mo><msub><mi>x</mi><mn>0</mn></msub><mo separator="true">,</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo separator="true">,</mo><msub><mi>x</mi><mn>12287</mn></msub><msup><mo stretchy="false">]</mo><mi>T</mi></msup></mrow><annotation encoding="application/x-tex">[x_0,x_1,...,x_{12287}]^T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0913309999999998em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">2</span><span class="mord mtight">2</span><span class="mord mtight">8</span><span class="mord mtight">7</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.13889em;">T</span></span></span></span></span></span></span></span></span></span></span>  然后乘以大小为   <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><msup><mi>n</mi><mrow><mo stretchy="false">[</mo><mn>1</mn><mo stretchy="false">]</mo></mrow></msup><mo separator="true">,</mo><mn>12288</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(n^{[1]}, 12288)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.138em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">[</span><span class="mord mtight">1</span><span class="mclose mtight">]</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord">2</span><span class="mord">2</span><span class="mord">8</span><span class="mord">8</span><span class="mclose">)</span></span></span></span>  的权重矩阵  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>W</mi><mrow><mo stretchy="false">[</mo><mn>1</mn><mo stretchy="false">]</mo></mrow></msup></mrow><annotation encoding="application/x-tex">W^{[1]}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8879999999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">[</span><span class="mord mtight">1</span><span class="mclose mtight">]</span></span></span></span></span></span></span></span></span></span></span></span> 。</li>
+<li>然后，您添加一个偏差项并获取其偏倚以获得以下向量： <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">[</mo><msubsup><mi>a</mi><mn>0</mn><mrow><mo stretchy="false">[</mo><mn>1</mn><mo stretchy="false">]</mo></mrow></msubsup><mo separator="true">,</mo><msubsup><mi>a</mi><mn>1</mn><mrow><mo stretchy="false">[</mo><mn>1</mn><mo stretchy="false">]</mo></mrow></msubsup><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo separator="true">,</mo><msubsup><mi>a</mi><mrow><msup><mi>n</mi><mrow><mo stretchy="false">[</mo><mn>1</mn><mo stretchy="false">]</mo></mrow></msup><mo>−</mo><mn>1</mn></mrow><mrow><mo stretchy="false">[</mo><mn>1</mn><mo stretchy="false">]</mo></mrow></msubsup><msup><mo stretchy="false">]</mo><mi>T</mi></msup></mrow><annotation encoding="application/x-tex">[a_0^{[1]}, a_1^{[1]},..., a_{n^{[1]}-1}^{[1]}]^T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.4937559999999999em;vertical-align:-0.4489559999999999em;"></span><span class="mopen">[</span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0448em;"><span style="top:-2.433692em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span><span style="top:-3.2198em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">[</span><span class="mord mtight">1</span><span class="mclose mtight">]</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.26630799999999993em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0448em;"><span style="top:-2.433692em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span><span style="top:-3.2198em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">[</span><span class="mord mtight">1</span><span class="mclose mtight">]</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.26630799999999993em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0448em;"><span style="top:-2.309375em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8220357142857143em;"><span style="top:-2.8220357142857138em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5357142857142856em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mopen mtight">[</span><span class="mord mtight">1</span><span class="mclose mtight">]</span></span></span></span></span></span></span></span></span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.2198em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">[</span><span class="mord mtight">1</span><span class="mclose mtight">]</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4489559999999999em;"><span></span></span></span></span></span></span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.13889em;">T</span></span></span></span></span></span></span></span></span></span></span> .
 <ul>
 <li>
 <p>然后重复相同的过程。</p>
 </li>
 <li>
-<p>您将所得向量乘以  $W^{[2]}$  ，然后加上截距（偏差）。</p>
+<p>您将所得向量乘以  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>W</mi><mrow><mo stretchy="false">[</mo><mn>2</mn><mo stretchy="false">]</mo></mrow></msup></mrow><annotation encoding="application/x-tex">W^{[2]}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8879999999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">[</span><span class="mord mtight">2</span><span class="mclose mtight">]</span></span></span></span></span></span></span></span></span></span></span></span>  ，然后加上截距（偏差）。</p>
 </li>
 <li>
 <p>最后，取最后一个激活函数为Sigmoid函数，如果大于0.5，则将其分类为猫。</p>
@@ -1012,7 +1011,7 @@ $$</p>
 </ul>
 </li>
 </ul>
-<h3 id="步骤"><strong>步骤:</strong></h3>
+<h3 id="步骤"><a class="markdownIt-Anchor" href="#步骤"></a> <strong>步骤:</strong></h3>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">initialize_parameters</span><span class="params">(n_x, n_h, n_y)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> parameters </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">linear_activation_forward</span><span class="params">(A_prev, W, b, activation)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> A, cache</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">compute_cost</span><span class="params">(AL, Y)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> cost</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">linear_activation_backward</span><span class="params">(dA, cache, activation)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> dA_prev, dW, db</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">update_parameters</span><span class="params">(parameters, grads, learning_rate)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> parameters</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1137,7 +1136,7 @@ $$</p>
 
       
         
-          <h2 id="数据规范化、标准化、归一化">数据规范化、标准化、归一化</h2>
+          <h2 id="数据规范化-标准化-归一化"><a class="markdownIt-Anchor" href="#数据规范化-标准化-归一化"></a> 数据规范化、标准化、归一化</h2>
 <p><a href="https://blog.csdn.net/u014381464/article/details/81101551" target="_blank" rel="noopener">转载：原文链接</a></p>
 <ul>
 <li>
@@ -1282,8 +1281,8 @@ $$</p>
 
       
         
-          <h1>准备淌一淌人工智能的浑水！</h1>
-<h3 id="准备路线：深度学习→图像分析">准备路线：深度学习→图像分析</h3>
+          <h1 id="准备淌一淌人工智能的浑水"><a class="markdownIt-Anchor" href="#准备淌一淌人工智能的浑水"></a> 准备淌一淌人工智能的浑水！</h1>
+<h3 id="准备路线深度学习图像分析"><a class="markdownIt-Anchor" href="#准备路线深度学习图像分析"></a> 准备路线：深度学习→图像分析</h3>
 <p>人工智能(Artificial Intelligence)是研究、开发用于模拟、延伸和扩展人的智能的理论、方法、技术及应用系统的一门新的技术科学。人工智能是计算机科学的一个分支，它企图了解智能的实质，并生产出一种新的能以人类智能相似的方式作出反应的智能机器，该领域的研究包括机器人、语言识别、图像识别、自然语言处理和专家系统等。“人工智能是一门极富挑战性的科学，从事这项工作的人必须懂得计算机知识，心理学和哲学。人工智能是包括十分广泛的科学，它由不同的领域组成，如机器学习，计算机视觉等等，人工智能的发展历史是和计算机科学与技术的发展史联系在一起的。除了计算机科学以外, 人工智能还涉及信息论、控制论、自动化、仿生学、生物学、心理学、数理逻辑、语言学、医学和哲学等多门学科。人工智能学科研究的主要内容包括：知识表示、自动推理和搜索方法、机器学习和知识获取、知识处理系统、自然语言理解、计算机视觉、智能机器人、自动程序设计等方面。</p>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1408,7 +1407,7 @@ $$</p>
 
       
         
-          <h2 id="1、环境">1、环境</h2>
+          <h2 id="1-环境"><a class="markdownIt-Anchor" href="#1-环境"></a> 1、环境</h2>
 <ul>
 <li>宝塔界面</li>
 <li>nginx</li>
@@ -1416,7 +1415,7 @@ $$</p>
 <li>javaweb项目</li>
 <li>ssl个人单域名证书（免费）</li>
 </ul>
-<h2 id="2、注意事项">2、注意事项</h2>
+<h2 id="2-注意事项"><a class="markdownIt-Anchor" href="#2-注意事项"></a> 2、注意事项</h2>
 <ul>
 <li>域名是否正确的解析</li>
 <li>防火墙是否打开（宝塔和阿里云服务器防火墙都要打开 80和443端口）</li>
@@ -1549,8 +1548,8 @@ $$</p>
 
       
         
-          <h1>嵌入式Servlet容器</h1>
-<h3 id="一、如何定制和修改Servlet容器的相关配置；">一、如何定制和修改Servlet容器的相关配置；</h3>
+          <h1 id="嵌入式servlet容器"><a class="markdownIt-Anchor" href="#嵌入式servlet容器"></a> 嵌入式Servlet容器</h1>
+<h3 id="一-如何定制和修改servlet容器的相关配置"><a class="markdownIt-Anchor" href="#一-如何定制和修改servlet容器的相关配置"></a> 一、如何定制和修改Servlet容器的相关配置；</h3>
 <ul>
 <li>修改和server有关的配置（ServerProperties【也是EmbeddedServletContainerCustomizer】）；</li>
 </ul>
