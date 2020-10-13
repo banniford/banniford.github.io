@@ -275,6 +275,126 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://banniford.github.io/2020/10/13/算法设计与分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="paniford">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="潘的日记本">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/10/13/算法设计与分析/" itemprop="url">算法设计与分析</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-10-13T20:58:20+08:00">
+                2020-10-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="算法设计与分析"><a class="markdownIt-Anchor" href="#算法设计与分析"></a> 算法设计与分析</h1>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://banniford.github.io/2020/08/24/数据结构/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -650,14 +770,17 @@
 </ul>
 <h4 id="图的遍历"><a class="markdownIt-Anchor" href="#图的遍历"></a> 图的遍历</h4>
 <h5 id="考dfs-深度优先搜索"><a class="markdownIt-Anchor" href="#考dfs-深度优先搜索"></a> (考)DFS 深度优先搜索</h5>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//递归访问,抽象表示，类似于树的先序遍历，</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFS</span><span class="params">(Vertex V)</span></span>&#123;<span class="comment">//传入一个起始点</span></span><br><span class="line">    visited[V]=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> ( V的每个邻接点 W )</span><br><span class="line">        <span class="keyword">if</span>(!visited [W])</span><br><span class="line">            DFS(w);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//代码</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//递归访问,抽象表示，类似于树的先序遍历，栈也可</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFS</span><span class="params">(Vertex V)</span></span>&#123;<span class="comment">//传入一个起始点</span></span><br><span class="line">    visited[V]=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> ( V的每个邻接点 W )</span><br><span class="line">        <span class="keyword">if</span>(!visited [W])</span><br><span class="line">            DFS(w);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//代码</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//深度优先搜索 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFS</span><span class="params">(struct GNode *Graph,<span class="keyword">int</span> n,<span class="keyword">int</span> visited[])</span></span>&#123;<span class="comment">//G为已知图，n为起始点 </span></span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,Graph-&gt;Data[n]);<span class="comment">//先输出起始顶点，再输出访问的其他顶点</span></span><br><span class="line">	visited[n]=<span class="number">1</span>;<span class="comment">//事先将起始顶点标记为true</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;Graph-&gt;Nv;i++)&#123;</span><br><span class="line">		 <span class="keyword">if</span>(Graph-&gt;G[n][i]!=<span class="number">0</span> &amp;&amp; visited[i]==<span class="number">0</span>)<span class="comment">///若第i个顶点与G-&gt;Data[n]有关，并且未被访问</span></span><br><span class="line">        &#123;</span><br><span class="line">            DFS(Graph,i,Graph-&gt;Nv,visited);<span class="comment">///用递归的方式继续搜寻</span></span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;Graph-&gt;Nv;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(visited[i]==<span class="number">0</span>)<span class="comment">///此循环用于判断顶点是否访问完成</span></span><br><span class="line">        &#123;</span><br><span class="line">             DFS(Graph,i,Graph-&gt;Nv,visited);<span class="comment">///用递归的方式继续搜寻，直至所有顶点访问完毕</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>采用队列实现</li>
+</ul>
 <p>若有N个顶点、E条边，时间复杂度是</p>
 <ul>
 <li>用邻接表存储图，有O(N+E)</li>
 <li>用临界矩阵存储图，有O(N^2)</li>
 </ul>
 <h5 id="考bfs-广度优先搜索"><a class="markdownIt-Anchor" href="#考bfs-广度优先搜索"></a> (考)BFS 广度优先搜索</h5>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//类似层序遍历队列实现，每次出队时入队相邻未访问元素</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BFS</span><span class="params">(Vertex V)</span></span>&#123;</span><br><span class="line">    visited[V]= <span class="literal">true</span>;</span><br><span class="line">    Enqueue(V,Q);</span><br><span class="line">    <span class="keyword">while</span>(!IsEmpty(Q))&#123;</span><br><span class="line">        V = Dequeue(Q);</span><br><span class="line">        <span class="keyword">for</span>(V 的每个邻接点 W)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!visited[W])&#123;</span><br><span class="line">                visited[W] = <span class="literal">true</span>;</span><br><span class="line">                Enqueue(W,Q);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//代码</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//类似层序遍历队列实现，每次出队时入队相邻未访问元素</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BFS</span><span class="params">(Vertex V)</span></span>&#123;</span><br><span class="line">    visited[V]= <span class="literal">true</span>;</span><br><span class="line">    Enqueue(V,Q);</span><br><span class="line">    <span class="keyword">while</span>(!IsEmpty(Q))&#123;</span><br><span class="line">        V = Dequeue(Q);</span><br><span class="line">        <span class="keyword">for</span>(V 的每个邻接点 W)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!visited[W])&#123;</span><br><span class="line">                visited[W] = <span class="literal">true</span>;</span><br><span class="line">                Enqueue(W,Q);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//代码</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> WeightType int</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DataType int</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MaxVertexNum 20</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Maxsize 5</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>&#123;</span></span><br><span class="line">	ElementType Data[Maxsize];</span><br><span class="line">	<span class="keyword">int</span> front;</span><br><span class="line">	<span class="keyword">int</span> rear;</span><br><span class="line">&#125;; </span><br><span class="line"></span><br><span class="line"><span class="function">struct Node* <span class="title">initNode</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">p</span>;</span></span><br><span class="line">	p=(Node*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct Node));</span><br><span class="line">	p-&gt;front=<span class="number">0</span>;</span><br><span class="line">	p-&gt;rear=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//循环队列 数组内只放放n-1个元素防止误判 满/空 尾(rear)进头(front)出 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Add</span><span class="params">(struct Node *p,ElementType k)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>((p-&gt;rear+<span class="number">1</span>)%Maxsize==p-&gt;front)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"队列满"</span>); </span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		p-&gt;rear=(p-&gt;rear+<span class="number">1</span>)%Maxsize;<span class="comment">//最后一位会变零</span></span><br><span class="line">		p-&gt;Data[p-&gt;rear]=k;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//出队列</span></span><br><span class="line"><span class="function">ElementType <span class="title">Delete</span><span class="params">(struct Node *p)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(p-&gt;front==p-&gt;rear)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"队列空"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        p-&gt;front=(p-&gt;front+<span class="number">1</span>)%Maxsize;</span><br><span class="line">        <span class="keyword">return</span> p-&gt;Data[p-&gt;front];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BFS</span><span class="params">(struct GNode *Graph,<span class="keyword">int</span> visited[],struct Node *p)</span></span>&#123;<span class="comment">//图、起始点、顶点数量、辅助数组、辅助队列 </span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;Graph-&gt;Nv;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(!visited[i])&#123;<span class="comment">//从未访问过该顶点 </span></span><br><span class="line">			visited[i]=<span class="number">1</span>; </span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,Graph-&gt;Data[i]);</span><br><span class="line">			Add(p,i);</span><br><span class="line">			<span class="keyword">while</span>(p-&gt;front!=p-&gt;rear)&#123;</span><br><span class="line">				i=Delete(p);<span class="comment">//出队需要访问的顶点下标 </span></span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;Graph-&gt;Nv;j++)&#123;</span><br><span class="line">					<span class="keyword">if</span>(Graph-&gt;G[i][j]==<span class="number">1</span> &amp;&amp; !=visited[j])&#123;<span class="comment">//其他顶点与改顶点有联系 且未访问 </span></span><br><span class="line">						visited[j]=<span class="number">1</span>;</span><br><span class="line">						<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,Graph-&gt;Data[j]);<span class="comment">//访问已出队的顶点 </span></span><br><span class="line">						Add(p,j);<span class="comment">//入队未访问的顶点下标 </span></span><br><span class="line">					&#125;</span><br><span class="line">					</span><br><span class="line">				&#125;				</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">		</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>若有N个顶点、E条边，时间复杂度是</p>
 <ul>
 <li>用邻接表存储图，有O(N+E)</li>
@@ -665,7 +788,7 @@
 </ul>
 <p>每调用一次<strong>BFS/BFS</strong> 就是把 <strong>V</strong> 所在的连通分量遍历了一遍。</p>
 <p>####如何建立一个图</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//邻接矩阵</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">GNode</span> *<span class="title">PtrToGNode</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">GNode</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> Nv;<span class="comment">//顶点数</span></span><br><span class="line">    <span class="keyword">int</span> Ne;<span class="comment">//边数</span></span><br><span class="line">    WeightType G[MaxVertexNum][MaxVertexNum];</span><br><span class="line">    DataType Data[MaxVertexNum];<span class="comment">//存放顶点的数据</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> PtrToGNode MGraph;<span class="comment">//指针别名</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//步骤1：初始化一个有VertexNum 个顶点但 没有边 的图</span></span><br><span class="line"> <span class="keyword">typedef</span> <span class="keyword">int</span> Vertex;<span class="comment">//用顶点下标表示顶点，为整型</span></span><br><span class="line"><span class="function">MGraph <span class="title">CreateGraph</span><span class="params">(<span class="keyword">int</span> VertexNum)</span></span>&#123;</span><br><span class="line">    Vertex V,W;<span class="comment">//区分出入的顶点个数VertexNum</span></span><br><span class="line">    MGraph Graph;</span><br><span class="line">    </span><br><span class="line">    Graph = (MGraph)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct GNode));</span><br><span class="line">    Graph-&gt;Nv = VertexNum;</span><br><span class="line">    Graph-&gt;Ne = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//注意这里默认顶点编号从0开始，到(Graph-&gt;Nv-1)</span></span><br><span class="line">    <span class="keyword">for</span>(V=<span class="number">0</span>;V&lt;Graph-&gt;Nv;V++)</span><br><span class="line">        <span class="keyword">for</span> (W=<span class="number">0</span>;W&lt;Graph-&gt;Nv;W++)</span><br><span class="line">            Graph-&gt;G[V][W]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> Graph;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//步骤2：向图中插入边</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">ENode</span> *<span class="title">PtrToENode</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ENode</span>&#123;</span></span><br><span class="line">  Vertex V1,V2;<span class="comment">//有向边&lt;V1,V2&gt;,两个顶点</span></span><br><span class="line">  WeightType Weight;<span class="comment">//权重</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> PtrToENode Edge;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InsertEdge</span><span class="params">(MGraph Graph,Edge E)</span></span>&#123;</span><br><span class="line">    <span class="comment">//插入边，有向图只用插一边&lt;V1,V2&gt;，无向图要两边</span></span><br><span class="line">    Graph-&gt;G[E-&gt;V1][E-&gt;V2]=E-&gt;Weight;</span><br><span class="line">    <span class="comment">//无向图 插入&lt;V2,V1&gt;</span></span><br><span class="line">    Graph-&gt;G[E-&gt;V2][E-&gt;V1]=E-&gt;Weight;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//完整的建立一个图</span></span><br><span class="line"><span class="function">MGraph <span class="title">BuildGraph</span><span class="params">()</span></span>&#123;</span><br><span class="line">    MGraph Graph;</span><br><span class="line">    Edge E;</span><br><span class="line">    Vertex V;</span><br><span class="line">    <span class="keyword">int</span> Nv,i;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;Nv);</span><br><span class="line">    Graph = CreateGraph(Nv);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;(Graph-&gt;Ne));<span class="comment">//直接读入 赋值边</span></span><br><span class="line">    <span class="keyword">if</span> (Graph-&gt;Ne!=<span class="number">0</span>)&#123;</span><br><span class="line">        E = (Edge)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct ENode));<span class="comment">//临时</span></span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;Graph-&gt;Ne;i++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>,&amp;E-&gt;V1,&amp;E-&gt;V2,&amp;E-&gt;Weight);<span class="comment">//</span></span><br><span class="line">            InsertEdge(Graph,E);</span><br><span class="line">        &#125;        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//如果顶点有数据的话，读入数据</span></span><br><span class="line">    <span class="keyword">for</span>(V=<span class="number">0</span>; V&lt;Graph-&gt;Nv;V++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">" %c"</span>,&amp;(Graph-&gt;Data[V]));</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> Graph;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//考试应急</span></span><br><span class="line"><span class="keyword">int</span> G[MAXN][MAXN],Nv,Ne;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BuildGraph</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j,v1,v2,w;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;Nv);</span><br><span class="line">    <span class="comment">//创建图</span></span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;Nv;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;Nv;j++)&#123;</span><br><span class="line">            G[i][j]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;Ne);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;Ne;i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>,&amp;v1,&amp;v2,&amp;w);</span><br><span class="line">        <span class="comment">//插入</span></span><br><span class="line">        G[v1][v2]=w;</span><br><span class="line">        G[v2][v1]=w;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//邻接矩阵</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">GNode</span> *<span class="title">PtrToGNode</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">GNode</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> Nv;<span class="comment">//顶点数</span></span><br><span class="line">    <span class="keyword">int</span> Ne;<span class="comment">//边数</span></span><br><span class="line">    WeightType G[MaxVertexNum][MaxVertexNum];</span><br><span class="line">    DataType Data[MaxVertexNum];<span class="comment">//存放顶点的数据，顶点表vertex</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> PtrToGNode MGraph;<span class="comment">//指针别名</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//步骤1：初始化一个有VertexNum 个顶点但 没有边 的图</span></span><br><span class="line"> <span class="keyword">typedef</span> <span class="keyword">int</span> Vertex;<span class="comment">//用顶点下标表示顶点，为整型</span></span><br><span class="line"><span class="function">MGraph <span class="title">CreateGraph</span><span class="params">(<span class="keyword">int</span> VertexNum)</span></span>&#123;</span><br><span class="line">    Vertex V,W;<span class="comment">//区分出入的顶点个数VertexNum</span></span><br><span class="line">    MGraph Graph;</span><br><span class="line">    </span><br><span class="line">    Graph = (MGraph)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct GNode));</span><br><span class="line">    Graph-&gt;Nv = VertexNum;</span><br><span class="line">    Graph-&gt;Ne = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//注意这里默认顶点编号从0开始，到(Graph-&gt;Nv-1)</span></span><br><span class="line">    <span class="keyword">for</span>(V=<span class="number">0</span>;V&lt;Graph-&gt;Nv;V++)</span><br><span class="line">        <span class="keyword">for</span> (W=<span class="number">0</span>;W&lt;Graph-&gt;Nv;W++)</span><br><span class="line">            Graph-&gt;G[V][W]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> Graph;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//步骤2：向图中插入边</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">ENode</span> *<span class="title">PtrToENode</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ENode</span>&#123;</span></span><br><span class="line">  Vertex V1,V2;<span class="comment">//有向边&lt;V1,V2&gt;,两个顶点</span></span><br><span class="line">  WeightType Weight;<span class="comment">//权重</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> PtrToENode Edge;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InsertEdge</span><span class="params">(MGraph Graph,Edge E)</span></span>&#123;</span><br><span class="line">    <span class="comment">//插入边，有向图只用插一边&lt;V1,V2&gt;，无向图要两边</span></span><br><span class="line">    Graph-&gt;G[E-&gt;V1][E-&gt;V2]=E-&gt;Weight;</span><br><span class="line">    <span class="comment">//无向图 插入&lt;V2,V1&gt;</span></span><br><span class="line">    Graph-&gt;G[E-&gt;V2][E-&gt;V1]=E-&gt;Weight;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//完整的建立一个图</span></span><br><span class="line"><span class="function">MGraph <span class="title">BuildGraph</span><span class="params">()</span></span>&#123;</span><br><span class="line">    MGraph Graph;</span><br><span class="line">    Edge E;</span><br><span class="line">    Vertex V;</span><br><span class="line">    <span class="keyword">int</span> Nv,i;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;Nv);</span><br><span class="line">    Graph = CreateGraph(Nv);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;(Graph-&gt;Ne));<span class="comment">//直接读入 赋值边 输入函数不能加花里胡哨的东西</span></span><br><span class="line">    <span class="keyword">if</span> (Graph-&gt;Ne!=<span class="number">0</span>)&#123;</span><br><span class="line">        E = (Edge)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct ENode));<span class="comment">//临时</span></span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;Graph-&gt;Ne;i++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>,&amp;E-&gt;V1,&amp;E-&gt;V2,&amp;E-&gt;Weight);</span><br><span class="line">            InsertEdge(Graph,E);</span><br><span class="line">        &#125;        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//如果顶点有数据的话，读入数据</span></span><br><span class="line">    <span class="keyword">for</span>(V=<span class="number">0</span>; V&lt;Graph-&gt;Nv;V++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">" %c"</span>,&amp;(Graph-&gt;Data[V]));</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> Graph;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//考试应急</span></span><br><span class="line"><span class="keyword">int</span> G[MAXN][MAXN],Nv,Ne;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BuildGraph</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j,v1,v2,w;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;Nv);</span><br><span class="line">    <span class="comment">//创建图</span></span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;Nv;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;Nv;j++)&#123;</span><br><span class="line">            G[i][j]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;Ne);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;Ne;i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>,&amp;v1,&amp;v2,&amp;w);</span><br><span class="line">        <span class="comment">//插入</span></span><br><span class="line">        G[v1][v2]=w;</span><br><span class="line">        G[v2][v1]=w;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 <h4 id="最小生成树"><a class="markdownIt-Anchor" href="#最小生成树"></a> 最小生成树</h4>
 <p>定义：</p>
@@ -1840,146 +1963,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://banniford.github.io/2020/03/21/Task05-多种卷积网络模型/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="paniford">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="潘的日记本">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/21/Task05-多种卷积网络模型/" itemprop="url">Task05:多种卷积网络模型</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-21T09:15:41+08:00">
-                2020-03-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="深度卷积神经网络alexnet"><a class="markdownIt-Anchor" href="#深度卷积神经网络alexnet"></a> 深度卷积神经网络（AlexNet）</h1>
-<p>LeNet:  在大的真实数据集上的表现并不尽如⼈意。</p>
-<p>1.神经网络计算复杂。<br>
-2.还没有⼤量深⼊研究参数初始化和⾮凸优化算法等诸多领域。</p>
-<p>机器学习的特征提取:手工定义的特征提取函数<br>
-神经网络的特征提取：通过学习得到数据的多级表征，并逐级表⽰越来越抽象的概念或模式。</p>
-<p>神经网络发展的限制:数据、硬件</p>
-<h3 id="alexnet"><a class="markdownIt-Anchor" href="#alexnet"></a> AlexNet</h3>
-<p>首次证明了学习到的特征可以超越⼿⼯设计的特征，从而⼀举打破计算机视觉研究的前状。<br>
-<strong>特征：</strong></p>
-<ol>
-<li>8层变换，其中有5层卷积（1/3/5/6/7）和2层全连接隐藏层（9/10），以及1个全连接输出层（11）。</li>
-<li>将sigmoid激活函数改成了更加简单的ReLU激活函数。</li>
-<li>用Dropout来控制全连接层的模型复杂度。</li>
-<li>引入数据增强，如翻转、裁剪和颜色变化，从而进一步扩大数据集来缓解过拟合。</li>
-</ol>
-<p><img src="/2020/03/21/Task05-多种卷积网络模型/1.png" alt="Image Name"></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/21/Task05-多种卷积网络模型/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2032,7 +2015,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
