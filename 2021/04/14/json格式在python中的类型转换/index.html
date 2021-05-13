@@ -83,18 +83,18 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;最近在进行数据分析时，处理 json格式的数据遇到了坑，主要对 json 本身不了解，导致解析过后python不识别，我还纳闷，同样的东西，为啥格式不对，原来 None 和 null 也是有区别的。不过使用 eval() 还真挺好使，就是需要考虑一些安全性问题。 &amp;emsp;&amp;emsp;JSON: JavaScript Object Notation ( JavaScrip">
+<meta name="description" content="最近在进行数据分析时，处理 json格式的数据遇到了坑，主要对 json 本身不了解，导致解析过后python不识别，我还纳闷，同样的东西，为啥格式不对，原来 None 和 null 也是有区别的。不过使用 eval() 还真挺好使，就是需要考虑一些安全性问题。   JSON: JavaScript Object Notation ( JavaScript 对象表示法)， JSON 是存储和交">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="json格式在python中的类型转换">
 <meta property="og:url" content="https://banniford.github.io/2021/04/14/json格式在python中的类型转换/index.html">
 <meta property="og:site_name" content="潘的日记本">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;最近在进行数据分析时，处理 json格式的数据遇到了坑，主要对 json 本身不了解，导致解析过后python不识别，我还纳闷，同样的东西，为啥格式不对，原来 None 和 null 也是有区别的。不过使用 eval() 还真挺好使，就是需要考虑一些安全性问题。 &amp;emsp;&amp;emsp;JSON: JavaScript Object Notation ( JavaScrip">
+<meta property="og:description" content="最近在进行数据分析时，处理 json格式的数据遇到了坑，主要对 json 本身不了解，导致解析过后python不识别，我还纳闷，同样的东西，为啥格式不对，原来 None 和 null 也是有区别的。不过使用 eval() 还真挺好使，就是需要考虑一些安全性问题。   JSON: JavaScript Object Notation ( JavaScript 对象表示法)， JSON 是存储和交">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2021-04-28T07:49:33.661Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="json格式在python中的类型转换">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;最近在进行数据分析时，处理 json格式的数据遇到了坑，主要对 json 本身不了解，导致解析过后python不识别，我还纳闷，同样的东西，为啥格式不对，原来 None 和 null 也是有区别的。不过使用 eval() 还真挺好使，就是需要考虑一些安全性问题。 &amp;emsp;&amp;emsp;JSON: JavaScript Object Notation ( JavaScrip">
+<meta name="twitter:description" content="最近在进行数据分析时，处理 json格式的数据遇到了坑，主要对 json 本身不了解，导致解析过后python不识别，我还纳闷，同样的东西，为啥格式不对，原来 None 和 null 也是有区别的。不过使用 eval() 还真挺好使，就是需要考虑一些安全性问题。   JSON: JavaScript Object Notation ( JavaScript 对象表示法)， JSON 是存储和交">
 
 
 
@@ -356,25 +356,29 @@
       
 
       
-        <p>&emsp;&emsp;最近在进行数据分析时，处理 <code>json</code>格式的数据遇到了坑，主要对 <code>json</code> 本身不了解，导致解析过后<code>python</code>不识别，我还纳闷，同样的东西，为啥格式不对，原来 <code>None</code> 和 <code>null</code> 也是有区别的。不过使用 <code>eval()</code> 还真挺好使，就是需要考虑一些安全性问题。</p>
-<p>&emsp;&emsp;<code>JSON: JavaScript Object Notation</code> ( <code>JavaScript</code> 对象表示法)， <code>JSON</code> 是存储和交换文本信息的语法，类似 <code>XML</code>，<code>JSON</code> 比 <code>XML</code> 更小、更快，更易解析。</p>
-<p>&emsp;&emsp;<code>JSON</code> 语法是 <code>JavaScript</code> 语法的子集：</p>
+        <p>  最近在进行数据分析时，处理 <code>json</code>格式的数据遇到了坑，主要对 <code>json</code> 本身不了解，导致解析过后<code>python</code>不识别，我还纳闷，同样的东西，为啥格式不对，原来 <code>None</code> 和 <code>null</code> 也是有区别的。不过使用 <code>eval()</code> 还真挺好使，就是需要考虑一些安全性问题。</p>
+<p>  <code>JSON: JavaScript Object Notation</code> ( <code>JavaScript</code> 对象表示法)， <code>JSON</code> 是存储和交换文本信息的语法，类似 <code>XML</code>，<code>JSON</code> 比 <code>XML</code> 更小、更快，更易解析。</p>
+<p>  <code>JSON</code> 语法是 <code>JavaScript</code> 语法的子集：</p>
 <ul>
-<li><p>数据在名称/值对中</p>
+<li>
+<p>数据在名称/值对中</p>
 </li>
-<li><p>数据由逗号分隔</p>
+<li>
+<p>数据由逗号分隔</p>
 </li>
-<li><p>大括号 { } 保存对象</p>
+<li>
+<p>大括号 { } 保存对象</p>
 </li>
-<li><p>中括号 [ ] 保存数组，数组可以包含多个对象</p>
+<li>
+<p>中括号 [ ] 保存数组，数组可以包含多个对象</p>
 </li>
 </ul>
 <a id="more"></a>
-<p>&emsp;&emsp;<strong>JSON 数据的书写格式是：</strong></p>
+<p>  <strong>JSON 数据的书写格式是：</strong></p>
 <blockquote>
 <p>key : value</p>
 </blockquote>
-<p>&emsp;&emsp;<code>JSON</code> 的 <code>value</code> 值可以是：<strong>数字（整数或浮点数）</strong>、<strong>字符串（在双引号中）</strong>、<strong>逻辑值（true 或 false）</strong>、<strong>数组（在中括号中）</strong>、<strong>对象（在大括号中）</strong>、<strong>null</strong> ，需要注意的是，<code>key</code> 值必须加 <strong>双引号</strong> ，<code>value</code> 中，字符串必须加 <strong>双引号</strong> ，其他类型不要加 <strong>双引号</strong> ，以上写法必须严格遵循，否则将不会被判定为 <code>JSON</code> 格式。</p>
+<p>  <code>JSON</code> 的 <code>value</code> 值可以是：<strong>数字（整数或浮点数）</strong>、<strong>字符串（在双引号中）</strong>、<strong>逻辑值（true 或 false）</strong>、<strong>数组（在中括号中）</strong>、<strong>对象（在大括号中）</strong>、<strong>null</strong> ，需要注意的是，<code>key</code> 值必须加 <strong>双引号</strong> ，<code>value</code> 中，字符串必须加 <strong>双引号</strong> ，其他类型不要加 <strong>双引号</strong> ，以上写法必须严格遵循，否则将不会被判定为 <code>JSON</code> 格式。</p>
 <p>实例演示：</p>
 <p>使用 <code>eval()</code>:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_fea_text</span><span class="params">(data_str)</span>:</span></span><br><span class="line">    data_str=eval(data_str)</span><br><span class="line">    <span class="keyword">if</span> len(data) &gt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> data_str[<span class="number">0</span>][<span class="string">'text'</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></table></figure>

@@ -355,8 +355,10 @@
 
       
         
-          <h1 id="基于PyQt5的SSD目标检测软件（一）"><a href="#基于PyQt5的SSD目标检测软件（一）" class="headerlink" title="基于PyQt5的SSD目标检测软件（一）"></a>基于PyQt5的SSD目标检测软件（一）</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​        墨迹了这么久，终于把毕设做好了，这在一年前是我不敢想的事情，作为一个生物工程专业的学生做了一个关于计算机图像识别方面的毕设听起来也怪搞笑的。四年前进入大学的场景还历历在目，四年后戏剧性的在疫情中结束了我的大学生涯，今年注定是不平凡的一年，有太多的历史值得我们去铭记。回想这四年的时光还是参与了不少事情，大学也不算虚度，唯一的遗憾就是没有坚持锻炼身体，四年过去了依旧这么瘦，希望以后最近的锻炼能坚持下去，养成一些好习惯。</p>
-<p>说一说做这个毕设的故事吧，大二的时候相当迷茫，并不明确的专业知识让我产生了编程学习也就是看看网课这么简单的想法，机缘巧合参加了创新工作室，当然也离不开王振海的忽悠，不过当时对编程依旧充满了喜爱，是目的也是动力，虽然没有目标，但是恰好工作室也有一些项目，反正都是知识，就跟着学，就这样跟着学会了3D建模，3D打印，单片机传感器的一些知识，等等，我不是想学编程吗？当老师知道了我得想法，也鼓励我去尝试，所以老师给了一个项目说想用树莓派做一个显微镜，直到这时，我才意识到如果实现这个功能，我所要补充的知识体系不是一点点编程的基础就可以解决的，当然它也确实打开了我学习计算机的大门，在拿到树莓派之前，我甚至不太清楚Linux是什么。就这样走着学着，得益于东风校区同学完成了硬件的建模、3D打印和电机控制，在临近比赛的前两天，我解决了用树莓派控制并图像展示的核心问题，虽然方法很简单笨拙，却实现了项目自动对焦<del>opencv调包</del>的简单需要。那是我第一次出省比赛，第一次走进上海交大的校园，也是后面一切的开始，但是实现目标检测功能的软件在那时已经种下了种子。</p>
+          <h1 id="基于pyqt5的ssd目标检测软件一"><a class="markdownIt-Anchor" href="#基于pyqt5的ssd目标检测软件一"></a> 基于PyQt5的SSD目标检测软件（一）</h1>
+<h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2>
+<p>​        墨迹了这么久，终于把毕设做好了，这在一年前是我不敢想的事情，作为一个生物工程专业的学生做了一个关于计算机图像识别方面的毕设听起来也怪搞笑的。四年前进入大学的场景还历历在目，四年后戏剧性的在疫情中结束了我的大学生涯，今年注定是不平凡的一年，有太多的历史值得我们去铭记。回想这四年的时光还是参与了不少事情，大学也不算虚度，唯一的遗憾就是没有坚持锻炼身体，四年过去了依旧这么瘦，希望以后最近的锻炼能坚持下去，养成一些好习惯。</p>
+<p>说一说做这个毕设的故事吧，大二的时候相当迷茫，并不明确的专业知识让我产生了编程学习也就是看看网课这么简单的想法，机缘巧合参加了创新工作室，当然也离不开王振海的忽悠，不过当时对编程依旧充满了喜爱，是目的也是动力，虽然没有目标，但是恰好工作室也有一些项目，反正都是知识，就跟着学，就这样跟着学会了3D建模，3D打印，单片机传感器的一些知识，等等，我不是想学编程吗？当老师知道了我得想法，也鼓励我去尝试，所以老师给了一个项目说想用树莓派做一个显微镜，直到这时，我才意识到如果实现这个功能，我所要补充的知识体系不是一点点编程的基础就可以解决的，当然它也确实打开了我学习计算机的大门，在拿到树莓派之前，我甚至不太清楚Linux是什么。就这样走着学着，得益于东风校区同学完成了硬件的建模、3D打印和电机控制，在临近比赛的前两天，我解决了用树莓派控制并图像展示的核心问题，虽然方法很简单笨拙，却实现了项目自动对焦<s>opencv调包</s>的简单需要。那是我第一次出省比赛，第一次走进上海交大的校园，也是后面一切的开始，但是实现目标检测功能的软件在那时已经种下了种子。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/05/09/基于SSD目标检测网络的树莓派控制系统（一）/#more" rel="contents">
@@ -480,14 +482,21 @@
 
       
         
-          <h1 id="MNIST手写字体识别实例"><a href="#MNIST手写字体识别实例" class="headerlink" title="MNIST手写字体识别实例"></a>MNIST手写字体识别实例</h1><h2 id="1-步骤概要"><a href="#1-步骤概要" class="headerlink" title="1.步骤概要"></a>1.步骤概要</h2><ul>
-<li><p>读取数据</p>
+          <h1 id="mnist手写字体识别实例"><a class="markdownIt-Anchor" href="#mnist手写字体识别实例"></a> MNIST手写字体识别实例</h1>
+<h2 id="1步骤概要"><a class="markdownIt-Anchor" href="#1步骤概要"></a> 1.步骤概要</h2>
+<ul>
+<li>
+<p>读取数据</p>
 </li>
-<li><p>创建网络</p>
+<li>
+<p>创建网络</p>
 </li>
-<li><p>训练参数得到 [w1,b1,w2,b2,w3,b3]（三层）</p>
+<li>
+<p>训练参数得到 [w1,b1,w2,b2,w3,b3]（三层）</p>
 </li>
-<li>准确度测试</li>
+<li>
+<p>准确度测试</p>
+</li>
 </ul>
           <!--noindex-->
           <div class="post-button text-center">
@@ -612,7 +621,8 @@
 
       
         
-          <h1 id="图像增广"><a href="#图像增广" class="headerlink" title="图像增广"></a>图像增广</h1><p>大规模数据集是成功应用深度神经网络的前提。图像增广（image augmentation）技术通过对训练图像做一系列随机改变，来产生相似但又不同的训练样本，从而扩大训练数据集的规模。图像增广的另一种解释是，随机改变训练样本可以降低模型对某些属性的依赖，从而提高模型的泛化能力。例如，我们可以对图像进行不同方式的裁剪，使感兴趣的物体出现在不同位置，从而减轻模型对物体出现位置的依赖性。我们也可以调整亮度、色彩等因素来降低模型对色彩的敏感度。可以说，在当年AlexNet的成功中，图像增广技术功不可没。</p>
+          <h1 id="图像增广"><a class="markdownIt-Anchor" href="#图像增广"></a> 图像增广</h1>
+<p>大规模数据集是成功应用深度神经网络的前提。图像增广（image augmentation）技术通过对训练图像做一系列随机改变，来产生相似但又不同的训练样本，从而扩大训练数据集的规模。图像增广的另一种解释是，随机改变训练样本可以降低模型对某些属性的依赖，从而提高模型的泛化能力。例如，我们可以对图像进行不同方式的裁剪，使感兴趣的物体出现在不同位置，从而减轻模型对物体出现位置的依赖性。我们也可以调整亮度、色彩等因素来降低模型对色彩的敏感度。可以说，在当年AlexNet的成功中，图像增广技术功不可没。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/03/25/数据增强/#more" rel="contents">
@@ -737,8 +747,10 @@
       
         
           <p>PyTorch是美国互联网巨头Facebook在深度学习框架Torch的基础上使用Python重写的一个全新的深度学习框架，它更像NumPy的替代产物，不仅继承了NumPy的众多优点，还支持GPUs计算，在计算效率上要比NumPy有更明显的优势；不仅如此，PyTorch还有许多高级功能，比如拥有丰富的API，可以快速完成深度神经网络模型的搭建和训练。所以 PyTorch一经发布，便受到了众多开发人员和科研人员的追捧和喜爱，成为AI从业者的重要工具之一。</p>
-<h3 id="知识储备——深度学习中的常见概念"><a href="#知识储备——深度学习中的常见概念" class="headerlink" title="知识储备——深度学习中的常见概念"></a>知识储备——深度学习中的常见概念</h3><h4 id="张量Tensor"><a href="#张量Tensor" class="headerlink" title="张量Tensor"></a>张量Tensor</h4><p>　　Tensorflow中数据的核心单元就是Tensor。张量包含了一个数据集合，这个数据集合就是原始值变形而来的，它可以是一个任何维度的数据。tensor的rank就是其维度。</p>
-<p>　　Rank本意是矩阵的秩，不过Tensor Rank和Matrix Rank的意义不太一样，这里就还叫Rank。Tensor Rank的意义看起来更像是维度，比如Rank =1就是向量，Rank=2 就是矩阵了，Rank = 0 就是一个值。</p>
+<h3 id="知识储备深度学习中的常见概念"><a class="markdownIt-Anchor" href="#知识储备深度学习中的常见概念"></a> 知识储备——深度学习中的常见概念</h3>
+<h4 id="张量tensor"><a class="markdownIt-Anchor" href="#张量tensor"></a> 张量Tensor</h4>
+<p>Tensorflow中数据的核心单元就是Tensor。张量包含了一个数据集合，这个数据集合就是原始值变形而来的，它可以是一个任何维度的数据。tensor的rank就是其维度。</p>
+<p>Rank本意是矩阵的秩，不过Tensor Rank和Matrix Rank的意义不太一样，这里就还叫Rank。Tensor Rank的意义看起来更像是维度，比如Rank =1就是向量，Rank=2 就是矩阵了，Rank = 0 就是一个值。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/03/23/Task06-pytorch实现简易神经网络/#more" rel="contents">
@@ -862,11 +874,16 @@
 
       
         
-          <h1 id="深度卷积神经网络（AlexNet）"><a href="#深度卷积神经网络（AlexNet）" class="headerlink" title="深度卷积神经网络（AlexNet）"></a>深度卷积神经网络（AlexNet）</h1><p> LeNet:  在大的真实数据集上的表现并不尽如⼈意。    </p>
-<p>1.神经网络计算复杂。<br>2.还没有⼤量深⼊研究参数初始化和⾮凸优化算法等诸多领域。  </p>
-<p>机器学习的特征提取:手工定义的特征提取函数<br>神经网络的特征提取：通过学习得到数据的多级表征，并逐级表⽰越来越抽象的概念或模式。  </p>
+          <h1 id="深度卷积神经网络alexnet"><a class="markdownIt-Anchor" href="#深度卷积神经网络alexnet"></a> 深度卷积神经网络（AlexNet）</h1>
+<p>LeNet:  在大的真实数据集上的表现并不尽如⼈意。</p>
+<p>1.神经网络计算复杂。<br>
+2.还没有⼤量深⼊研究参数初始化和⾮凸优化算法等诸多领域。</p>
+<p>机器学习的特征提取:手工定义的特征提取函数<br>
+神经网络的特征提取：通过学习得到数据的多级表征，并逐级表⽰越来越抽象的概念或模式。</p>
 <p>神经网络发展的限制:数据、硬件</p>
-<h3 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h3><p>首次证明了学习到的特征可以超越⼿⼯设计的特征，从而⼀举打破计算机视觉研究的前状。<br><strong>特征：</strong></p>
+<h3 id="alexnet"><a class="markdownIt-Anchor" href="#alexnet"></a> AlexNet</h3>
+<p>首次证明了学习到的特征可以超越⼿⼯设计的特征，从而⼀举打破计算机视觉研究的前状。<br>
+<strong>特征：</strong></p>
 <ol>
 <li>8层变换，其中有5层卷积（1/3/5/6/7）和2层全连接隐藏层（9/10），以及1个全连接输出层（11）。</li>
 <li>将sigmoid激活函数改成了更加简单的ReLU激活函数。</li>
@@ -997,11 +1014,13 @@
 
       
         
-          <h2 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h2><h3 id="二维互相关运算"><a href="#二维互相关运算" class="headerlink" title="二维互相关运算"></a>二维互相关运算</h3><p>二维互相关（cross-correlation）运算的输入是一个二维输入数组和一个二维核（kernel）数组，输出也是一个二维数组，其中核数组通常称为卷积核或过滤器（filter）。卷积核的尺寸通常小于输入数组，卷积核在输入数组上滑动，在每个位置上，卷积核与该位置处的输入子数组按元素相乘并求和，得到输出数组中相应位置的元素。图1展示了一个互相关运算的例子，阴影部分分别是输入的第一个计算区域、核数组以及对应的输出。</p>
+          <h2 id="卷积神经网络"><a class="markdownIt-Anchor" href="#卷积神经网络"></a> 卷积神经网络</h2>
+<h3 id="二维互相关运算"><a class="markdownIt-Anchor" href="#二维互相关运算"></a> 二维互相关运算</h3>
+<p>二维互相关（cross-correlation）运算的输入是一个二维输入数组和一个二维核（kernel）数组，输出也是一个二维数组，其中核数组通常称为卷积核或过滤器（filter）。卷积核的尺寸通常小于输入数组，卷积核在输入数组上滑动，在每个位置上，卷积核与该位置处的输入子数组按元素相乘并求和，得到输出数组中相应位置的元素。图1展示了一个互相关运算的例子，阴影部分分别是输入的第一个计算区域、核数组以及对应的输出。</p>
 <p><img src="/2020/03/18/Task04-卷积神经网络/1.png" alt="Image Name"></p>
 <center>图1 二维互相关运算</center>
-
-<h3 id="互相关运算与卷积运算"><a href="#互相关运算与卷积运算" class="headerlink" title="互相关运算与卷积运算"></a>互相关运算与卷积运算</h3><p>卷积层得名于卷积运算，但卷积层中用到的并非卷积运算而是互相关运算。我们将核数组上下翻转、左右翻转，再与输入数组做互相关运算，这一过程就是卷积运算。由于卷积层的核数组是可学习的，所以使用互相关运算与使用卷积运算并无本质区别。</p>
+<h3 id="互相关运算与卷积运算"><a class="markdownIt-Anchor" href="#互相关运算与卷积运算"></a> 互相关运算与卷积运算</h3>
+<p>卷积层得名于卷积运算，但卷积层中用到的并非卷积运算而是互相关运算。我们将核数组上下翻转、左右翻转，再与输入数组做互相关运算，这一过程就是卷积运算。由于卷积层的核数组是可学习的，所以使用互相关运算与使用卷积运算并无本质区别。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/03/18/Task04-卷积神经网络/#more" rel="contents">
@@ -1125,12 +1144,15 @@
 
       
         
-          <h2 id="过拟合、欠拟合及其解决方案"><a href="#过拟合、欠拟合及其解决方案" class="headerlink" title="过拟合、欠拟合及其解决方案"></a>过拟合、欠拟合及其解决方案</h2><ol>
+          <h2 id="过拟合-欠拟合及其解决方案"><a class="markdownIt-Anchor" href="#过拟合-欠拟合及其解决方案"></a> 过拟合、欠拟合及其解决方案</h2>
+<ol>
 <li>过拟合、欠拟合的概念</li>
 <li>权重衰减</li>
 <li>丢弃法</li>
 </ol>
-<h1 id="模型选择、过拟合和欠拟合"><a href="#模型选择、过拟合和欠拟合" class="headerlink" title="模型选择、过拟合和欠拟合"></a>模型选择、过拟合和欠拟合</h1><h2 id="训练误差和泛化误差"><a href="#训练误差和泛化误差" class="headerlink" title="训练误差和泛化误差"></a>训练误差和泛化误差</h2><p>在解释上述现象之前，我们需要区分训练误差（training error）和泛化误差（generalization error）。通俗来讲，前者指模型在训练数据集上表现出的误差，后者指模型在任意一个测试数据样本上表现出的误差的期望，并常常通过测试数据集上的误差来近似。计算训练误差和泛化误差可以使用之前介绍过的损失函数，例如线性回归用到的平方损失函数和softmax回归用到的交叉熵损失函数。</p>
+<h1 id="模型选择-过拟合和欠拟合"><a class="markdownIt-Anchor" href="#模型选择-过拟合和欠拟合"></a> 模型选择、过拟合和欠拟合</h1>
+<h2 id="训练误差和泛化误差"><a class="markdownIt-Anchor" href="#训练误差和泛化误差"></a> 训练误差和泛化误差</h2>
+<p>在解释上述现象之前，我们需要区分训练误差（training error）和泛化误差（generalization error）。通俗来讲，前者指模型在训练数据集上表现出的误差，后者指模型在任意一个测试数据样本上表现出的误差的期望，并常常通过测试数据集上的误差来近似。计算训练误差和泛化误差可以使用之前介绍过的损失函数，例如线性回归用到的平方损失函数和softmax回归用到的交叉熵损失函数。</p>
 <p>机器学习模型应关注降低泛化误差。</p>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1255,14 +1277,16 @@
 
       
         
-          <h1 id="文本预处理"><a href="#文本预处理" class="headerlink" title="文本预处理"></a>文本预处理</h1><p>文本是一类序列数据，一篇文章可以看作是字符或单词的序列，本节将介绍文本数据的常见预处理步骤，预处理通常包括四个步骤：</p>
+          <h1 id="文本预处理"><a class="markdownIt-Anchor" href="#文本预处理"></a> 文本预处理</h1>
+<p>文本是一类序列数据，一篇文章可以看作是字符或单词的序列，本节将介绍文本数据的常见预处理步骤，预处理通常包括四个步骤：</p>
 <ol>
 <li>读入文本</li>
 <li>分词</li>
 <li>建立字典，将每个词映射到一个唯一的索引（index）</li>
 <li>将文本从词的序列转换为索引的序列，方便输入模型</li>
 </ol>
-<h2 id="读入文本"><a href="#读入文本" class="headerlink" title="读入文本"></a>读入文本</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_time_machine</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'/home/kesci/input/timemachine7163/timemachine.txt'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        lines = [re.sub(<span class="string">'[^a-z]+'</span>, <span class="string">' '</span>, line.strip().lower()) <span class="keyword">for</span> line <span class="keyword">in</span> f]</span><br><span class="line">    <span class="keyword">return</span> lines</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">lines = read_time_machine()</span><br><span class="line">print(<span class="string">'# sentences %d'</span> % len(lines))</span><br></pre></td></tr></table></figure>
+<h2 id="读入文本"><a class="markdownIt-Anchor" href="#读入文本"></a> 读入文本</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_time_machine</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'/home/kesci/input/timemachine7163/timemachine.txt'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        lines = [re.sub(<span class="string">'[^a-z]+'</span>, <span class="string">' '</span>, line.strip().lower()) <span class="keyword">for</span> line <span class="keyword">in</span> f]</span><br><span class="line">    <span class="keyword">return</span> lines</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">lines = read_time_machine()</span><br><span class="line">print(<span class="string">'# sentences %d'</span> % len(lines))</span><br></pre></td></tr></table></figure>
 <hr>
 <p><strong>output</strong>:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># sentences 3221</span><br></pre></td></tr></table></figure>
@@ -1389,9 +1413,11 @@
 
       
         
-          <h2 id="线性回归的基本要素"><a href="#线性回归的基本要素" class="headerlink" title="线性回归的基本要素"></a>线性回归的基本要素</h2><h3 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h3><p>为了简单起见，这里我们假设价格只取决于房屋状况的两个因素，即面积（平方米）和房龄（年）。接下来我们希望探索价格与这两个因素的具体关系。线性回归假设输出与各个输入之间是线性关系:</p>
-<script type="math/tex; mode=display">
-\mathrm{price} = w_{\mathrm{area}} \cdot \mathrm{area} + w_{\mathrm{age}} \cdot \mathrm{age} + b</script>
+          <h2 id="线性回归的基本要素"><a class="markdownIt-Anchor" href="#线性回归的基本要素"></a> 线性回归的基本要素</h2>
+<h3 id="模型"><a class="markdownIt-Anchor" href="#模型"></a> 模型</h3>
+<p>为了简单起见，这里我们假设价格只取决于房屋状况的两个因素，即面积（平方米）和房龄（年）。接下来我们希望探索价格与这两个因素的具体关系。线性回归假设输出与各个输入之间是线性关系:</p>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow><mo>=</mo><msub><mi>w</mi><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi></mrow></msub><mo>⋅</mo><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi></mrow><mo>+</mo><msub><mi>w</mi><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>⋅</mo><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">e</mi></mrow><mo>+</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">\mathrm{price} = w_{\mathrm{area}} \cdot \mathrm{area} + w_{\mathrm{age}} \cdot \mathrm{age} + b
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8623000000000001em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathrm">p</span><span class="mord mathrm">r</span><span class="mord mathrm">i</span><span class="mord mathrm">c</span><span class="mord mathrm">e</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.59445em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">a</span><span class="mord mathrm mtight">r</span><span class="mord mathrm mtight">e</span><span class="mord mathrm mtight">a</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord mathrm">a</span><span class="mord mathrm">r</span><span class="mord mathrm">e</span><span class="mord mathrm">a</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.730558em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">a</span><span class="mord mathrm mtight" style="margin-right:0.01389em;">g</span><span class="mord mathrm mtight">e</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.7777700000000001em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathrm">a</span><span class="mord mathrm" style="margin-right:0.01389em;">g</span><span class="mord mathrm">e</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span></span></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/02/14/Task01-线性回归；Softmax与分类模型、多层感知机/#more" rel="contents">
@@ -1516,7 +1542,8 @@
       
         
           
-            <h1 id="武汉加油！"><a href="#武汉加油！" class="headerlink" title="武汉加油！"></a><center>武汉加油！</center></h1><p><img src="/2020/02/10/武汉加油/whjy.jpg" style="width:650px;height:400px;"></p>
+            <h1 id="center武汉加油center"><a class="markdownIt-Anchor" href="#center武汉加油center"></a> <center>武汉加油！</center></h1>
+<img src="/2020/02/10/武汉加油/whjy.jpg" style="width:650px;height:400px;">
 
           
         
