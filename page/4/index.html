@@ -285,6 +285,138 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://banniford.github.io/2019/11/21/Spring-Boot-Web开发/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="paniford">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="潘的日记本">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/21/Spring-Boot-Web开发/" itemprop="url">Spring Boot Web开发（四）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-21T21:52:09+08:00">
+                2019-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="web开发"><a class="markdownIt-Anchor" href="#web开发"></a> Web开发</h1>
+<h2 id="1-简介"><a class="markdownIt-Anchor" href="#1-简介"></a> 1、简介</h2>
+<h4 id="使用springboot"><a class="markdownIt-Anchor" href="#使用springboot"></a> 使用SpringBoot；</h4>
+<h4 id="1-创建springboot应用选中我们需要的模块"><a class="markdownIt-Anchor" href="#1-创建springboot应用选中我们需要的模块"></a> <strong>1）、创建SpringBoot应用，选中我们需要的模块；</strong></h4>
+<h4 id="2-springboot已经默认将这些场景配置好了只需要在配置文件中指定少量配置就可以运行起来"><a class="markdownIt-Anchor" href="#2-springboot已经默认将这些场景配置好了只需要在配置文件中指定少量配置就可以运行起来"></a> <strong>2）、SpringBoot已经默认将这些场景配置好了，只需要在配置文件中指定少量配置就可以运行起来</strong></h4>
+<h4 id="3-自己编写业务代码"><a class="markdownIt-Anchor" href="#3-自己编写业务代码"></a> <strong>3）、自己编写业务代码；</strong></h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xxxxAutoConfiguration：帮我们给容器中自动配置组件；</span><br><span class="line">xxxxProperties:配置类来封装配置文件的内容；</span><br></pre></td></tr></table></figure>
+<h2 id="2-springboot对静态资源的映射规则"><a class="markdownIt-Anchor" href="#2-springboot对静态资源的映射规则"></a> 2、SpringBoot对静态资源的映射规则；</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ConfigurationProperties</span>(prefix = <span class="string">"spring.resources"</span>, ignoreUnknownFields = <span class="keyword">false</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ResourceProperties</span> <span class="keyword">implements</span> <span class="title">ResourceLoaderAware</span> </span>&#123;</span><br><span class="line">  <span class="comment">//可以设置和静态资源有关的参数，缓存时间等</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/11/21/Spring-Boot-Web开发/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://banniford.github.io/2019/11/21/Spring-Boot配置-三/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -765,7 +897,7 @@ spring-boot-starter:spring-boot场景启动器;帮我们导入了web模块正常
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -778,7 +910,7 @@ spring-boot-starter:spring-boot场景启动器;帮我们导入了web模块正常
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

@@ -285,6 +285,134 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://banniford.github.io/2021/08/17/nodejs中的异步问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="paniford">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="潘的日记本">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/08/17/nodejs中的异步问题/" itemprop="url">nodejs中的异步问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-08-17T22:17:07+08:00">
+                2021-08-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="nodejs-中的异步问题"><a class="markdownIt-Anchor" href="#nodejs-中的异步问题"></a> Node.js 中的异步问题</h1>
+<p>  最近工作的时候遇到 <code>Node.js</code> 一些问题，觉得比较有意思，想来记录一下。</p>
+<p>  平时写惯了 <code>python</code> 代码，习惯了在同步中偶尔插一点异步，初次接触 <code>node.js</code> ，仅仅写一点 <code>CRUD</code> 在对 <code>red-node</code> 开源项目修改的过程中，体会到了在异步中写同步的痛苦（在 <code>callback</code> 中无限套娃），这样对错误的定位会比较麻烦，但是同事提高了整体的运行效率，当然还是自己太菜，接触的太少。</p>
+<p>  最终在开发的过程中使用了 <code>async</code> 异步模块，可以说是非常的好用了。</p>
+<p>  首先 <code>JavaScript</code> 中内置的 <code>async/await</code> 已经是 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/AsyncFunction" target="_blank" rel="noopener">AsyncFunction 特性</a> 中的关键字，目前为止，除了 <code>IE</code> 之外，常用浏览器和 <code>Node (v7.6+)</code> 都已经支持该特性。这是一个非常好的语法糖，解决了在异步中需要同步时陷入 <strong>回调地狱</strong> 的可能（当然我是非常不太乐意写一堆 <code>callback</code> 嵌套 <code>return</code> 的，前几天有几个下午为了几个尝试给我脑子都套蒙了）。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2021/08/17/nodejs中的异步问题/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://banniford.github.io/2021/08/15/谈谈最近/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1474,139 +1602,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://banniford.github.io/2020/05/12/基于SSD目标检测网络的树莓派控制系统（三）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="paniford">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="潘的日记本">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/05/12/基于SSD目标检测网络的树莓派控制系统（三）/" itemprop="url">基于SSD目标检测网络的树莓派控制系统（三）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-12T15:04:20+08:00">
-                2020-05-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="基于pyqt5的ssd目标检测软件三"><a class="markdownIt-Anchor" href="#基于pyqt5的ssd目标检测软件三"></a> 基于PyQt5的SSD目标检测软件（三）</h1>
-<h4 id="续上节"><a class="markdownIt-Anchor" href="#续上节"></a> 续上节。。。。</h4>
-<h4 id="2-训练部分"><a class="markdownIt-Anchor" href="#2-训练部分"></a> 2. 训练部分</h4>
-<h5 id="21-真实框得处理"><a class="markdownIt-Anchor" href="#21-真实框得处理"></a> 2.1 真实框得处理</h5>
-<p>​		预测部分实际上是没有计算loss的向前传播，主要是通过模型进行预测结果，而训练过程主要通过反向传播来修正权重减小整体的成本loss和精度loss从而使模型更加准确。</p>
-<p>​		在预测部分，每个特征层的预测结果，<strong>num_priors x 4 的卷积</strong> 用于预测 <strong>该特征层上</strong> <strong>每一个网格点上 每一个先验框</strong> 的 <strong>微调</strong> 情况(<strong>bounding box regression</strong>（<strong>边界框回归 在训练中 微调边界框大小匹配真实框)</strong>)。</p>
-<p>​		所以说，我们直接利用SSD网络预测到的结果只是直接<strong>匹配相同类别</strong>所得到的原来<strong>初始化先验框</strong>的结果，而我们需要的是进行<strong>bounding box regression 回归后</strong> <strong>调整过的准确预测框的位置。</strong></p>
-<p>​		而在训练的时候，<strong>我们需要计算loss（分类loss和边界框回归loss（IOU））函数，这个loss函数是相对于ssd网络的预测结果的</strong>。我们需要把图片输入<strong>到当前的ssd网络中，得到预测结果；同时还需要把真实框的信息，进行编码</strong>，这个编码是把<strong>真实框的位置信息格式转化为ssd预测结果的格式信息</strong>。</p>
-<p>​		 我们需要找到 <strong>每一张用于训练的图片</strong>的<strong>每一个真实框对应的先验框</strong>，并通过 <strong>回归预测的方法</strong> 让模型学会如何调整<strong>预测生成的先验框</strong>才能得到<strong>真实框对应的先验框</strong>。</p>
-<p><strong>从预测结果获得真实框的过程被称作解码，而从真实框获得预测结果的过程就是编码的过程。</strong></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/05/12/基于SSD目标检测网络的树莓派控制系统（三）/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1659,7 +1654,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1672,7 +1667,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

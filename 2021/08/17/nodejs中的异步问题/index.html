@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="Python,">
+  <meta name="keywords" content="node.js,">
 
 
 
@@ -83,22 +83,18 @@
 
 
 
-<meta name="description" content="最近踩坑合集   上班恰好有1个月了，每天都在写 markdown，却没有写自己的 markdown 总结，以后尝试每周总结一下。   最近在做的是数据可视化，主要涉及的技术栈是 numpy ，matplotlib, pandas 内容上还是比较简单的，主要是对数据进行整理和绘图展示，在实践中还是踩了不少坑，这里整理一下。  问题一：matplotlib绘制逆变波形图  (方波转正弦交流电示意图">
-<meta name="keywords" content="Python">
+<meta name="description" content="Node.js 中的异步问题   最近工作的时候遇到 Node.js 一些问题，觉得比较有意思，想来记录一下。   平时写惯了 python 代码，习惯了在同步中偶尔插一点异步，初次接触 node.js ，仅仅写一点 CRUD 在对 red-node 开源项目修改的过程中，体会到了在异步中写同步的痛苦（在 callback 中无限套娃），这样对错误的定位会比较麻烦，但是同事提高了整体的运行效率，">
+<meta name="keywords" content="node.js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="最近踩坑合集">
-<meta property="og:url" content="https://banniford.github.io/2021/04/28/最近踩坑合集/index.html">
+<meta property="og:title" content="nodejs中的异步问题">
+<meta property="og:url" content="https://banniford.github.io/2021/08/17/nodejs中的异步问题/index.html">
 <meta property="og:site_name" content="潘的日记本">
-<meta property="og:description" content="最近踩坑合集   上班恰好有1个月了，每天都在写 markdown，却没有写自己的 markdown 总结，以后尝试每周总结一下。   最近在做的是数据可视化，主要涉及的技术栈是 numpy ，matplotlib, pandas 内容上还是比较简单的，主要是对数据进行整理和绘图展示，在实践中还是踩了不少坑，这里整理一下。  问题一：matplotlib绘制逆变波形图  (方波转正弦交流电示意图">
+<meta property="og:description" content="Node.js 中的异步问题   最近工作的时候遇到 Node.js 一些问题，觉得比较有意思，想来记录一下。   平时写惯了 python 代码，习惯了在同步中偶尔插一点异步，初次接触 node.js ，仅仅写一点 CRUD 在对 red-node 开源项目修改的过程中，体会到了在异步中写同步的痛苦（在 callback 中无限套娃），这样对错误的定位会比较麻烦，但是同事提高了整体的运行效率，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://banniford.github.io/2021/04/28/最近踩坑合集/1.png">
-<meta property="og:image" content="https://banniford.github.io/2021/04/28/最近踩坑合集/2-15.png">
-<meta property="og:image" content="https://banniford.github.io/2021/04/28/最近踩坑合集/2.png">
-<meta property="og:updated_time" content="2021-04-28T07:52:17.941Z">
+<meta property="og:updated_time" content="2021-08-28T17:14:15.080Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="最近踩坑合集">
-<meta name="twitter:description" content="最近踩坑合集   上班恰好有1个月了，每天都在写 markdown，却没有写自己的 markdown 总结，以后尝试每周总结一下。   最近在做的是数据可视化，主要涉及的技术栈是 numpy ，matplotlib, pandas 内容上还是比较简单的，主要是对数据进行整理和绘图展示，在实践中还是踩了不少坑，这里整理一下。  问题一：matplotlib绘制逆变波形图  (方波转正弦交流电示意图">
-<meta name="twitter:image" content="https://banniford.github.io/2021/04/28/最近踩坑合集/1.png">
+<meta name="twitter:title" content="nodejs中的异步问题">
+<meta name="twitter:description" content="Node.js 中的异步问题   最近工作的时候遇到 Node.js 一些问题，觉得比较有意思，想来记录一下。   平时写惯了 python 代码，习惯了在同步中偶尔插一点异步，初次接触 node.js ，仅仅写一点 CRUD 在对 red-node 开源项目修改的过程中，体会到了在异步中写同步的痛苦（在 callback 中无限套娃），这样对错误的定位会比较麻烦，但是同事提高了整体的运行效率，">
 
 
 
@@ -128,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://banniford.github.io/2021/04/28/最近踩坑合集/">
+  <link rel="canonical" href="https://banniford.github.io/2021/08/17/nodejs中的异步问题/">
 
 
 
 
 
-  <title>最近踩坑合集 | 潘的日记本</title>
+  <title>nodejs中的异步问题 | 潘的日记本</title>
   
 
 
@@ -293,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://banniford.github.io/2021/04/28/最近踩坑合集/">
+    <link itemprop="mainEntityOfPage" href="https://banniford.github.io/2021/08/17/nodejs中的异步问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="paniford">
@@ -310,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">最近踩坑合集</h1>
+          <h1 class="post-title" itemprop="name headline">nodejs中的异步问题</h1>
         
 
         <div class="post-meta">
@@ -322,8 +318,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-04-28T10:18:03+08:00">
-                2021-04-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-08-17T22:17:07+08:00">
+                2021-08-17
               </time>
             
 
@@ -360,44 +356,65 @@
       
 
       
-        <h1 id="最近踩坑合集"><a class="markdownIt-Anchor" href="#最近踩坑合集"></a> 最近踩坑合集</h1>
-<p>  上班恰好有1个月了，每天都在写 <code>markdown</code>，却没有写自己的 <code>markdown</code> 总结，以后尝试每周总结一下。</p>
-<p>  最近在做的是数据可视化，主要涉及的技术栈是 <code>numpy</code> ，<code>matplotlib</code>, <code>pandas</code> 内容上还是比较简单的，主要是对数据进行整理和绘图展示，在实践中还是踩了不少坑，这里整理一下。</p>
-<h2 id="问题一matplotlib绘制逆变波形图"><a class="markdownIt-Anchor" href="#问题一matplotlib绘制逆变波形图"></a> 问题一：matplotlib绘制逆变波形图</h2>
-<center><img src="/2021/04/28/最近踩坑合集/1.png" width="500"></center>
-<center>(方波转正弦交流电示意图)</center>
-<p>  </p>
+        <h1 id="nodejs-中的异步问题"><a class="markdownIt-Anchor" href="#nodejs-中的异步问题"></a> Node.js 中的异步问题</h1>
+<p>  最近工作的时候遇到 <code>Node.js</code> 一些问题，觉得比较有意思，想来记录一下。</p>
+<p>  平时写惯了 <code>python</code> 代码，习惯了在同步中偶尔插一点异步，初次接触 <code>node.js</code> ，仅仅写一点 <code>CRUD</code> 在对 <code>red-node</code> 开源项目修改的过程中，体会到了在异步中写同步的痛苦（在 <code>callback</code> 中无限套娃），这样对错误的定位会比较麻烦，但是同事提高了整体的运行效率，当然还是自己太菜，接触的太少。</p>
+<p>  最终在开发的过程中使用了 <code>async</code> 异步模块，可以说是非常的好用了。</p>
+<p>  首先 <code>JavaScript</code> 中内置的 <code>async/await</code> 已经是 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/AsyncFunction" target="_blank" rel="noopener">AsyncFunction 特性</a> 中的关键字，目前为止，除了 <code>IE</code> 之外，常用浏览器和 <code>Node (v7.6+)</code> 都已经支持该特性。这是一个非常好的语法糖，解决了在异步中需要同步时陷入 <strong>回调地狱</strong> 的可能（当然我是非常不太乐意写一堆 <code>callback</code> 嵌套 <code>return</code> 的，前几天有几个下午为了几个尝试给我脑子都套蒙了）。</p>
 <a id="more"></a>
-<p>  这个看起来难度不大，但是我在搜资料的时候，一堆人使用 傅里叶变换进行拟合，这可难倒没学离散的我了，所以采用了土方法，利用 <strong>分割</strong> + <strong>间距</strong> 的方法。</p>
-<p>  思路就是自己定义个数据集，控制间距，分割以后对一些位置进行改变，最后得到所需要的图形。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#新建一个代码块</span></span><br><span class="line">m=[<span class="number">8</span>,<span class="number">16</span>,<span class="number">32</span>,<span class="number">48</span>,<span class="number">64</span>]</span><br><span class="line"></span><br><span class="line">j = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(m)<span class="number">-1</span>):</span><br><span class="line">    m.insert(i+j,<span class="number">15</span>)</span><br><span class="line">    j+=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">"m="</span>,m)</span><br></pre></td></tr></table></figure>
+<h2 id="asyncawait-干了啥"><a class="markdownIt-Anchor" href="#asyncawait-干了啥"></a> <code>async/await</code> 干了啥？</h2>
+<p>  <code>async</code> 是“异步”的简写，而 <code>await</code> 可以认为是 <code>async wait</code> 的简写。所以应该很好理解 <code>async</code> 用于申明一个 <code>function</code> 是异步的，而 <code>await</code> 用于等待一个 <strong>异步方法</strong> 执行完成。</p>
+<p>  <code>async/await</code>是一个整体，<code>await</code> 只能出现在 <code>async</code> 函数中。也就是说，如果调用一个 <code>async</code> 函数使用 <code>await</code> 等待的话，就需要在 <code>await</code> 外面再包一个 <code>async</code> 函数。</p>
+<h3 id="async-起什么作用"><a class="markdownIt-Anchor" href="#async-起什么作用"></a> async 起什么作用</h3>
+<p>  这个问题的关键在于，<code>async</code> 函数是怎么处理它的返回值的！</p>
+<p>  我们当然希望它能直接通过 <code>return</code> 语句返回我们想要的值，但是如果真是这样，似乎就没 <code>await</code> 什么事了。所以，写段代码来试试，看它到底会返回什么：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">testAsync</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"hello async"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> result = testAsync();</span><br><span class="line"><span class="built_in">console</span>.log(result);</span><br></pre></td></tr></table></figure>
+<p>运行后输出：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span> &#123; <span class="string">'hello async'</span> &#125;</span><br></pre></td></tr></table></figure>
+<p>  所以，<code>async</code> 函数返回的是一个 <code>Promise</code> 对象。从文档中也可以得到这个信息。<code>async</code> 函数（包含函数语句、函数表达式、<code>Lambda</code>表达式）会返回一个 <code>Promise</code> 对象，如果在函数中 <code>return</code> 一个直接量，<code>async</code> 会把这个直接量通过 <code>Promise.resolve()</code> 封装成 <code>Promise</code> 对象。那么 <code>await</code> 其实就是在等一个 <code>Promise</code> 的结果。</p>
 <blockquote>
-<p>m= [8, 15, 16, 15, 32, 15, 48, 15, 64]</p>
+<p>Promise.resolve(x) 可以看作是 new Promise(resolve =&gt; resolve(x)) 的简写，可以用于快速封装字面量对象或其他对象，将其封装成 Promise 实例。</p>
 </blockquote>
-<p>  我们先定义一个 <code>m</code> 列表，来设置我们把 <code>1/4</code> 个周期分割的份数，那么中间肯定有间隔时间，我们加上时间间隔。</p>
-<p>  我们把 <code>1/4</code> 个周期的数据数量已经分好了，那我们我们需要把它们加起来算出一个整数，这个整数就是我们 <code>1/4</code> 个周期所需要的数据数量。</p>
-<p>  新建一个代码块，计算该整数并存储到变量 <code>M</code> 中。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#新建一个代码块</span></span><br><span class="line">M=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> m:</span><br><span class="line">    M+=i</span><br><span class="line">print(<span class="string">"M="</span>,M)</span><br></pre></td></tr></table></figure>
+<p>  <code>async</code> 函数返回的是一个 <code>Promise</code> 对象，所以在最外层不能用 <code>await</code> 获取其返回值的情况下，我们当然应该用原来的方式：<code>then()</code> 链来处理这个 <code>Promise</code> 对象，就像这样:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">testAsync().then(<span class="function"><span class="params">v</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(v);    <span class="comment">// 输出 hello async</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="await-到底在等啥"><a class="markdownIt-Anchor" href="#await-到底在等啥"></a> await 到底在等啥</h3>
+<p>  一般来说，都认为 <code>await</code> 是在等待一个 <code>async</code> 函数完成。不过按语法说明，<code>await</code> 等待的是一个表达式，这个表达式的计算结果是 <code>Promise</code> 对象或者其它值（换句话说，就是没有特殊限定）。</p>
+<p>  因为 <code>async</code> 函数返回一个 <code>Promise</code> 对象，所以 <code>await</code> 可以用于等待一个 <code>async</code> 函数的返回值——这也可以说是 <code>await</code> 在等 <code>async</code> 函数，但要清楚，它等的实际是一个返回值。注意到 <code>await</code> 不仅仅用于等 <code>Promise</code> 对象，它可以等任意表达式的结果，所以，<code>await</code>后面实际是可以接普通函数调用或者直接量的。所以下面这个示例完全可以正确运行:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getSomething</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"something"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">testAsync</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve(<span class="string">"hello async"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> v1 = <span class="keyword">await</span> getSomething();</span><br><span class="line">    <span class="keyword">const</span> v2 = <span class="keyword">await</span> testAsync();</span><br><span class="line">    <span class="built_in">console</span>.log(v1, v2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test();</span><br></pre></td></tr></table></figure>
+<h3 id="await-等到了要等的然后呢"><a class="markdownIt-Anchor" href="#await-等到了要等的然后呢"></a> await 等到了要等的，然后呢</h3>
+<p>  <code>await</code> 等到了它要等的东西，一个 <code>Promise</code> 对象，或者其它值，然后呢？我不得不先说，<code>await</code> 是个运算符，用于组成表达式，<code>await</code> 表达式的运算结果取决于它等的东西。</p>
+<p>  如果它等到的不是一个 <code>Promise</code> 对象，那 <code>await</code> 表达式的运算结果就是它等到的东西。</p>
+<p>  如果它等到的是一个 <code>Promise</code> 对象，<code>await</code> 就忙起来了，它会 <strong>阻塞</strong> 后面的代码，等着 <code>Promise</code> 对象 <code>resolve</code>，然后得到 <code>resolve</code> 的值，作为 <code>await</code> 表达式的运算结果。</p>
 <blockquote>
-<p>M= 228</p>
+<p>看到上面的阻塞一词，心慌了吧……放心，这就是 <code>await</code> 必须用在 <code>async</code> 函数中的原因。<code>async</code> 函数调用不会造成阻塞，它内部所有的阻塞都被封装在一个 <code>Promise</code> 对象中异步执行。</p>
 </blockquote>
-<p>  现在我们得到了 <code>1/4</code> 个周期的数据数量，再乘以 <code>4</code> 就是我们一个周期的数据总数量了。</p>
-<p>  新建一个代码块,执行代码块查看效果：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#新建一个代码块</span></span><br><span class="line">X= <span class="number">0</span></span><br><span class="line">my_X=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>*M + <span class="number">1</span>):</span><br><span class="line">    my_X.append(X)</span><br><span class="line">    <span class="comment"># 每份数据量为 pi/2 除以 M 份</span></span><br><span class="line">    X+=np.pi/(<span class="number">2</span>*M)</span><br><span class="line"></span><br><span class="line">create_figure()</span><br><span class="line">plt.plot(my_X,np.sin(my_X))</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<center><img src="/2021/04/28/最近踩坑合集/2-15.png" width="500"></center>
-<center>(构造正弦波)</center>
-<p>  </p>
-<p>  因为我们所划分的是 <code>1/4</code> 个周期，所以 每一份的数据量大小为 <code>pi/4</code> 除以 <code>M</code> 份，然后通过 <code>list.append</code> 函数添加到列表中去，我们就获得我们所需要的数据了。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 生成矩形电波</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">period_new1</span><span class="params">(x)</span>:</span> </span><br><span class="line">    x1=np.sin(x)</span><br><span class="line">    <span class="comment">#根据条件筛选出大于0的数据并修改</span></span><br><span class="line">    y=np.where(x1&gt;<span class="number">0</span>,<span class="number">1</span>,<span class="number">-1</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#将第一位和最后一位置为 0</span></span><br><span class="line">    y[<span class="number">0</span>]=<span class="number">0</span></span><br><span class="line">    y[<span class="number">-1</span>]=<span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> y</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将矩形电波其中部分置为 0 模拟 PWM 波形</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">period_new2</span><span class="params">(y)</span>:</span> </span><br><span class="line">    idx = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">2</span>):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> m:</span><br><span class="line">            idx+= i</span><br><span class="line">            <span class="keyword">if</span> i!= <span class="number">64</span> <span class="keyword">and</span> i!= <span class="number">15</span>:</span><br><span class="line">                y[idx:idx+<span class="number">15</span>] = <span class="number">0</span></span><br><span class="line">                </span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> reversed(m):</span><br><span class="line">            idx+= i</span><br><span class="line">            <span class="keyword">if</span> i!= <span class="number">8</span> <span class="keyword">and</span> i!= <span class="number">15</span>:</span><br><span class="line">                y[idx:idx+<span class="number">15</span>] = <span class="number">0</span></span><br><span class="line">   </span><br><span class="line">    <span class="keyword">return</span> y</span><br><span class="line"></span><br><span class="line">create_figure()</span><br><span class="line">my_y1= period_new1(my_X)</span><br><span class="line">my_y2= period_new2(my_y1.copy())</span><br><span class="line"></span><br><span class="line">plt.plot()</span><br><span class="line">plt.plot(my_X,np.sin(my_X),<span class="string">'b-'</span>)  </span><br><span class="line">plt.plot(my_X,my_y1, color=<span class="string">'r'</span>, linestyle=<span class="string">'-'</span>);  </span><br><span class="line">plt.plot(my_X,my_y2,color=<span class="string">'#2ea338'</span>, linestyle=<span class="string">'-'</span>) </span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<center><img src="/2021/04/28/最近踩坑合集/2.png" width="500"></center>
-<center>(方波与正弦波)</center>
-<p>  </p>
-<h2 id="问题二-解决jpyter-node-中使用-matplotlib-画图中文字体的问题"><a class="markdownIt-Anchor" href="#问题二-解决jpyter-node-中使用-matplotlib-画图中文字体的问题"></a> 问题二： 解决jpyter node 中使用 matplotlib 画图中文字体的问题</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 新建代码块</span></span><br><span class="line"><span class="keyword">from</span> pylab <span class="keyword">import</span> mpl</span><br><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="comment"># 更换当前字体库为 SimHei -&gt;黑体</span></span><br><span class="line">matplotlib.rc(<span class="string">"font"</span>,family=<span class="string">'SimHei'</span>)</span><br><span class="line"><span class="comment"># 解决保存图像是负号'-'显示为方块的问题</span></span><br><span class="line">plt.rcParams[<span class="string">"figure.dpi"</span>] =mpl.rcParams[<span class="string">'axes.unicode_minus'</span>] = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
-<p>  因为每个电脑的字体库可能有所不同，所以如果出现缺少 <code>SimHei</code> 的话会出现 <code>error</code> 错误，并且无法渲染中文字体，那么可以新建代码块运行以下代码:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 新建代码块</span></span><br><span class="line"><span class="comment"># 查询当前系统所有字体</span></span><br><span class="line"><span class="keyword">from</span> matplotlib.font_manager <span class="keyword">import</span> FontManager</span><br><span class="line"><span class="keyword">import</span> subprocess</span><br><span class="line"></span><br><span class="line">mpl_fonts = set(f.name <span class="keyword">for</span> f <span class="keyword">in</span> FontManager().ttflist)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'all font list get from matplotlib.font_manager:'</span>)</span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> sorted(mpl_fonts):</span><br><span class="line">    print(<span class="string">'\t'</span> + f)</span><br></pre></td></tr></table></figure>
-<p>  可以尝试将 <code>matplotlib.rc(&quot;font&quot;,family='SimHei')</code> 中的 <code>SimHei</code> 更换为 <strong>其他</strong> 字体尝试，一般中文字体库会以 <strong>拼音</strong> 的形式存在。</p>
-<p>  当然还有很多一劳永逸的方式，直接更改文件就好了，但是这种方法对于在云平台使用起来的话更加的灵活。</p>
+<h3 id="比较一下使用原生promise和asyncawait封装的代码"><a class="markdownIt-Anchor" href="#比较一下使用原生promise和asyncawait封装的代码"></a> 比较一下使用原生Promise和async/await封装的代码</h3>
+<p>  上面已经说明了 <code>async</code> 会将其后的函数（函数表达式或 <code>Lambda</code>）的返回值封装成一个 <code>Promise</code> 对象，而 <code>await</code> 会等待这个 <code>Promise</code> 完成，并将其 <code>resolve</code> 的结果返回出来。</p>
+<p>  现在举例，用 <code>setTimeout</code> 模拟耗时的异步操作，先来看看不用 <code>async/await</code> 会怎么写:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">takeLongTime</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="string">"long_time_value"</span>), <span class="number">1000</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">takeLongTime().then(<span class="function"><span class="params">v</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"got"</span>, v);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>  如果改用 <code>async/await</code> 呢，会是这样:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">takeLongTime</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="string">"long_time_value"</span>), <span class="number">1000</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> v = <span class="keyword">await</span> takeLongTime();</span><br><span class="line">    <span class="built_in">console</span>.log(v);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test();</span><br></pre></td></tr></table></figure>
+<p>  眼尖的同学已经发现 <code>takeLongTime()</code> 没有申明为 <code>async</code>。实际上，<code>takeLongTime()</code> 本身就是返回的 <code>Promise</code> 对象，加不加 <code>async</code> 结果都一样，如果没明白，请回过头再去看看上面的“<code>async</code> 起什么作用”。</p>
+<p>  所以总的来说，<code>async/await</code> 可以通过封装 <code>Promise</code> 的方法让我们的代码更像是同步代码，从而解决 <code>then</code> 链套娃的方式，那么这里需要注意的是因为 <code>test()</code> 函数被套上了 <code>async</code> 那么也就是说这个方法是异步的，那么我们如果在 <code>test()</code> 后还有代码执行的话，就会不等待 <code>test()</code> 的结果直接运行下去了，这也就是说，想要等待 <code>test()</code> 的结果，就需要继续套娃 <code>async/await</code> 不过这种方法总比 套娃 <code>callback</code> 看起来更加直观一点。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">takeLongTime</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="string">"long_time_value"</span>), <span class="number">1000</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> v = <span class="keyword">await</span> takeLongTime();</span><br><span class="line">    <span class="built_in">console</span>.log(v);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"阿巴阿巴阿巴"</span>)</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">阿巴阿巴阿巴</span><br><span class="line">long_time_value</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">takeLongTime</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="string">"long_time_value"</span>), <span class="number">1000</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> v = <span class="keyword">await</span> takeLongTime();</span><br><span class="line">    <span class="built_in">console</span>.log(v);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">run</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">await</span> test();</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"阿巴阿巴阿巴"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">run()</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">long_time_value</span><br><span class="line">阿巴阿巴阿巴</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>await</code> 等的一定是 <code>Promise</code> 对象或者另一个 <code>async/await</code>。<code>await</code> 命令后面的 <code>Promise</code> 对象，运行结果可能是 <code>rejected</code>，所以最好把 <code>await</code> 命令放在 <code>try...catch</code> 代码块中。</p>
+</blockquote>
+<p>  <code>node.js</code> 也有 <code>async</code> 库，当我们调用这个库的时候可以使用其中的一些函数，例如</p>
+<ul>
+<li><code>async.series(tasks, [callback])</code> 多个函数依次执行，之间没有数据交换；</li>
+<li><code>async.parallel(tasks, [callback])</code> 多个函数并行执行；</li>
+<li><code>parallelLimit(tasks, limit, [callback])</code> <code>limit</code> 个函数并行执行；</li>
+<li><code>async.waterfall(tasks, [callback])</code>多个函数依次执行，且前一个的输出为后一个的输入；</li>
+<li><code>auto(tasks, [callback])</code> 多个函数有依赖关系，有的并行执行，有的依次执行；</li>
+<li><code>whilst(test, fn, callback)</code> 用可于异步调用的 <code>while</code>;</li>
+</ul>
+<p>  这些函数可以通过 <strong>串行</strong> 或者 <strong>并行</strong> 的方式将异步函数同步化，比较适合用于下载和解压的异步操作。</p>
 
       
     </div>
@@ -415,7 +432,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag"># Python</a>
+            <a href="/tags/node-js/" rel="tag"># node.js</a>
           
         </div>
       
@@ -428,8 +445,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2021/04/14/json格式在python中的类型转换/" rel="next" title="json格式在python中的类型转换">
-                <i class="fa fa-chevron-left"></i> json格式在python中的类型转换
+              <a href="/2021/08/15/谈谈最近/" rel="next" title="谈谈最近">
+                <i class="fa fa-chevron-left"></i> 谈谈最近
               </a>
             
           </div>
@@ -437,10 +454,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2021/08/15/谈谈最近/" rel="prev" title="谈谈最近">
-                谈谈最近 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -565,7 +578,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#最近踩坑合集"><span class="nav-number">1.</span> <span class="nav-text"> 最近踩坑合集</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题一matplotlib绘制逆变波形图"><span class="nav-number">1.1.</span> <span class="nav-text"> 问题一：matplotlib绘制逆变波形图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题二-解决jpyter-node-中使用-matplotlib-画图中文字体的问题"><span class="nav-number">1.2.</span> <span class="nav-text"> 问题二： 解决jpyter node 中使用 matplotlib 画图中文字体的问题</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nodejs-中的异步问题"><span class="nav-number">1.</span> <span class="nav-text"> Node.js 中的异步问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#asyncawait-干了啥"><span class="nav-number">1.1.</span> <span class="nav-text"> async/await 干了啥？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#async-起什么作用"><span class="nav-number">1.1.1.</span> <span class="nav-text"> async 起什么作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#await-到底在等啥"><span class="nav-number">1.1.2.</span> <span class="nav-text"> await 到底在等啥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#await-等到了要等的然后呢"><span class="nav-number">1.1.3.</span> <span class="nav-text"> await 等到了要等的，然后呢</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#比较一下使用原生promise和asyncawait封装的代码"><span class="nav-number">1.1.4.</span> <span class="nav-text"> 比较一下使用原生Promise和async/await封装的代码</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
