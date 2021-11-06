@@ -285,6 +285,139 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://banniford.github.io/2020/08/20/c语言复习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="paniford">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="潘的日记本">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/08/20/c语言复习/" itemprop="url">c语言复习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-20T21:26:48+08:00">
+                2020-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="cc语言复习"><a class="markdownIt-Anchor" href="#cc语言复习"></a> C/C++语言复习</h1>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">include&lt;stdio.h&gt;</span><br><span class="line">基本头函数 </span><br><span class="line">include&lt;<span class="built_in">string</span>.h&gt;</span><br><span class="line">字符串处理函数 </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">10</span>];</span><br><span class="line">    <span class="keyword">int</span> j=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;<span class="number">10</span>;++i)&#123;<span class="comment">//第三个函数体最后循环结束时才运行，++i和i++一样 </span></span><br><span class="line">    </span><br><span class="line">    a[i]=++j;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,a[i]);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,i); </span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line"><span class="keyword">char</span> c[<span class="number">4</span>]=&#123;<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'\0'</span>,<span class="string">'d'</span>&#125;;<span class="comment">//单个字符用‘’\0表示结束，“”超过一个字符 </span></span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%c"</span>,getchar());</span><br><span class="line"><span class="keyword">char</span> str[<span class="number">13</span>];</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%s"</span>,str);<span class="comment">//c语言中如果输入是数据变量则不需要加&amp;引用，数组本身就是引用地址 </span></span><br><span class="line"><span class="keyword">int</span> a ;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a); </span><br><span class="line"><span class="keyword">char</span> c[]=&#123;<span class="string">"China\n12223"</span>&#125;;<span class="comment">//会在字符组后自动 添加\0 </span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%s"</span>,c);</span><br><span class="line"><span class="built_in">puts</span>(c);<span class="comment">//输出已经定义得字符组 </span></span><br><span class="line"></span><br><span class="line">gets(c);<span class="comment">//从键盘获取char数组字符+1位返回值时c得起始地址，puts和gets只能输出和输入一个字符串 </span></span><br><span class="line"><span class="built_in">puts</span>(c);</span><br><span class="line"><span class="keyword">char</span> c[<span class="number">20</span>]=&#123;<span class="string">"China\n12223"</span>&#125;;<span class="comment">//会在字符组后自动 添加\0 </span></span><br><span class="line"><span class="keyword">char</span> str[]=&#123;<span class="string">"\nxxx"</span>&#125;;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%s"</span>,<span class="built_in">strcat</span>(c,str));<span class="comment">//strcat可以链接两个字符串，且第一个字符串要足够大可以容纳下1，2两个数组，不满得位置都是\0</span></span><br><span class="line"><span class="keyword">char</span> str1[<span class="number">10</span>],str2[]=<span class="string">"China"</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%s"</span>,<span class="built_in">strcpy</span>(str1,str2));<span class="comment">//将字符串2复制到1中也可以strcpy(str1,"China") </span></span><br><span class="line"><span class="built_in">strcmp</span>(str1,<span class="string">"China"</span>);<span class="comment">//比较两个字符串相等=0左大为正数，右大为负数 </span></span><br><span class="line"><span class="built_in">strlen</span>(<span class="string">"asdasd"</span>);<span class="comment">//统计字符串完整长度，不包括\0</span></span><br><span class="line"><span class="comment">//strlwr将字符串中大转小 strupr 小转大</span></span><br></pre></td></tr></table></figure>
+<p>函数写在<code>main</code>下面得时候，要在<code>main</code>函数里面声明，例如 <code>viod test();</code>调用<code>test()；</code></p>
+<p>带返回值得函数都需加类型，没有返回值得用void 传递数组时，传递首地址，所以声明函数中数组可以不加大小<br>
+<code>void test(int array[])</code>但是类型要一致 ，多维要加最高维度大小 <code>int test(int array[][10])</code></p>
+<p>寄存器变量 <code>register</code> 减少去内存读取数量</p>
+<p>全局变量定义域一般从定义处开始到文件末，使用<code>extern</code>可以把下面得全局变量扩展到此处。两个文件间使用扩展得话<br>
+就是一个文件定义全局变量，另一个文件使用<code>extern</code>进行扩展链接 ，如果一个文件中全局变量被<code>static</code>修饰，<br>
+则其他文件中不能用<code>extern</code>扩展</p>
+<p><code>static</code> 修饰函数时不能被其他文件调用  <code>extern</code> 修饰函数可以被其他文件声明使用 是默认，可省</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/08/20/c语言复习/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://banniford.github.io/2020/05/12/基于SSD目标检测网络的树莓派控制系统（三）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1461,142 +1594,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://banniford.github.io/2020/02/18/Task02-文本预处理；语言模型；循环神经网络/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="paniford">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="潘的日记本">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/18/Task02-文本预处理；语言模型；循环神经网络/" itemprop="url">Task02-文本预处理；语言模型；循环神经网络</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-18T17:01:45+08:00">
-                2020-02-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="文本预处理"><a class="markdownIt-Anchor" href="#文本预处理"></a> 文本预处理</h1>
-<p>文本是一类序列数据，一篇文章可以看作是字符或单词的序列，本节将介绍文本数据的常见预处理步骤，预处理通常包括四个步骤：</p>
-<ol>
-<li>读入文本</li>
-<li>分词</li>
-<li>建立字典，将每个词映射到一个唯一的索引（index）</li>
-<li>将文本从词的序列转换为索引的序列，方便输入模型</li>
-</ol>
-<h2 id="读入文本"><a class="markdownIt-Anchor" href="#读入文本"></a> 读入文本</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_time_machine</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'/home/kesci/input/timemachine7163/timemachine.txt'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        lines = [re.sub(<span class="string">'[^a-z]+'</span>, <span class="string">' '</span>, line.strip().lower()) <span class="keyword">for</span> line <span class="keyword">in</span> f]</span><br><span class="line">    <span class="keyword">return</span> lines</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">lines = read_time_machine()</span><br><span class="line">print(<span class="string">'# sentences %d'</span> % len(lines))</span><br></pre></td></tr></table></figure>
-<hr>
-<p><strong>output</strong>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># sentences 3221</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/02/18/Task02-文本预处理；语言模型；循环神经网络/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1649,7 +1646,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1662,7 +1659,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
